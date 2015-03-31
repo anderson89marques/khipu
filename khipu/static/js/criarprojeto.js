@@ -1,0 +1,57 @@
+/**
+ * Created by anderson on 28/03/15.
+ */
+
+$(document).ready(function($){
+    function criarprojeto(){
+                var dados = $("#formdd").serialize()
+                jQuery.ajax({
+                    url: "/criarprojeto",
+                    type: 'POST',
+                    data: dados,
+                    success: function(data){
+                        //this.html(" ")
+                        //this.append(data);
+                        dialog.dialog( "close" );
+                        alert(data.nome_projeto);
+                        $("#nome_projeto").html("<p style='font-family:verdana;'><em>"+ data.nome_projeto + "<em></p>")
+                        $("#chave").html("<p style='font-family:verdana; font-size:10px;'><em>"+ data.chave.slice(0,100) +
+                        "<em></br>"+ data.chave.slice(100) + "</p>")
+                        $("#data_ativacao").html("<p style='font-family:verdana;'><em>"+ data.data_ativacao + "<em></p>")
+                        $("#ativadopor").html("<p style='font-family:verdana;'><em>"+ data.ativado_por + "<em></p>")
+                    }
+                });
+                return true;
+            }
+
+    var dialog = $("#dialog_formm").dialog({
+                autoOpen: false,
+                height: 300,
+                width: 350,
+                modal: true,
+                buttons:{
+                    "Criar Projeto": criarprojeto,
+                    Cancel: function() {
+                        //form[ 0 ].reset();
+                        dialog.dialog( "close" );
+                        window.location.replace("http://0.0.0.0:6543");
+                    }
+                },
+                close: function() {
+                    form[ 0 ].reset();
+                    //dialog.dialog( "close" );
+                    //window.location.replace("http://0.0.0.0:6543");
+                    //allFields.removeClass( "ui-state-error" );
+                }
+
+    });
+
+    form = dialog.find( "form" ).on( "submit", function( event ) {
+                event.preventDefault();
+                criarprojeto();
+    });
+
+    $(".ui-dialog-titlebar-close").remove(); //Removendo o botão de fechar do dialog.
+
+    dialog.dialog( "open" ); //Abrindo o dialog.
+});

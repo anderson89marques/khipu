@@ -1,0 +1,20 @@
+#conteudocriarcontatos{
+    width: 960px;
+    height: 700px;
+    margin: auto;
+}
+
+#divformcontatos{
+    width: 60%;
+    height: 100%;
+    float: left;
+    background-color: #ffffff;
+}
+
+#divlistgrupos{
+    width: 40%;
+    height: 100%;
+    float: right;
+    background-color: aqua;
+}
+

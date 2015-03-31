@@ -1,0 +1,31 @@
+{% extends "../main.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+        {% if listusuarios %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nome Usuário</th>
+                    <th>Papel</th>
+                    <th>Data de Criação</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for usuario in listusuarios%}
+                    <tr>
+                        <td>{{ usuario.nome }}</td>
+                        <td>{{ usuario.principals[0].nome }}</td>
+                        <td>{{ usuario.data_criacao.strftime("%d/%m/%Y") }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        {% else %}
+            <p>Não a prpjetos cadastradas</p>
+        {% endif %}
+{% endblock %}

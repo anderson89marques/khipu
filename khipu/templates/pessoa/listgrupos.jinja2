@@ -1,0 +1,4 @@
+Escolha o grupo do usuário <input id="criargrupo" type="button" value="Criar Grupo"><br/>
+{% for nome in lista %}
+    <input type="checkbox" name="nomegrupo" value="{{ nome }}">{{ nome }} <br/>
+{% endfor %}

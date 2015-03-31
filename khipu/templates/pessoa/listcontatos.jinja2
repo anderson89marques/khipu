@@ -1,0 +1,30 @@
+{% extends  "../main.jinja2"%}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    {% if listpessoas %}
+    <table>
+        <thead>
+            <tr>
+               <th>Selecione o contato</th>
+               <th>Nome</th>
+               <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% for pessoa in listpessoas%}
+                    <td><input type="checkbox" name="check" value="" />Selecionar</td>
+                    <td>{{ pessoa.nome }}</td>
+                    <td>{{ pessoa.telefone }}</td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    {% else %}
+        <p>Não a pessoas cadastradas</p>
+    {% endif %}
+{% endblock %}

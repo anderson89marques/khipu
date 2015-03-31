@@ -1,0 +1,29 @@
+{% extends "../main.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+    <link type="text/css" rel="stylesheet" href="{{ request.static_url('khipu:static/css/enviarmensagemtheme.css') }}">
+    <link type="text/css" rel="stylesheet" href="{{ request.static_url('khipu:static/dist/themes/default/style.min.css') }}">
+{% endblock %}
+
+{% block content %}
+    <p>Criar Mensagem</p>
+    <div id="contentmensagem">
+        {% include "_form.jinja2" %}
+    </div>
+    <div id="contentgp">
+        <div id="jstree">
+            <ul>
+                {% for grupo in listgrupos %}
+                    <li id="grupo{{ grupo.id }}">{{ grupo.nome }}
+                    <ul>
+                    {% for pessoa in grupo.pessoas %}
+                        <li id="{{ pessoa.id }}">{{ pessoa.nome }}</li>
+                    {% endfor %}
+                    </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

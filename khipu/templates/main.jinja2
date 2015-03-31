@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="{{ request.local_name }}">
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap core CSS -->
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <title>KHIPU</title>
+    {% endblock %}
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron" style="background-color: #222222;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <img class="logo img-responsive" src="{{request.static_url('khipu:static/pyramid.png')}}" alt="pyramid web framework">
+                    </div>
+                <div class="col-lg-2">
+                    {% if view.logged_in%}
+                        <a href="{{ request.application_url }}/logout">Olá {{ view.logged_in }} | Logout</a>
+                    {% else %}
+                        <a href="{{ request.application_url }}/login"> Olá | Log In</a>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-default navbar-inverse">
+            <div class="container">
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="{{ request.route_url('home')}}">Home</a></li>
+                        <li><a href="{{ request.route_url('exibeprojeto')}}">Criar Projeto</a></li>
+                        <li><a href="{{ request.route_url('listaprojetos')}}" >Projetos</a></li>
+                        <li><a href="{{ request.route_url('listausuarios')}}">Usuários</a></li>
+                        <li><a href="{{ request.route_url('listamensagens')}}">Mensagens</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        {% block content %} {% endblock %}
+
+    <footer class="panel-footer navbar-inverse">
+        <div class="container">
+            <p class="text-muted text-center" style="color: #ffffff">
+                <strong>
+                    © Anderson Marques Morais
+                </strong>
+            </p>
+        </div>
+    </footer>
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/jquery-ui.js') }}"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/dist/jstree.min.js')}}"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarmensagem.js')}}"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarcontato.js')}}"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarprojeto.js')}}"></script>
+</body>
+</html>

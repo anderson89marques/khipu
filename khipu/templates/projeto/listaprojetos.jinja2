@@ -1,0 +1,33 @@
+{% extends "../main.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+        {% if listprojetos %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Nome Projeto</th>
+                    <th>Chave</th>
+                    <th>Data de Ativacao</th>
+                    <th>Usuário</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for projeto in listprojetos%}
+                    <tr>
+                        <td><a href="{{ request.route_url('showprojeto', id=projeto.id) }}" >{{ projeto.nome }}</a></td>
+                        <td>{{ projeto.chave[:15] + "..." }}</td>
+                        <td>{{ projeto.data_ativacao.strftime("%d/%m/%Y") }}</td>
+                        <td>{{ projeto.usuario.nome }}</td>
+                    </tr>
+                {% endfor %}
+
+                </tbody>
+            </table>
+        {% else %}
+            <p>Não existe projetos cadastrados! :(</p>
+        {% endif %}
+{% endblock %}

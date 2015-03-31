@@ -1,0 +1,35 @@
+{% extends "../main.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+    <link href="{{ request.static_url('khipu:static/css/criarcontatostheme.css')}}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div id="conteudocriarcontatos">
+        <div id="divformcontatos">
+            <p>Cadastrar contatos</p>
+            {% include "_form.jinja2" %}
+        </div>
+        <div id="divlistgrupos">
+            {% if lista %}
+                {% include "listgrupos.jinja2" %}
+            {% else %}
+                É preciso criar um grupo. <br/>
+                para poder salvar usuário
+                <input id="criargrupo" type="button" value="criar grupo">
+            {% endif %}
+        </div>
+    </div>
+    <div id="dialog_form" title="Criar novo grupo">
+        <p>Informe o nome do projeto.</p>
+        <form id="formd">
+            <fieldset>
+                <label for="gruponome">Nome do grupo:</label>
+                <input id="gruponome" type="text" name="nomegrupo" />
+
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

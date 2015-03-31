@@ -1,0 +1,97 @@
+from sqlalchemy import (
+	    Column, Index,
+    Integer, Text,
+    ForeignKey, Date
+    )
+
+from sqlalchemy.ext.declarative import declarative_base
+
+from sqlalchemy.orm import (
+    scoped_session,
+    sessionmaker,
+    relationship,
+    )
+
+from zope.sqlalchemy import ZopeTransactionExtension
+
+DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
+Base = declarative_base()
+
+
+class Organizacao(Base):
+    __tablename__ = 'organizacao'
+    id = Column(Integer, primary_key=True)
+    nome = Column(Text)
+    login = Column(Text, nullable=True)
+    senha = Column(Text, nullable=True)
+    email = Column(Text, nullable=True)
+    #0.* mensagens podem ser enviadas(N - 1)
+    mensagens = relationship('Mensagem', back_populates='organizacao')
+
+
+class Mensagem(Base):
+    __tablename__ = 'mensagem'
+    id = Column(Integer, primary_key=True)
+    texto = Column(Text)
+    #pertece a uma organização(Uma mensagem não pode ser compartilhada entre as organizações)(1-N)
+    organizacao_id = Column(Integer, ForeignKey('organizacao.id'))
+    organizacao = relationship('Organizacao', back_populates='mensagens')
+    pessoas = relationship("Pessoa", secondary="pessoa_mensagem")
+
+
+class PessoaMensagem(Base):
+    __tablename__ = 'pessoa_mensagem'
+    mensagem_id = Column(Integer, ForeignKey('mensagem.id'), primary_key=True)
+    pessoa_id = Column(Integer, ForeignKey('pessoa.id'), primary_key=True)
+
+
+class PessoaGrupo(Base):
+    __tablename__ = "pessoa_grupo"
+    pessoa_id = Column(Integer, ForeignKey('pessoa.id'), primary_key=True)
+    grupo_id = Column(Integer, ForeignKey('grupo.id'), primary_key=True)
+
+
+class Pessoa(Base):
+    __tablename__ = 'pessoa'
+    id = Column(Integer, primary_key=True)
+    nome = Column(Text)
+    telefone = Column(Text)
+    grupos = relationship("Grupo", secondary="pessoa_grupo")
+    mensagens = relationship("Mensagem", secondary="pessoa_mensagem")
+
+    def __init__(self):
+        pass
+
+
+class Grupo(Base):
+    __tablename__ = 'grupo'
+    id = Column(Integer, primary_key=True)
+    nome = Column(Text)
+    pessoas = relationship("Pessoa", secondary="pessoa_grupo")
+
+
+class GcmInformation(Base):
+    __tablename__ = 'gcminformation'
+    id = Column(Integer, primary_key=True)
+    name = Column(Text, default="GCMCLASS")
+    apikey = Column(Text, default="AIzaSyBCyTjgOMZncxzTgPxVN9yxEbaZ0Y2SvQo") #chave do servidor
+    register_id = Column(Integer, ForeignKey('registers_ids.id'))
+    register_ids = relationship("RegisterIds", uselist=True)
+
+
+class RegisterIds(Base):
+    __tablename__ = 'registers_ids'
+    id = Column(Integer, primary_key=True)
+    androidkey = Column(Text)
+
+
+class ServerInformation(Base):
+    __tablename__ = 'server_information'
+    id = Column(Integer, primary_key=True)
+    mensagem_id = Column(Integer)
+    app_key = Column(Integer)
+    data_recebimento = Column(Date)
+
+#Index('my_index', MyModel.name, unique=True, mysql_length=255)
+
+

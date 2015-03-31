@@ -1,0 +1,78 @@
+
+#cabeçalho {
+    height: 110px;
+}
+
+#cabeçalho p {
+    background-color: #bc2131;
+}
+
+/*#cabeçalho p img {
+    height: 90px;
+    padding: 10px 0px 10px 2px;
+}
+*/
+
+#navbarn {
+    background-color: black;
+}
+
+#navbarn ul{
+    padding-left: 0px;
+    list-style: none;
+    height: 25px;
+    margin-top: 0px;
+    padding-top: 5px;
+}
+#navbarn ul li{
+    display: inline;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+#navbarn ul li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#navbarn ul li:hover {
+    background-color: #bc2131;
+}
+
+#conteudo {
+    height: 650px;
+    background-color: aliceblue;
+}
+
+table {
+    width: 840px;
+    margin: auto;
+    border: solid;
+}
+
+table thead tr{
+    background-color: #bc2131;
+}
+
+table thead tr td{
+    background-color: #bc2131;
+    text-align: center;
+
+}
+
+table td{
+    width: 145px;
+    padding: 0px 4px 0px 4px;
+    border: solid;
+}
+
+#rodape {
+    height: 40px;
+    clear: both;
+    padding-top: 20px;
+    text-align: center;
+    background-color: #bc2131;
+    font-family: "Lucinda Grande", "Lucinda Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+    color: #ffffff;
+}
+

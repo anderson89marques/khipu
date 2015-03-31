@@ -1,0 +1,12 @@
+#contentmensagem{
+    float: left;
+    width: 60%;
+    height: 600px;
+}
+
+#contentgp{
+    background-color: #007fff;
+    float: right;
+    width: 40%;
+    height: 600px;
+}
