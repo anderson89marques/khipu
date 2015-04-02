@@ -5,9 +5,10 @@ from pyramid.security import (remember, forget, authenticated_userid, effective_
 from sqlalchemy.exc import DBAPIError
 from khipu.banco_de_dados.models import (DBSession, Mensagem, Projeto,
                                          GcmInformation, RegisterIds, Usuario)
-from khipu.servicos.servico import Sender
-from binascii import hexlify, unhexlify
-from simplecrypt import encrypt, decrypt
+from khipu.servicos.servico import (Sender, SistemaService, MensagemService)
+from binascii import unhexlify
+from simplecrypt import decrypt
+from paginate import Page
 import transaction
 import datetime
 
@@ -16,7 +17,6 @@ import datetime
 class KhipuController:
     def __init__(self, request):
         self.request = request
-        self.sender = Sender()
         self.logged_in = request.authenticated_userid #no template eu uso assim -> view.logged_in
         #testar isso abaixo pra usar na exibição de dados de acordo com a permissão.
         #self.principals = DBSession.query(Usuario).filter(Usuario.nome == self.logged_in).first()
@@ -58,22 +58,16 @@ class KhipuController:
     @view_config(route_name="listaprojetos", renderer="templates/projeto/listaprojetos.jinja2", permission="comum")
     def listarprojetos(self):
         try:
-            listprojetos = DBSession.query(Projeto).all()
-            print("ID do PROJETO: %r" % listprojetos[0].id)
+            #consulta no banco
+            query = DBSession.query(Projeto).all()
+            #paginação
+            listprojetos = Page(query,
+                                 page=int(self.request.matchdict['page']),
+                                 items_per_page=10,
+                                 item_count=len(query))
         except DBAPIError:
             Response("Problema na busca dos projetos", content_type='text/plain', status_int=500)
         return {'listprojetos': listprojetos}
-
-    @view_config(route_name="receiver", renderer="json")
-    def receiver_data(self):
-        #mudar isso aqui para criar uma thread para tratar as informações de forma assíncrona.
-        print("receiver %r" % self.request.params)
-
-        mensagem = self.sender.processador(self.request.params['q'], self.request.registry.settings["token.secret"])
-        return {"msg": mensagem}
-
-    def send_information_about_messages(self):
-        pass
 
 
 # ***** USUARIO *********
@@ -86,7 +80,13 @@ class UsuarioController:
     def lista_usuarios(self):
         print("Efetive principals: %r" % effective_principals(self.request))
         try:
-            listusuarios = DBSession.query(Usuario).all()
+            #consulta no banco
+            query = DBSession.query(Usuario).all()
+            #paginação
+            listusuarios = Page(query,
+                                 page=int(self.request.matchdict['page']),
+                                 items_per_page=10,
+                                 item_count=len(query))
         except DBAPIError:
             Response("Problema na busca de pessoas", content_type='text/plain', status_int=500)
         return {'listusuarios': listusuarios}
@@ -97,8 +97,11 @@ class UsuarioController:
         print("Buscando o arquivo de sentings: %r" % self.request.registry.settings["tutorial.secret"])
         return {"nome": "Anderson"}
 
-
-    @forbidden_view_config() #Quando o usuário que não estiver logado e tentar acessa uma página ao qual ele não tem permissão ele é redirecionado para a página de login.
+    """
+    Quando o usuário que não estiver logado e tentar acessa uma página ao qual ele não tem
+    permissão ele é redirecionado para a página de login.
+    """
+    @forbidden_view_config()
     def sem_auth_control(self):
         """
         Se o usuário está logado e veio parar aqui quer dizer que ele não tem autorização para acessar
@@ -128,7 +131,7 @@ class UsuarioController:
             user = DBSession.query(Usuario).filter(Usuario.nome == login).first() #tratar todo o esquema de encriptação
             if user.check_password(password):
                 headers = remember(self.request, login)
-                return HTTPFound(ocation=came_from, headers=headers)
+                return HTTPFound(location=came_from, headers=headers)
             message = "Login Falhou"
 
         return dict(name="Login",
@@ -187,13 +190,52 @@ class GcmController:
 class MensagemController:
     def __init__(self, request):
         self.request = request
-        self.sender = Sender()
         self.logged_in = request.authenticated_userid
+        self.sender = Sender()
+        self.mensagem_service = MensagemService()
 
     @view_config(route_name='listamensagens', renderer='templates/mensagem/listamensagens.jinja2', permission="comum")
     def lista_mensagens(self):
         try:
-            listmensagens = DBSession.query(Mensagem).all()
+            #consulta no banco
+            query = DBSession.query(Mensagem).all()
+            listmensagens = Page(query,
+                                 page=int(self.request.matchdict['page']),
+                                 items_per_page=10,
+                                 item_count=len(query))
+
         except DBAPIError:
             Response("Problema na busca das mensagens", content_type='text/plain', status_int=500)
         return {'listmensagens': listmensagens}
+
+    @view_config(route_name="receiver", renderer="json")
+    def receiver_data(self):
+        print("receiver %r" % self.request.params)
+        mensagem = self.sender.processador(self.request.params['q'], self.request.registry.settings["token.secret"])
+        return {"msg": mensagem}
+
+    @view_config(route_name="busca_informacao", renderer="json")
+    def busca_informacao_mensagem(self):
+        mensagens = self.mensagem_service.get_messages(self.request.params['q'], self.request.registry.settings["token.secret"])
+        pass
+
+
+# ***** Sistema *********
+class SistemaController:
+    def __init__(self, request):
+        self.request = request
+        self.logged_in = request.authenticated_userid
+        self.sistema = SistemaService()
+
+    @view_config(route_name="listparametros", renderer="templates/sistema/listparametros.jinja2", permission="admin")
+    def list_parametros(self):
+        list_par = self.sistema.get_list_parametros()
+        return list_par
+
+    @view_config(route_name="listparametrosbody",  renderer="templates/sistema/_body_list.jinja2", permission="admin")
+    def list_parametros_body(self):
+        print("BODY LIST :D")
+        import time
+        time.sleep(6)
+        list_par = self.sistema.get_list_parametros()
+        return list_par

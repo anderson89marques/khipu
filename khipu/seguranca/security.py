@@ -2,7 +2,8 @@ __author__ = 'anderson'
 USERS = {'editor': 'editor',
          'viewer': 'viewer'}
 GROUPS = {'editor': ['group:editors']}
-from khipu.banco_de_dados.models import (DBSession, Usuario, Principal)
+
+from khipu.banco_de_dados.models import (DBSession, Usuario, Principal, Mensagem, Projeto)
 import transaction
 import datetime
 

@@ -1,0 +1,31 @@
+<h1>Network</h1>
+<hr>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th colspan="4" style="text-align: center;"><span style="font-size: 20px;">Uso da Rede</span></th>
+    </tr>
+    <tr>
+        <th>Interface</th>
+        <th>Bytes enviados</th>
+        <th>Bytes recebidos</th>
+        <th>Pacotes enviados</th>
+        <th>Pacotes recebidos</th>
+        <th>Erros durante envio</th>
+        <th>Erros durante recebimento</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for net in network_interfaces %}
+        <tr>
+            <td>{{ net }}</td>
+            <td>{{ network_interfaces[net][0] }}</td>
+            <td>{{ network_interfaces[net][1] }}</td>
+            <td>{{ network_interfaces[net][2] }}</td>
+            <td>{{ network_interfaces[net][3] }}</td>
+            <td>{{ network_interfaces[net][4] }}</td>
+            <td>{{ network_interfaces[net][5] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

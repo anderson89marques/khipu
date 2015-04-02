@@ -6,23 +6,31 @@
 {% endblock %}
 
 {% block content %}
-    <h2> Terá alguma coisa na home</h2>
-    <p id="resumo" class=""> Lorem ipsum dolor sit amet, vim ubique labore dictas eu, novum equidem ius ut. Eam solet disputando eu, odio
-        putant petentium pri an. Ius iusto tollit adversarium an, malis utamur pertinax pri ea. Esse nemore incorrupte vel no.<br><br>
-
-        Has mollis lobortis theophrastus an, no quo habeo dictas senserit. Appetere placerat recteque pro at, munere principes
-        inciderint est ex. Veniam timeam tibique pri ei, eos option gubergren definitiones eu. Quodsi rationibus cu qui.
-        An vivendo intellegebat eum, apeirian expetendis delicatissimi an duo. An cum idque ignota splendide, mel eu
-        admodum repudiare, modus soluta cum cu.<br><br>
-
-        Perpetua repudiandae ut eum, est mucius officiis fabellas ne, pro ne euismod dolorum appellantur. Sea nobis
-        assueverit no, cum everti aperiri gubergren ad. Eam et novum oratio omnium. Cu his congue epicurei lucilius.<br><br>
-
-        Melius expetendis te sea, has ex dicam admodum invidunt. Te nibh cibo labore pro, autem eirmod vel et, in vis
-        facer nulla epicurei. Eu has quodsi animal, nam solum tation aliquando cu. Essent omnesque splendide duo te, ea
-        tale idque nam, tibique interpretaris cu pro. Ut iriure percipit invidunt per, mea te diceret detraxit necessitatibus.<br><br>
-
-        Vix dicit signiferumque ad, ei ludus phaedrum per. Clita disputationi reprehendunt usu no, ex mel animal regione
-        evertitur, his nostro expetendis ad. Vim ea etiam scripta incorrupte, id duo tation ridens. Ad vis explicari ullamcorper.</p>
-    <p>Tela do home</p>
+        <div class="row">
+            <div class="container">
+                <h1 class="page-header">KHIPU DASHBOARD</h1>
+                <div class="row placeholders" style="margin-bottom: 30px;">
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <a href="#"><img src="{{ request.static_url("khipu:static/images/project.jpg") }}" class="img-responsive img-rounded" data-holder-rendered="True" alt="200"/></a>
+                        <h4 class="text-center">Projeto</h4>
+                        <span class="text-muted text-center">Crie seu projeto e comece a usar o khipu</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <a href="#"><img src="{{ request.static_url("khipu:static/images/project.jpg") }}" class="img-responsive img-rounded" data-holder-rendered="True" alt="200"/></a>
+                        <h4 class="text-center">Mensagens</h4>
+                        <span class="text-muted text-center">Veja todas as mensagens do sistema.</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <a href="#"><img src="{{ request.static_url("khipu:static/images/project.jpg") }}" class="img-responsive img-rounded" data-holder-rendered="True" alt="200"/></a>
+                        <h4 class="text-center">Sistema</h4>
+                        <span class="text-muted text-center">Veja informações do computador.</span>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                        <a href="{{ request.route_url('listausuarios', page='1') }}"><img src="{{ request.static_url("khipu:static/images/project.jpg") }}" class="img-responsive img-rounded" data-holder-rendered="True" alt="200"/></a>
+                        <h4 class="text-center">Perfis de Acesso</h4>
+                        <span class="text-muted text-center">Veja todos os usuários do sistema.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}

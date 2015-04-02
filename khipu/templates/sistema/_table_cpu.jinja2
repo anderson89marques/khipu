@@ -1,0 +1,26 @@
+
+<h1>CPU</h1>
+<hr>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th colspan="4" style="text-align: center;"><span style="font-size: 20px;">Tempo gasto por cpu lógica em segundos</span></th>
+    </tr>
+    <tr>
+        <th>Usuário</th>
+        <th>Processos do sistema</th>
+        <th>Processos com maior prioridade</th>
+        <th>Porcentagem de uso da cpu</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i, cpu in cpu_times%}
+        <tr>
+            <td>{{ cpu.user }}</td>
+            <td>{{ cpu.system }}</td>
+            <td>{{ cpu.nice }}</td>
+            <td>{{ cpu_porcento[i] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

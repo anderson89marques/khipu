@@ -1,0 +1,10 @@
+#dialog_loading_body {
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+#dialog_loading_body img{
+    height: 80px;
+    width: 80px;
+}

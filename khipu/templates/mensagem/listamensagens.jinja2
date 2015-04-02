@@ -28,6 +28,19 @@
 
                 </tbody>
             </table>
+            <div class="pager">
+                {% set link_attr={"class": "btn small"} %}
+                {% set curpage_attr={"class": "btn primary small disabled"} %}
+                {% set dotdot_attr={"class": "btn small disabled"} %}
+                <!-- Usei o filter com parametro striotags para converter as strings de retorno
+                para tags html. Na url passei apenas o parametro necessário.-->
+                {% filter striptags %}
+                    {{  listmensagens.pager(url='$page',format="$link_previous ~2~ $link_next",
+                                                  symbol_previous="«", symbol_next="»",
+                                                 link_attr=link_attr, curpage_attr=curpage_attr,
+                                                 dotdot_attr=dotdot_attr)}}
+                {% endfilter %}
+            </div>
         {% else %}
             <p>Não existe projetos cadastrados! :(</p>
         {% endif %}

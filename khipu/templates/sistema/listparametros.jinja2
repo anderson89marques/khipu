@@ -1,0 +1,15 @@
+{% extends "../main.jinja2" %}
+
+{% block head %}
+    {{ super() }}
+    <link href="{{ request.static_url('khipu:static/css/sistema.css')}}" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container" id="body_list_parametros">
+        {% include "_body_list.jinja2" %}
+    </div>
+    <div id="dialog_loading_body"  style="display: none">
+        <img src="{{ request.static_url('khipu:static/images/load1.GIF')}}" id="imgload">
+    </div>
+{% endblock %}

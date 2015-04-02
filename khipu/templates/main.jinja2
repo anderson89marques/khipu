@@ -22,9 +22,9 @@
                     </div>
                 <div class="col-lg-2">
                     {% if view.logged_in%}
-                        <a href="{{ request.application_url }}/logout">Olá {{ view.logged_in }} | Logout</a>
+                        <span style="color: #a9bcb8;"> Olá {{ view.logged_in }} </span><a href="{{ request.application_url }}/logout" style="text-decoration: none;"><span style="color: #a9bcb8;">| Sair</span></a>
                     {% else %}
-                        <a href="{{ request.application_url }}/login"> Olá | Log In</a>
+                         <span style="color: #a9bcb8;"> Olá </span> <a href="{{ request.application_url }}/login" style="text-decoration: none;"><span style="color: #a9bcb8;">| Entrar</span></a>
                     {% endif %}
                 </div>
                 </div>
@@ -35,10 +35,29 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="{{ request.route_url('home')}}">Home</a></li>
-                        <li><a href="{{ request.route_url('exibeprojeto')}}">Criar Projeto</a></li>
-                        <li><a href="{{ request.route_url('listaprojetos')}}" >Projetos</a></li>
-                        <li><a href="{{ request.route_url('listausuarios')}}">Usuários</a></li>
-                        <li><a href="{{ request.route_url('listamensagens')}}">Mensagens</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Projeto<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ request.route_url('exibeprojeto')}}">Criar Projeto</a></li>
+                                <li><a href="{{ request.route_url('listaprojetos', page='1')}}" >Projetos</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#"  data-toggle="dropdown" class="dropdown-toggle">Segurança<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Meu Usuário</a></li>
+                                <li><a href="#">Cadastro de usuário</a></li>
+                                <li><a href="{{ request.route_url('listausuarios', page='1')}}">Perfis de Acesso</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{{ request.route_url('listamensagens', page='1')}}">Mensagens</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Sistema<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ request.route_url('listparametros') }}">Parâmetros do Sistema</a></li>
+                                <li><a href="#">Gestão de Exceção</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -59,9 +78,8 @@
     <!-- Latest compiled and minified JavaScript -->
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ request.static_url('khipu:static/js/jquery-ui.js') }}"></script>
-    <script type="text/javascript" src="{{ request.static_url('khipu:static/dist/jstree.min.js')}}"></script>
-    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarmensagem.js')}}"></script>
-    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarcontato.js')}}"></script>
     <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarprojeto.js')}}"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/jquery.timer.js') }}"></script>
+    <script type="text/javascript" src="{{ request.static_url('khipu:static/js/time.informacao.sistema.js') }}"></script>
 </body>
 </html>
