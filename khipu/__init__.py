@@ -4,15 +4,18 @@ from pyramid.authorization import ACLAuthorizationPolicy
 from sqlalchemy import engine_from_config
 from khipu.banco_de_dados.models import (DBSession, Base, Usuario, Principal)
 from khipu.seguranca.security import groupfinder, init
-import transaction #só pra teste
 
 """
     KHIPU ou QUIPO,
     era um instrumento utilizado para COMUNICAÇÃO,
     mas também como registro contábil e como registros mnemotécnicos entre os INCAS.
 """
+
+
 def main(global_config, **settings):
-    """ This function returns a Pyramid WSGI application.
+    """
+        This function returns a Pyramid WSGI application.
+        Esta função retorna uma aplicação Pyramid WSGI
     """
 
     #Configuração para criação do banco de dados

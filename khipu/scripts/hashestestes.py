@@ -53,3 +53,5 @@ d = decrypt(password, eb)
 print(d.decode("utf8"))
 if palavra == d:
     print(True)
+
+

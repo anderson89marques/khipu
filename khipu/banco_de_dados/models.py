@@ -1,23 +1,13 @@
-from sqlalchemy import (
-    Column, Index,
-    Integer, Text,
-    ForeignKey, Date
-    )
-
+from sqlalchemy import (Column, Index, Integer, Text, ForeignKey, Date)
 from sqlalchemy.ext.declarative import declarative_base
-
-from sqlalchemy.orm import (
-    scoped_session,
-    sessionmaker,
-    relationship,
-    )
-
+from sqlalchemy.orm import (scoped_session, sessionmaker, relationship)
 from zope.sqlalchemy import ZopeTransactionExtension
 from passlib.context import CryptContext
-from simplecrypt import encrypt, decrypt
-from binascii import hexlify, unhexlify
+from simplecrypt import encrypt
+from binascii import hexlify
 import uuid
 
+#Criação da sessão de acesso ao banco de dados e também da classe Base para a construção dos modelos.
 DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension(), expire_on_commit=False))
 Base = declarative_base()
 
@@ -125,6 +115,5 @@ class ServerInformation(Base):
     app_key = Column(Integer)
     data_recebimento = Column(Date)
 
-#Index('my_index', MyModel.name, unique=True, mysql_length=255)
 
 

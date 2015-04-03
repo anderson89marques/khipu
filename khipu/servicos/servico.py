@@ -1,54 +1,25 @@
 __author__ = 'anderson'
-import json
 
-from khipu.banco_de_dados.models import (
-    DBSession, Mensagem, GcmInformation, Projeto
-)
+from khipu.banco_de_dados.models import (DBSession, Mensagem, GcmInformation, Projeto, RegisterIds)
+from khipu.banco_de_dados.enuns import StatusMensagem
 from khipu.gcm_wraper.gcm import GCM
-from binascii import hexlify, unhexlify
-from simplecrypt import encrypt, decrypt
+from binascii import unhexlify
+from simplecrypt import decrypt
 import datetime
-import urllib.request
-import urllib.parse
 import transaction
 import json
 import psutil
 
+
+# ***** Sender *********
 class Sender(object):
     """
-        classe responsável por formatar as informações que serão enviadas para o servidor do google e posteriormente
+        Classe responsável por formatar as informações que serão enviadas para o servidor do google e posteriormente
         para o celular cadastrado, que então enviará as mensagens de texto;
     """
 
     def __init__(self):
         pass
-
-    def testerest(self, mapadados):
-        url = "http://0.0.0.0:6544/"
-        username = "anderson"
-        password = "anderson"
-
-        passman = urllib.request.HTTPPasswordMgrWithDefaultRealm()
-        passman.add_password(None, url, username, password)
-
-        authhandler = urllib.request.HTTPBasicAuthHandler(passman)
-        opner = urllib.request.build_opener(authhandler)
-        # use the opener to fetch a URL
-
-        urllib.request.install_opener(opner)
-
-        print(mapadados)
-        dados = urllib.parse.urlencode(mapadados)
-        bytedados = dados.encode("utf8")
-        pagehandle = None
-        try:
-            #pagehandle = urllib.request.urlopen(url, bytedados).read()
-            req = urllib.request.Request(url, bytedados)
-            handle = opner.open('http://0.0.0.0:6544/receiver').read()
-        except urllib.error.HTTPError as e:
-            print("ERRO: %r" % e)
-
-        print(handle.decode("utf8"))
 
     def givemeGcm(self):
         return DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
@@ -59,22 +30,18 @@ class Sender(object):
             msg.id_on_web_app = id_msg
             msg.data_chegada = datetime.datetime.now().date()
             msg.numero_tentativas_envio = 1
-            msg.status = "Recebido."
+            msg.status = StatusMensagem.RECEBIDA_CLIENTE
             msg.projeto = projeto
             DBSession.add(msg)
         return msg
 
     def processador(self, dados, key):
-        print("Entrou no processador!")
+        print("Processando Mensagem Recebida")
         d = json.loads(dados)
         projeto = None
         print("projeto json: %r" % d)
-        print("id projeto : %r" % d['data']['id_projeto'])
         try:
-            #descriptografando e buscando o projeto no banco
-            token_em_bytes = unhexlify(d['data']['id_projeto'])
-            token_descripto_bytes = decrypt(key, token_em_bytes)
-            projeto = DBSession.query(Projeto).filter(Projeto.uuid == token_descripto_bytes.decode("utf8")).first()
+            projeto = descriptografa_projeto(dados['id_projeto'], key)
         except Exception as e:
             print("Erro na consulta: %r" % e)
 
@@ -86,13 +53,18 @@ class Sender(object):
             print("DADOS: %r" % d)
             gcmobj = GCM(gcminformation.apikey)
             response = gcmobj.json_request(registration_ids=d['registration_ids'], data=d['data'])
-            print(response)
+            print("Resposta Google: %r" % response)
             return {'msg': "Mensagem Recebida com sucesso"}
         else:
             return {'msg': "Projeto não autorizado"}
 
 
+# ***** Sistema *********
 class SistemaService(object):
+    """
+        Classe responsável por coletar informações do Computador como: Memória, Uso de CPU, e informações da REDE.
+    """
+
     def __init__(self):
         pass
 
@@ -140,28 +112,75 @@ class SistemaService(object):
                 'network_interfaces': network_interfaces}
 
 
+# ***** Mensagem *********
 class MensagemService(object):
+    """
+        Classe que controla a busca de informações sobre as mensagens.
+        O método get_messages recebe a chave para descriptografar o token identificador da aplicação
+        e também os dados contendo o token e os ids das mensagens ao qual se quer obter informação.
+    """
+
     def __init__(self):
         pass
 
     def get_messages(self, dados, key):
-        print("Entrou no processador!")
+        print("Buscando Mensagens!")
         d = json.loads(dados)
         projeto = None
         print("projeto json: %r" % d)
-        print("id projeto : %r" % d['id_projeto'])
         try:
-            #descriptografando e buscando o projeto no banco
-            token_em_bytes = unhexlify(d['id_projeto'])
-            token_descripto_bytes = decrypt(key, token_em_bytes)
-            projeto = DBSession.query(Projeto).filter(Projeto.uuid == token_descripto_bytes.decode("utf8")).first()
+            projeto = descriptografa_projeto(dados['id_projeto'], key)
         except Exception as e:
             print("Erro na consulta: %r" % e)
 
         if projeto:
             msg_ids = d['mensagem_ids']
             mensagens = [DBSession.query(Mensagem).filter(Mensagem.id_on_web_app == id).first() for id in msg_ids]
-            informacoes = [{"data_chegada": msg.data_chega, "numero_tentativas": msg.numero_tentativas_envio,
-                            "status": msg.status} for msg in mensagens]
+            informacoes = [{"mensagem_id": msg.id, "data_chegada": msg.data_chegada.strftime("%d/%m/%Y"),
+                            "numero_tentativas": msg.numero_tentativas_envio, "status": msg.status}
+                           for msg in mensagens if msg]
             print("Informações: %r" % informacoes)
             return informacoes
+
+
+# ***** Mensagem *********
+class GcmService(object):
+    def __init__(self):
+        pass
+
+    def informa_msg(self, dados, key):
+        print("Recebimento da Informação da mensagem do android")
+        projeto = None
+        msg = {}
+        try:
+            projeto = descriptografa_projeto(dados['id_projeto'], key)
+        except Exception as e:
+            msg['ok'] = "Erro :( %r" % e
+        print(msg)
+
+        if projeto:
+            gcmclass = DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
+            if not gcmclass:
+                regId = RegisterIds(androidkey=dados["RegId"])
+                gcmclass = GcmInformation()
+                gcmclass.register_ids.append(regId)
+                DBSession.add(gcmclass)
+            msg['ok'] = 'Projeto autorizado'
+        else:
+            msg['ok'] = "Projeto não autorizado"
+
+        return msg
+
+
+def descriptografa_projeto(id_projeto, key):
+    """
+    Função utilizada por várias classes para descriptografar o token e buscar o projeto relacionado a ele.
+    :param id_projeto: token de identificação do projeto
+    :param key: chave usada para descriptografar
+    :return: o projeto relaciona is id_projeto
+    """
+    #descriptografando e buscando o projeto no banco
+    token_em_bytes = unhexlify(id_projeto)
+    token_descripto_bytes = decrypt(key, token_em_bytes)
+    projeto = DBSession.query(Projeto).filter(Projeto.uuid == token_descripto_bytes.decode("utf8")).first()
+    return projeto

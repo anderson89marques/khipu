@@ -1,11 +1,10 @@
-from pyramid.response import Response
-from pyramid.view import (view_config, view_defaults, forbidden_view_config)
-from pyramid.httpexceptions import HTTPFound, HTTPUnauthorized
+from khipu.banco_de_dados.models import (DBSession, Mensagem, Projeto, GcmInformation, RegisterIds, Usuario)
 from pyramid.security import (remember, forget, authenticated_userid, effective_principals)
+from khipu.servicos.servico import (Sender, SistemaService, MensagemService, GcmService)
+from pyramid.httpexceptions import HTTPFound, HTTPUnauthorized
+from pyramid.view import (view_config, forbidden_view_config)
+from pyramid.response import Response
 from sqlalchemy.exc import DBAPIError
-from khipu.banco_de_dados.models import (DBSession, Mensagem, Projeto,
-                                         GcmInformation, RegisterIds, Usuario)
-from khipu.servicos.servico import (Sender, SistemaService, MensagemService)
 from binascii import unhexlify
 from simplecrypt import decrypt
 from paginate import Page
@@ -82,11 +81,9 @@ class UsuarioController:
         try:
             #consulta no banco
             query = DBSession.query(Usuario).all()
+
             #paginação
-            listusuarios = Page(query,
-                                 page=int(self.request.matchdict['page']),
-                                 items_per_page=10,
-                                 item_count=len(query))
+            listusuarios = Page(query, page=int(self.request.matchdict['page']), items_per_page=10, item_count=len(query))
         except DBAPIError:
             Response("Problema na busca de pessoas", content_type='text/plain', status_int=500)
         return {'listusuarios': listusuarios}
@@ -97,10 +94,7 @@ class UsuarioController:
         print("Buscando o arquivo de sentings: %r" % self.request.registry.settings["tutorial.secret"])
         return {"nome": "Anderson"}
 
-    """
-    Quando o usuário que não estiver logado e tentar acessa uma página ao qual ele não tem
-    permissão ele é redirecionado para a página de login.
-    """
+
     @forbidden_view_config()
     def sem_auth_control(self):
         """
@@ -119,68 +113,53 @@ class UsuarioController:
         login_url = self.request.route_url('login')
         referrer = self.request.url
         print("login url:%r, refferer:%r" % (login_url, referrer))
+
         if referrer == login_url:
             referrer = '/'  # never use login form itself as came_from
+
         came_from = self.request.params.get('came_from', referrer)
         message = ''
         login = ''
         password = ''
+
         if 'form.submitted' in self.request.params:
             login = self.request.params['login']
             password = self.request.params['password']
-            user = DBSession.query(Usuario).filter(Usuario.nome == login).first() #tratar todo o esquema de encriptação
+            user = DBSession.query(Usuario).filter(Usuario.nome == login).first()
             if user.check_password(password):
                 headers = remember(self.request, login)
                 return HTTPFound(location=came_from, headers=headers)
             message = "Login Falhou"
 
-        return dict(name="Login",
-                    message=message,
-                    url=self.request.application_url + '/login',
-                    came_from=came_from,
-                    login=login,
-                    password=password)
+        return dict(name="Login", message=message, url=self.request.application_url + '/login',
+                    came_from=came_from, login=login, password=password)
 
     @view_config(route_name="logout")
     def logout(self):
         request = self.request
         headers = forget(request)
         url = request.route_url('home')
-        return HTTPFound(location=url,
-                         headers=headers)
+
+        return HTTPFound(location=url, headers=headers)
 
 
 # ***** GCM *********
 class GcmController:
+    """
+    Classe responsável pela comunicação com o Android.
+    """
+
     def __init__(self, request):
         self.request = request
+        self.gcmservice = GcmService()
 
     @view_config(route_name='criargcm', renderer='json')
     def criarGcm(self):
         with transaction.manager:
             print("Entrou no criar gcm: %r" % self.request.params)
-            projeto = None
-            msg = {}
-            try:
-                #descriptografando e buscando o projeto no banco
-                token_em_bytes = unhexlify(self.request.params['id_projeto'])
-                token_descripto_bytes = decrypt(self.request.registry.settings["token.secret"], token_em_bytes)
-                projeto = DBSession.query(Projeto).filter(Projeto.uuid == token_descripto_bytes.decode("utf8")).first()
-            except Exception as e:
-                msg['ok'] = "Erro :( %r" % e
+            mensagem = self.gcmservice.informa_msg(self.request.params, self.request.registry.settings["token.secret"])
 
-            print(msg)
-            if projeto:
-                gcmclass = DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
-                if not gcmclass:
-                    regId = RegisterIds(androidkey=self.request.params["RegId"])
-                    gcmclass = GcmInformation()
-                    gcmclass.register_ids.append(regId)
-                    DBSession.add(gcmclass)
-                msg['ok'] = 'Projeto autorizado'
-            else:
-                msg['ok'] = "Projeto não autorizado"
-        return msg
+        return mensagem
 
     def android_messages_information(self):
         pass
@@ -199,13 +178,11 @@ class MensagemController:
         try:
             #consulta no banco
             query = DBSession.query(Mensagem).all()
-            listmensagens = Page(query,
-                                 page=int(self.request.matchdict['page']),
-                                 items_per_page=10,
-                                 item_count=len(query))
-
+            listmensagens = Page(query, page=int(self.request.matchdict['page']),
+                                 items_per_page=10, item_count=len(query))
         except DBAPIError:
             Response("Problema na busca das mensagens", content_type='text/plain', status_int=500)
+
         return {'listmensagens': listmensagens}
 
     @view_config(route_name="receiver", renderer="json")
@@ -216,8 +193,9 @@ class MensagemController:
 
     @view_config(route_name="busca_informacao", renderer="json")
     def busca_informacao_mensagem(self):
-        mensagens = self.mensagem_service.get_messages(self.request.params['q'], self.request.registry.settings["token.secret"])
-        pass
+        mensagens = self.mensagem_service.get_messages(self.request.params['q'],
+                                                       self.request.registry.settings["token.secret"])
+        return mensagens
 
 
 # ***** Sistema *********
