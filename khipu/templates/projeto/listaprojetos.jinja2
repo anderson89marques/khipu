@@ -2,44 +2,63 @@
 
 {% block head %}
     {{ super() }}
+    <link rel="stylesheet" href="{{ request.static_url('khipu:static/css/jquery-ui.css') }}">
 {% endblock %}
 
 {% block content %}
-        {% if listprojetos %}
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Nome Projeto</th>
-                    <th>Chave</th>
-                    <th>Data de Ativacao</th>
-                    <th>Usuário</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for projeto in listprojetos%}
-                    <tr>
-                        <td><a href="{{ request.route_url('showprojeto', id=projeto.id) }}" >{{ projeto.nome }}</a></td>
-                        <td>{{ projeto.chave[:15] + "..." }}</td>
-                        <td>{{ projeto.data_ativacao.strftime("%d/%m/%Y") }}</td>
-                        <td>{{ projeto.usuario.nome }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-            <div class="pager">
-                {% set link_attr={"class": "btn small"} %}
-                {% set curpage_attr={"class": "btn primary small disabled"} %}
-                {% set dotdot_attr={"class": "btn small disabled"} %}
-                <!-- Usei o filter com parametro striotags para converter as strings de retorno
-                para tags html-->
-                {% filter striptags %}
-                    {{ listprojetos.pager(url='$page',format="$link_previous ~2~ $link_next",
-                                                  symbol_previous="«", symbol_next="»",
-                                                 link_attr=link_attr, curpage_attr=curpage_attr,
-                                                 dotdot_attr=dotdot_attr)}}
-                {% endfilter %}
+    {% set url='$page' %}
+    {% if nome_projeto%}
+        {% set url = url + '?nome_projeto=' + nome_projeto %}
+    {% elif nome_usuario and datepicker1 and datepicker2 %}
+        {% set url = url + '?nome_usuario=' + nome_usuario + "&datepicker1=" + datepicker1 +
+                    "&datepicker2=" + datepicker2 %}
+    {% elif nome_usuario%}
+        {% set url = url + '?nome_usuario=' + nome_usuario %}
+    {% elif datepicker1 and datepicker2 %}
+        {% set url= url + "?datepicker1=" + datepicker1 +
+                    "&datepicker2=" + datepicker2 %}
+    {% endif %}
+    <h1>Projetos</h1>
+    <hr>
+    <form action="{{request.route_url('listaprojetos', page='1')}}" class="form-inline" style="margin: 30px;">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="input-group" >
+                    <input id="datepicker1" class="form-control" name="datepicker1" value="{{ datepicker1 }}" placeholder="Data Ativação: início">
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                </div>
+                até
+                <div class="input-group">
+                    <input id="datepicker2" class="form-control" name="datepicker2" value="{{ datepicker2 }}" placeholder="Data Ativação: fim">
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                </div>
+
+                <div class="input-group" style="margin: 0px 20px 0px 30px;">
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-cog">
+                                </span>
+                            </span>
+                    <input id="projetonome" name="nome_projeto" value="{{ nome_projeto }}" class="form-control" placeholder="Nome do Projeto">
+                </div>
+                <div class="input-group" style="margin-right: 20px;">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-user">
+                                </span>
+                            </span>
+                    <input id="usuarionome" name="nome_usuario"  value="{{ nome_usuario }}" class="form-control" placeholder="Nome do Usuário">
+                </div><br>
+                <button type="submit" class="btn btn-primary glyphicon glyphicon-search" style="margin:20px 0px 0px 430px">Procurar</button>
             </div>
-        {% else %}
-            <p>Não existe projetos cadastrados! :(</p>
-        {% endif %}
+        </div>
+    </form>
+    <div>
+        {% include "_listaparcial.jinja2" %}
+    </div>
+
 {% endblock %}
