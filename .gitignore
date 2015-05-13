@@ -3,4 +3,5 @@
 /.idea/workspace.xml
 /.idea/misc.xml
 /.idea/Khipu.iml
-
+/.idea/inspectionProfiles/Project_Default.xml
+/khipu/*/__pycache__

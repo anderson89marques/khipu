@@ -1,4 +1,4 @@
-{% extends "../main.jinja2" %}
+{% extends "templates/main.jinja2" %}
 
 {% block head %}
     {{ super() }}
@@ -6,6 +6,8 @@
 
 {% block content %}
         {% if listusuarios %}
+            <h1>Usuários</h1>
+            <hr>
             <table class="table table-striped">
                 <thead>
                 <tr>

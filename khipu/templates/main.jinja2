@@ -8,7 +8,7 @@
     <!-- Bootstrap core CSS -->
         <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <title>KHIPU</title>
     {% endblock %}
 </head>
@@ -55,7 +55,7 @@
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Sistema<b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ request.route_url('listparametros') }}">Parâmetros do Sistema</a></li>
-                                <li><a href="#">Gestão de Exceção</a></li>
+                                <li><a href="{{ request.route_url('listaexcecoes', page='1') }}">Gestão de Exceção</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -81,5 +81,11 @@
     <script type="text/javascript" src="{{ request.static_url('khipu:static/js/criarprojeto.js')}}"></script>
     <script type="text/javascript" src="{{ request.static_url('khipu:static/js/jquery.timer.js') }}"></script>
     <script type="text/javascript" src="{{ request.static_url('khipu:static/js/time.informacao.sistema.js') }}"></script>
+    <script>
+        $(function() {
+            $( "#datepicker1" ).datepicker();
+            $( "#datepicker2" ).datepicker();
+        });
+</script>
 </body>
 </html>

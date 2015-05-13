@@ -1,0 +1,33 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Nome Projeto</th>
+        <th>Chave</th>
+        <th>Data de Ativacao</th>
+        <th>Usuário</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for projeto in listprojetos%}
+        <tr>
+            <td><a href="{{ request.route_url('showprojeto', id=projeto.id) }}" >{{ projeto.nome }}</a></td>
+            <td>{{ projeto.chave[:15] + "..." }}</td>
+            <td>{{ projeto.data_ativacao.strftime("%d/%m/%Y") }}</td>
+            <td>{{ projeto.usuario.nome }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<div class="pager">
+    {% set link_attr={"class": "btn small"} %}
+    {% set curpage_attr={"class": "btn primary small disabled"} %}
+    {% set dotdot_attr={"class": "btn small disabled"} %}
+    <!-- Usei o filter com parametro striotags para converter as strings de retorno
+    para tags html-->
+    {% filter striptags %}
+        {{ listprojetos.pager(url=url,format="$link_previous ~2~ $link_next",
+                                                  symbol_previous="«", symbol_next="»",
+                                                 link_attr=link_attr, curpage_attr=curpage_attr,
+                                                 dotdot_attr=dotdot_attr)}}
+    {% endfilter %}
+</div>

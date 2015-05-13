@@ -1,12 +1,23 @@
-{% extends "../main.jinja2" %}
+{% extends "templates/main.jinja2" %}
 
 {% block head %}
     {{ super() }}
     <link href="{{ request.static_url('khipu:static/css/jquery-ui.css')}}" type="text/css" rel="stylesheet">
+    <style>
+        .bs-example{
+            margin: 20px;
+        }
+    </style>
 {% endblock %}
 
 {% block content %}
     <div class="container">
+        <div class="bs-example">
+            <div id="meualert" class="alert alert-success" style="display: none;">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                Seu projeto foi criado com <strong>Sucesso</strong>.
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-4 col-md-8 col-md-offset-2"  style="background-color: #979797; margin-bottom: 50px; margin-top: 40px;">
                 <h1>Autorização de Acesso</h1>

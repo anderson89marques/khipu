@@ -1,9 +1,9 @@
 __author__ = 'anderson'
 import urllib
 import json
-
+import logging
 GCM_URL = 'https://android.googleapis.com/gcm/send'
-
+log = logging.getLogger(__name__)
 
 class GCM(object):
     def __init__(self, apikey, url=GCM_URL):
@@ -12,7 +12,7 @@ class GCM(object):
 
     def construir_dados(self, registration_ids, data=None, collapse_key=None, delay_while_idle=False,
                         time_to_live=0, is_json=True, dry_run=False):
-
+        log.debug("Contruindo dados para enviar o google gcm server")
         if is_json:
             dados = {'registration_ids': registration_ids, 'data': data}
 
@@ -31,6 +31,7 @@ class GCM(object):
         if is_json:
             dados = json.dumps(dados)
 
+        log.debug("Dados: %r" % dados)
         return dados
 
     def fazer_requisicao(self, dados, is_json=True):
@@ -41,17 +42,19 @@ class GCM(object):
         :param is_json:
         :return:
         """
-
+        log.debug("Fazendo a requisição para o google gcm server")
         #adicionando a chave do servidor no head da requisição.
         headers = {
             'Authorization': 'key=%s' % self.apikey
         }
 
+        log.debug("Header: %r" % headers)
+        log.debug("Conteúdo: %r" % dados)
         #Default não é json é application/x-www-form-urlencoded;charset=UTF-8
         if is_json:
             headers['Content-Type'] = 'application/json'
 
-        #Transformando os dados para bytes senão dará erro no envio.
+        #Transformando os dados para bytes para evitar erro no envio.
         binary_data = dados.encode('utf8')
         req = urllib.request.Request(self.url, binary_data, headers)
 
@@ -60,23 +63,22 @@ class GCM(object):
             response = urllib.request.urlopen(req).read()
         except urllib.error.HTTPError as e:
             if e.code == 400:
-                print("Error code: %d\nRequisição não pôde ser passado como JSON." % e.code)
+                log.debug("Fazendo a requisição para o google gcm server")("Error code: %d\nRequisição não pôde ser passado como JSON." % e.code)
                 raise Exception("Error code: %d\nRequisição não pôde ser passado como JSON." % e.code)
             if e.code == 401:
-                print("Error code: %d\nErro de autenticação." % e.code)
+                log.debug("Fazendo a requisição para o google gcm server")("Error code: %d\nErro de autenticação." % e.code)
                 raise Exception("Error code: %d\nErro de autenticação." % e.code)
             if e.code == 503:
-                print("Error code: %d\nServiço GCM está indisponível." % e.code)
+                log.debug("Fazendo a requisição para o google gcm server")("Error code: %d\nServiço GCM está indisponível." % e.code)
                 raise Exception("Error code: %d\nServiço GCM está indisponível." % e.code)
         except urllib.error.URLError as e:
-            print("Error code: %d\nErro interno no servidor GCM enquanto estava tentandoa requisição." % e.code)
+            log.debug("Fazendo a requisição para o google gcm server")("Error code: %d\nErro interno no servidor GCM enquanto estava tentandoa requisição." % e.code)
             raise Exception(("Error code: %d\nErro interno no servidor GCM enquanto estava tentandoa requisição." % e.code))
 
         #decodificando
         response = response.decode("utf8")
         if is_json:
             resp = json.loads(response)
-
         return response
 
     def json_request(self, registration_ids, data=None, collapse_key=None, delay_while_idle=False,
