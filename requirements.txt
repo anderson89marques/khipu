@@ -1,6 +1,5 @@
 Chameleon==2.22
 Jinja2==2.7.3
--e git+https://github.com/anderson89marques/khipu.git@5efae6517ad79233e340d8f11454a2cea44bf624#egg=Khipu-master
 Mako==1.0.1
 MarkupSafe==0.23
 PasteDeploy==1.5.2

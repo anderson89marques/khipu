@@ -2,7 +2,6 @@
  * Created by anderson on 01/04/15.
  */
 $(document).ready(function(){
-
     //time em milisegundos
     var timer = $.timer(function(){
         $.ajax({
