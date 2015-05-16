@@ -5,11 +5,12 @@ from pyramid.httpexceptions import HTTPFound, HTTPUnauthorized
 from pyramid.view import (view_config, forbidden_view_config)
 from pyramid.response import Response
 from sqlalchemy.exc import DBAPIError
-from binascii import unhexlify
-from simplecrypt import decrypt
 from paginate import Page
 import transaction
 import datetime
+import logging
+
+log = logging.getLogger(__name__)
 
 
 # ***** KHIPU *********
@@ -22,17 +23,19 @@ class KhipuController:
 
     @view_config(route_name="exibeprojeto", renderer="templates/projeto/criarprojeto.jinja2", permission='comum')
     def exibirprojeto(self):
+        log.debug("Exibir projeto!")
         return {'id': 'id', 'nome_projeto': 'nome projeto', 'chave': 'chave', 'data_ativacao': 'data ativação', 'ativado_por': 'nome usuario'}
 
     @view_config(route_name="criarprojeto", renderer="json", permission='comum')
     def criarprojeto(self):
-        print("informações do dialog: %r" % self.request.params)
+        log.debug("informações do dialog: %r" % self.request.params)
         nome_projeto = self.request.params['nomeprojeto']
 
         with transaction.manager:
             projeto = DBSession.query(Projeto).filter(Projeto.nome == nome_projeto).first()
             owner = authenticated_userid(self.request) #pega o usuário logado
             print(owner)
+            log.debug("Usuário Logado: %r" % owner)
             if not projeto: #não é permitido criar projetos com mesmo nome
                 projeto = Projeto()
                 projeto.nome = nome_projeto
@@ -40,7 +43,7 @@ class KhipuController:
                 projeto.data_ativacao = datetime.datetime.now().date()
                 projeto.usuario = DBSession.query(Usuario).filter(Usuario.nome == owner).first()
                 DBSession.add(projeto)
-                print("Projeto: %r %r %r" % (projeto.nome, projeto.chave, projeto.data_ativacao.strftime("%d/%m/%Y")))
+                log.debug("Projeto: %r %r %r" % (projeto.nome, projeto.chave, projeto.data_ativacao.strftime("%d/%m/%Y")))
             else:
                 Response("Projeto já existe!", content_type='text/plain', status_int=500)
 
@@ -49,13 +52,14 @@ class KhipuController:
 
     @view_config(route_name="showprojeto", renderer="templates/projeto/showprojeto.jinja2", permission='comum')
     def show_projeto(self):
-        print("PARAMETROS DO SHOW: %r" % self.request.matchdict['id']) #com o metachdict consehuir pegar o valor da paramentro da url
+        log.debug("PARAMETROS DO SHOW: %r" % self.request.matchdict['id']) #com o metachdict consehuir pegar o valor da paramentro da url
         id = self.request.matchdict['id']
         projeto = DBSession.query(Projeto).filter(Projeto.id == id).first()
         return {'projeto': projeto}
 
     @view_config(route_name="listaprojetos", renderer="templates/projeto/listaprojetos.jinja2", permission="comum")
     def listarprojetos(self):
+        log.debug("Listar projetos!")
         try:
             #consulta no banco
             query = DBSession.query(Projeto).all()
@@ -77,7 +81,9 @@ class UsuarioController:
 
     @view_config(route_name='listausuarios', renderer='templates/usuario/listausuarios.jinja2', permission="admin")
     def lista_usuarios(self):
-        print("Efetive principals: %r" % effective_principals(self.request))
+        print("Aqui porra")
+        log.info("listar usuários")
+        log.info("Efetive principals: %r" % effective_principals(self.request))
         try:
             #consulta no banco
             query = DBSession.query(Usuario).all()
@@ -90,8 +96,8 @@ class UsuarioController:
 
     @view_config(route_name='home', renderer='templates/home.jinja2', permission="view")
     def home(self):
-        print("Efetive principals: %r" % effective_principals(self.request))
-        print("Buscando o arquivo de sentings: %r" % self.request.registry.settings["tutorial.secret"])
+        log.debug("Efetive principals: %r" % effective_principals(self.request))
+        log.debug("Buscando o arquivo de sentings: %r" % self.request.registry.settings["tutorial.secret"])
         return {"nome": "Anderson"}
 
 
@@ -110,9 +116,10 @@ class UsuarioController:
 
     @view_config(route_name="login", renderer='templates/login.jinja2')
     def login(self):
+        log.debug("Logando...")
         login_url = self.request.route_url('login')
         referrer = self.request.url
-        print("login url:%r, refferer:%r" % (login_url, referrer))
+        log.debug("login url:%r, refferer:%r" % (login_url, referrer))
 
         if referrer == login_url:
             referrer = '/'  # never use login form itself as came_from
@@ -136,6 +143,7 @@ class UsuarioController:
 
     @view_config(route_name="logout")
     def logout(self):
+        log.debug("Logout")
         request = self.request
         headers = forget(request)
         url = request.route_url('home')
@@ -156,7 +164,7 @@ class GcmController:
     @view_config(route_name='criargcm', renderer='json')
     def criarGcm(self):
         with transaction.manager:
-            print("Entrou no criar gcm: %r" % self.request.params)
+            log.debug("Entrou no criar gcm: %r" % self.request.params)
             mensagem = self.gcmservice.informa_msg(self.request.params, self.request.registry.settings["token.secret"])
 
         return mensagem
@@ -187,7 +195,7 @@ class MensagemController:
 
     @view_config(route_name="receiver", renderer="json")
     def receiver_data(self):
-        print("receiver %r" % self.request.params)
+        log.debug("receiver %r" % self.request.params)
         mensagem = self.sender.processador(self.request.params['q'], self.request.registry.settings["token.secret"])
         return {"msg": mensagem}
 
@@ -207,12 +215,14 @@ class SistemaController:
 
     @view_config(route_name="listparametros", renderer="templates/sistema/listparametros.jinja2", permission="admin")
     def list_parametros(self):
+        log.debug("Listar parametros")
         list_par = self.sistema.get_list_parametros()
+        log.debug("Parametros Encontrados %r" % list_par)
         return list_par
 
     @view_config(route_name="listparametrosbody",  renderer="templates/sistema/_body_list.jinja2", permission="admin")
     def list_parametros_body(self):
-        print("BODY LIST :D")
+        log.debug("BODY LIST :D")
         import time
         time.sleep(6)
         list_par = self.sistema.get_list_parametros()
