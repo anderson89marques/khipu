@@ -23,6 +23,7 @@ $(document).ready(function($){
                         $("#data_ativacao").html("<p style='font-family:verdana;'><em>"+ data.data_ativacao + "<em></p>")
                         $("#ativadopor").html("<p style='font-family:verdana;'><em>"+ data.ativado_por + "<em></p>")
                         dialog_loading.dialog( "close" )
+                        $("#meualert").css("display", "block")
                     }
                 });
                 return true;
@@ -37,7 +38,7 @@ $(document).ready(function($){
                         //form[ 0 ].reset();
                         dialog_loading.dialog( "close");
                         dialog.dialog( "close" );
-                        window.location.replace("http://0.0.0.0:6543");
+                        window.location.replace("http://192.168.1.140:6543");
                     }
                 },
                 close: function() {

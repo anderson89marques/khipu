@@ -16,14 +16,28 @@ khipu/__init__.py
 khipu/tests.py
 khipu/views.py
 khipu/banco_de_dados/__init__.py
+<<<<<<< HEAD
 khipu/banco_de_dados/enuns.py
+=======
+<<<<<<< HEAD
+=======
+khipu/banco_de_dados/enuns.py
+>>>>>>> 78ea0e65f45a08485447f78a4265b3192dcb9295
+>>>>>>> 93c54e769c6bbecc7284ee8aede71b32215ca90b
 khipu/banco_de_dados/models.py
 khipu/gcm_wraper/__init__.py
 khipu/gcm_wraper/gcm.py
 khipu/scripts/__init__.py
 khipu/scripts/exibindo_info_memoria_human_readable.py
 khipu/scripts/hashestestes.py
+<<<<<<< HEAD
 khipu/scripts/httprestteste.py
+=======
+<<<<<<< HEAD
+=======
+khipu/scripts/httprestteste.py
+>>>>>>> 78ea0e65f45a08485447f78a4265b3192dcb9295
+>>>>>>> 93c54e769c6bbecc7284ee8aede71b32215ca90b
 khipu/scripts/initializedb.py
 khipu/scripts/psutil_testes.py
 khipu/seguranca/__init__.py

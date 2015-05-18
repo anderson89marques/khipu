@@ -2,9 +2,8 @@
  * Created by anderson on 01/04/15.
  */
 $(document).ready(function(){
-
     //time em milisegundos
-    var timer = $.timer(function(){
+    /*var timer = $.timer(function(){
         $.ajax({
             url: "/parametros/body",
             type: 'POST',
@@ -18,11 +17,10 @@ $(document).ready(function(){
                 this.html(" ")
                 this.append(data);
                 $("#dialog_loading_body").css({"display": "none"});
-                /*alert("");*/
             }
         });
     });
-    timer.set({time: 10000, autostart: true});
-    timer.play();
+    timer.set({time: 10000, autostart: true});*/
+    //timer.play();
     //timer.stop();
 });

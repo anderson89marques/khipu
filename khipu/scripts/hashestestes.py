@@ -3,8 +3,9 @@ from datetime import datetime
 __author__ = 'anderson'
 from passlib.context import CryptContext
 import uuid
-import datetime
+from datetime import datetime, datetime
 from simplecrypt import encrypt, decrypt
+from khipu.banco_de_dados.enuns import StatusMensagem
 
 #o usuário cria um projeto e clica para gerar a chave<
 #então é garado um número identificador para o projeto que salvo no banco junto com o nome do projeto
@@ -13,7 +14,7 @@ from simplecrypt import encrypt, decrypt
 
 
 #Criando um objeto que usará criptografia do método shs256, rounds default de 80000
-cripto = CryptContext(schemes="sha256_crypt")
+"""cripto = CryptContext(schemes="sha256_crypt")
 
 #Encriptografando uma string
 passw = cripto.encrypt("anderson")
@@ -29,13 +30,16 @@ p = cripto.encrypt(u)
 print(p)
 isuok = cripto.verify(u, p)
 print(isuok)
-
+"""
 print("::::::::::::::::::")
 #vou salvar a data normal e na hora de exibir eu edito
-d = datetime.datetime.now().strftime("%d-%m-%Y %h - %a")
+l = "03-29-2015"
+formater_string = "%m-%d-%Y"
+d = datetime.strptime(l, formater_string)
 print(d)
 print(type(d))
-
+print(StatusMensagem.CONFIRMADA_SMS.name)
+"""
 print("::::::::::::::::::")
 from binascii import hexlify, unhexlify
 password = "98z"
@@ -53,5 +57,5 @@ d = decrypt(password, eb)
 print(d.decode("utf8"))
 if palavra == d:
     print(True)
-
+"""
 

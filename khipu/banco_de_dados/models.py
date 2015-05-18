@@ -6,6 +6,8 @@ from passlib.context import CryptContext
 from simplecrypt import encrypt
 from binascii import hexlify
 import uuid
+import sys
+import os
 
 #Criação da sessão de acesso ao banco de dados e também da classe Base para a construção dos modelos.
 DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension(), expire_on_commit=False))
@@ -87,10 +89,14 @@ class Mensagem(Base):
     id = Column(Integer, primary_key=True)
     id_on_web_app = Column(Integer)
     data_chegada = Column(Date)
+    data_ultimo_envio = Column(Date)
     numero_tentativas_envio = Column(Integer)
     status = Column(Text) #Vai ser um Enum.
     projeto_id = Column(Integer, ForeignKey('projeto.id'))
     projeto = relationship('Projeto', back_populates='mensagens')
+
+    def __repr__(self):
+        return "Mensagem: {0} {1} {2} {3}".format(self.id, self.id_on_web_app, self.data_chegada, self.status)
 
 
 class GcmInformation(Base):
@@ -108,12 +114,34 @@ class RegisterIds(Base):
     androidkey = Column(Text)
 
 
+class KhipuException(Base):
+    __tablename__ = 'khipu_exception'
+    id = Column(Integer, primary_key=True)
+    nome_arquivo = Column(Text)
+    tipo_excessao = Column(Text)
+    linha = Column(Text)
+    descricao = Column(Text)
+
+    def __init__(self):
+        exc_type, exc_obj, exc_tb = sys.exc_info()
+
+        self.nome_arquivo = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+        self.tipo_excessao = exc_type.__name__
+        self.linha = exc_tb.tb_lineno
+        self.descricao = str(exc_obj)
+
+    def __repr__(self):
+        return "Erro: nome do arquivo:{0}, tipo:{1}, linha:{2}, descrição:{3}".format(self.nome_arquivo,self.tipo_excessao,
+                                                                                      self.linha, self.descricao)
+
+
 class ServerInformation(Base):
     __tablename__ = 'server_information'
     id = Column(Integer, primary_key=True)
     mensagem_id = Column(Integer)
     app_key = Column(Integer)
     data_recebimento = Column(Date)
+
 
 
 

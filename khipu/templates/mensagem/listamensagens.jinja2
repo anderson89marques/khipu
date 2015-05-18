@@ -1,10 +1,64 @@
-{% extends "../main.jinja2" %}
+{% extends "templates/main.jinja2" %}
 {% block head %}
     {{ super() }}
+    <link rel="stylesheet" href="{{ request.static_url('khipu:static/css/jquery-ui.css') }}">
 {% endblock %}
 
 {% block content %}
+        {% set url='$page' %}
+        {% if nome_projeto%}
+            {% set url = url + '?nome_projeto=' + nome_projeto %}
+        {% elif status and datepicker1 and datepicker2 %}
+        {% set url = url + '?status=' + status + "&datepicker1=" + datepicker1 +
+                    "&datepicker2=" + datepicker2 %}
+        {% elif status%}
+            {% set url = url + '?status=' + status %}
+        {% elif datepicker1 and datepicker2 %}
+            {% set url= url + "?datepicker1=" + datepicker1 +
+                    "&datepicker2=" + datepicker2 %}
+        {% endif %}
         {% if listmensagens %}
+            <h1>Mensagens</h1>
+            <hr>
+            <form action="{{request.route_url('listamensagens', page='1')}}" class="form-inline" >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="input-group" >
+                            <input id="datepicker1" class="form-control" name="datepicker1" value="{{ datepicker1 }}" placeholder="Data Chegada: início">
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                        </div>
+                        até
+                        <div class="input-group">
+                            <input id="datepicker2" class="form-control" name="datepicker2" value="{{ datepicker2 }}" placeholder="Data Chegada: fim">
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-calendar">
+                                </span>
+                            </span>
+                        </div>
+
+                        <div class="input-group" style="margin: 0px 15px 0px 15px;">
+                            <span class="input-group-addon" >
+                                <span class="glyphicon glyphicon-cog">
+                                </span>
+                            </span>
+                            <input id="projetonome" name="nome_projeto" value="{{ nome_projeto }}" class="form-control" placeholder="Nome do Projeto">
+                        </div>
+                        <div class="input-group" style="margin-right: 10px;">
+                            <select class="form-control" name="status">
+                                <option>RECEBIDA_CLIENTE</option>
+                                <option>ENVIADA_GOOGLE</option>
+                                <option>CONFIRMADO_RECEBIMENTO_GOOGLE</option>
+                                <option>CONFIRMADO_RECEBIMENTO_ANDROID</option>
+                                <option>CONFIRMADA_SMS</option>
+                            </select>
+                        </div><br>
+                        <button type="submit" class="btn btn-primary glyphicon glyphicon-search" style="margin:20px 0px 0px 430px">Procurar</button>
+                    </div>
+                </div>
+            </form>
             <table class="table table-striped">
                 <thead>
                 <tr>
@@ -35,7 +89,7 @@
                 <!-- Usei o filter com parametro striotags para converter as strings de retorno
                 para tags html. Na url passei apenas o parametro necessário.-->
                 {% filter striptags %}
-                    {{  listmensagens.pager(url='$page',format="$link_previous ~2~ $link_next",
+                    {{  listmensagens.pager(url=url,format="$link_previous ~2~ $link_next",
                                                   symbol_previous="«", symbol_next="»",
                                                  link_attr=link_attr, curpage_attr=curpage_attr,
                                                  dotdot_attr=dotdot_attr)}}
