@@ -59,7 +59,7 @@ class KhipuController:
         log.debug("Projeto id: %r" % self.request.matchdict['id']) #com o metachdict consegui pegar o valor da paramentro da url
         try:
             id = self.request.matchdict['id']
-            projeto = DBSession.query(Projeto).filter(Projeto.id == id).first()
+            projeto = DBSession.querldy(Projeto).filter(Projeto.id == id).first()
         except Exception as e:
             manuseia_excecao()
             return Response("Erro ao exibir projeto", content_type='text/plain', status_int=500)

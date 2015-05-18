@@ -14,22 +14,17 @@ Khipu.egg-info/requires.txt
 Khipu.egg-info/top_level.txt
 khipu/__init__.py
 khipu/tests.py
-khipu/views.py
+khipu/Autenticacao/__init__.py
+khipu/Autorizacao/__init__.py
 khipu/banco_de_dados/__init__.py
-<<<<<<< HEAD
-=======
 khipu/banco_de_dados/enuns.py
->>>>>>> 78ea0e65f45a08485447f78a4265b3192dcb9295
 khipu/banco_de_dados/models.py
 khipu/gcm_wraper/__init__.py
 khipu/gcm_wraper/gcm.py
 khipu/scripts/__init__.py
 khipu/scripts/exibindo_info_memoria_human_readable.py
 khipu/scripts/hashestestes.py
-<<<<<<< HEAD
-=======
 khipu/scripts/httprestteste.py
->>>>>>> 78ea0e65f45a08485447f78a4265b3192dcb9295
 khipu/scripts/initializedb.py
 khipu/scripts/psutil_testes.py
 khipu/seguranca/__init__.py
@@ -85,6 +80,7 @@ khipu/templates/pessoa/criarcontatos.jinja2
 khipu/templates/pessoa/listcontatos.jinja2
 khipu/templates/pessoa/listgrupos.jinja2
 khipu/templates/projeto/_form.jinja2
+khipu/templates/projeto/_listaparcial.jinja2
 khipu/templates/projeto/criarprojeto.jinja2
 khipu/templates/projeto/listaprojetos.jinja2
 khipu/templates/projeto/showprojeto.jinja2
@@ -92,5 +88,8 @@ khipu/templates/sistema/_body_list.jinja2
 khipu/templates/sistema/_table_cpu.jinja2
 khipu/templates/sistema/_table_memoria.jinja2
 khipu/templates/sistema/_table_network.jinja2
+khipu/templates/sistema/listaexcecoes.jinja2
 khipu/templates/sistema/listparametros.jinja2
 khipu/templates/usuario/listausuarios.jinja2
+khipu/views/__init__.py
+khipu/views/views.py
