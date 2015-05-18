@@ -6,3 +6,4 @@ SQLAlchemy
 transaction
 zope.sqlalchemy
 waitress
+psutil
