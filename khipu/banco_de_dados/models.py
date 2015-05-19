@@ -60,8 +60,10 @@ class Projeto(Base):
     __tablename__ = 'projeto'
     id = Column(Integer, primary_key=True)
     nome = Column(Text)
-    chave = Column(Text)
-    uuid = Column(Text)
+    client_id = Column(Text)
+    client_secret = Column(Text)
+    access_token = Column(Text)
+    grant_type = Column(Text)
     data_ativacao = Column(Date)
     usuario_id = Column(Integer, ForeignKey('usuario.id'))
     usuario = relationship('Usuario', back_populates='projetos')
