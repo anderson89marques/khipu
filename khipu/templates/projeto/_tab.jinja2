@@ -1,0 +1,15 @@
+
+<label for="nome_projeto">Nome Projeto:</label>
+<label id="nome_projeto" style="font-family:verdana;"><p><em>{{ projeto.nome if projeto != None else "Nome Projeto"}}</em></p></label></br>
+<div>
+    <label style="margin: 0px; padding: 0px;" for="cliente_id">Client ID:</label>
+    <label id="cliente_id" style="font-family:verdana;"><p><em>{{ projeto.client_id if projeto != None else "Client Id"}}</em></p></label></br>
+    <label style="margin: 0px; padding: 0px;" for="cliente_secret">Client Secret:</label>
+    <label id="cliente_secret" style="font-family:verdana;"><p><em>{{ projeto.client_secret if projeto != None  else "Client Secret"}}</em></p></label></br>
+</div>
+
+<label for="data_ativacao">Data de Ativação:</label>
+<label id="data_ativacao" style="font-family:verdana;"><p><em>{{  projeto.data_ativacao.strftime("%d/%m/%Y") if projeto != None else "Data"}}</em></p></label></br>
+
+<label for="ativadopor">Ativado por:</label>
+<label id="ativadopor" style="font-family:verdana;"><p><em>{{ projeto.usuario.nome if projeto != None else "Usuario"}}</em></p></label></br>

@@ -62,20 +62,17 @@ class Projeto(Base):
     nome = Column(Text)
     client_id = Column(Text)
     client_secret = Column(Text)
-    access_token = Column(Text)
-    grant_type = Column(Text)
+    access_token = Column(Text, nullable=True)
+    grant_type = Column(Text, nullable=True)
     data_ativacao = Column(Date)
     usuario_id = Column(Integer, ForeignKey('usuario.id'))
     usuario = relationship('Usuario', back_populates='projetos')
     #0.* mensagens podem ser enviadas(N - 1)
     mensagens = relationship('Mensagem', back_populates='projeto')
 
-    def gerar_chave_para_projeto(self, key):
-        u = uuid.uuid1().hex
-        self.uuid = u
-        e = encrypt(key, u)
-        eh = hexlify(e)         #a ideia é criar um token em hexadecimal
-        self.chave = eh.decode("utf8")
+    def gerar_chaves_para_projeto(self):
+        self.client_id = uuid.uuid1().hex
+        self.client_secret = uuid.uuid1().hex
 
     def check_chave(self, chave):
         #Criando um objeto que usará criptografia do método sha256, rounds default de 80000

@@ -22,19 +22,7 @@
             <div class="col-sm-4 col-md-8 col-md-offset-2"  style="background-color: #979797; margin-bottom: 50px; margin-top: 40px;">
                 <h1>Autorização de Acesso</h1>
                 <div class="well">
-                    <label for="nome_projeto">Nome Projeto:</label>
-                    <label id="nome_projeto"> {{ nome_projeto }}</label></br>
-
-                    <div>
-                        <label style="margin: 0px; padding: 0px;" for="chave">Chave de Acesso:</label>
-                        <label id="chave" style="padding-top: 3px;">{{ chave }}</label></br>
-                    </div>
-
-                    <label for="data_ativacao">Data de Ativação:</label>
-                    <label id="data_ativacao">{{ data_ativacao }}</label></br>
-
-                    <label for="ativadopor">Ativado por:</label>
-                    <label id="ativadopor">{{ ativado_por }}</label></br>
+                    {% include "templates/projeto/_tab.jinja2" %}
                 </div>
 
             </div>

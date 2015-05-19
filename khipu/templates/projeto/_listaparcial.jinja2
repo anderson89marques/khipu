@@ -2,7 +2,8 @@
     <thead>
     <tr>
         <th>Nome Projeto</th>
-        <th>Chave</th>
+        <th>Client ID</th>
+        <th>Client Secret</th>
         <th>Data de Ativacao</th>
         <th>Usuário</th>
     </tr>
@@ -11,7 +12,8 @@
     {% for projeto in listprojetos%}
         <tr>
             <td><a href="{{ request.route_url('showprojeto', id=projeto.id) }}" >{{ projeto.nome }}</a></td>
-            <td>{{ projeto.chave[:15] + "..." }}</td>
+            <td>{{ projeto.client_id }}</td>
+            <td>{{ projeto.client_secret }}</td>
             <td>{{ projeto.data_ativacao.strftime("%d/%m/%Y") }}</td>
             <td>{{ projeto.usuario.nome }}</td>
         </tr>

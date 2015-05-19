@@ -23,9 +23,9 @@ class KhipuController:
 
     @view_config(route_name="exibeprojeto", renderer="templates/projeto/criarprojeto.jinja2", permission='comum')
     def exibirprojeto(self):
-        return {'id': 'id', 'nome_projeto': 'nome projeto', 'chave': 'chave', 'data_ativacao': 'data ativação', 'ativado_por': 'nome usuario'}
+        return {'projeto': Projeto()}
 
-    @view_config(route_name="criarprojeto", renderer="json", permission='comum')
+    @view_config(route_name="criarprojeto", renderer="templates/projeto/_tab.jinja2", permission='comum')
     def criarprojeto(self):
         log.debug("Criando projeto")
         log.debug("informações do dialog: %r" % self.request.params)
@@ -39,19 +39,18 @@ class KhipuController:
                 if not projeto: #não é permitido criar projetos com mesmo nome
                     projeto = Projeto()
                     projeto.nome = nome_projeto
-                    projeto.gerar_chave_para_projeto(self.request.registry.settings["token.secret"]) #passando a chave que será usando como base pra gerar o token
+                    projeto.gerar_chaves_para_projeto()
                     projeto.data_ativacao = datetime.datetime.now().date()
                     projeto.usuario = DBSession.query(Usuario).filter(Usuario.nome == owner).first()
                     DBSession.add(projeto)
-                    log.debug("Projeto Criado: %r %r %r" % (projeto.nome, projeto.chave, projeto.data_ativacao.strftime("%d/%m/%Y")))
+                    log.debug("Projeto Criado: %r %r %r %r" % (projeto.nome, projeto.client_id, projeto.client_secret, projeto.data_ativacao.strftime("%d/%m/%Y")))
                 else:
                     return Response("Projeto já existe!", content_type='text/plain', status_int=500)
             except Exception as e:
                 manuseia_excecao()
                 return Response("Erro ao criar projeto", content_type='text/plain', status_int=500)
 
-            return {'id': projeto.id, 'nome_projeto': projeto.nome, 'chave': projeto.chave,
-                    'data_ativacao': projeto.data_ativacao.strftime("%d/%m/%Y"), 'ativado_por': projeto.usuario.nome}
+            return {'projeto': projeto}
 
     @view_config(route_name="showprojeto", renderer="templates/projeto/showprojeto.jinja2", permission='comum')
     def show_projeto(self):
@@ -59,7 +58,8 @@ class KhipuController:
         log.debug("Projeto id: %r" % self.request.matchdict['id']) #com o metachdict consegui pegar o valor da paramentro da url
         try:
             id = self.request.matchdict['id']
-            projeto = DBSession.querldy(Projeto).filter(Projeto.id == id).first()
+            projeto = DBSession.query(Projeto).filter(Projeto.id == id).first()
+            log.debug("Projeto: %s" % projeto.nome)
         except Exception as e:
             manuseia_excecao()
             return Response("Erro ao exibir projeto", content_type='text/plain', status_int=500)
