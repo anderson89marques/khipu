@@ -7429,3 +7429,359 @@ WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_prin
 2015-05-19 18:51:58,132 DEBUG [txn.140552431023936][MainThread] commit
 2015-05-19 18:51:58,149 DEBUG [txn.140552431023936][MainThread] new transaction
 2015-05-19 18:51:58,150 DEBUG [txn.140552431023936][MainThread] commit
+2015-05-20 15:45:14,463 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-05-20 15:45:14,463 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-05-20 15:45:14,463 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-05-20 15:45:14,555 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 15:45:14,555 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 15:45:14,789 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-05-20 15:45:14,789 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:45:14,807 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-05-20 15:45:14,807 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.3.6 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2, 64-bit',)
+2015-05-20 15:45:14,809 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-05-20 15:45:14,809 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:45:14,813 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-05-20 15:45:14,813 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-05-20 15:45:14,814 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 15:45:14,814 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:45:14,834 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 15:45:14,834 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:45:14,835 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-05-20 15:45:14,835 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:45:14,835 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-05-20 15:45:14,836 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-05-20 15:45:14,837 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,837 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-05-20 15:45:14,838 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,838 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-05-20 15:45:14,839 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,839 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-05-20 15:45:14,840 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,840 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-05-20 15:45:14,840 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,840 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-05-20 15:45:14,841 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,841 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-05-20 15:45:14,841 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,841 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-05-20 15:45:14,842 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,842 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-05-20 15:45:14,843 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,843 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-05-20 15:45:14,844 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,844 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-05-20 15:45:14,844 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,845 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-05-20 15:45:14,845 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,845 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-05-20 15:45:14,846 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,846 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-05-20 15:45:14,847 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,847 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-05-20 15:45:14,847 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,848 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-05-20 15:45:14,848 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,848 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-05-20 15:45:14,849 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:45:14,849 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-05-20 15:45:14,850 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:45:14,850 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-05-20 15:45:14,850 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 15:45:14,850 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 15:45:14,869 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-05-20 15:45:14,869 DEBUG [txn.140217646896960][MainThread] new transaction
+2015-05-20 15:45:14,870 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 15:45:14,870 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'sysdata'}
+2015-05-20 15:45:14,879 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 15:45:14,879 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$tydTGMSRVPOBS5EJ$PnRVGOT/P9jdyWsRWUosEoYR8Me78GNm6h7FMQMNUOC', datetime.date(2015, 5, 19))
+2015-05-20 15:45:14,880 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 15:45:14,880 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-05-20 15:45:14,881 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 15:45:14,881 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$F4I75IzOeqoZCQy9$OWmaHOyvaQJSgAVHDa0NL1hM7VKAKbqqqQ1qavk1qm3', datetime.date(2015, 5, 19))
+2015-05-20 15:45:14,881 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-05-20 15:45:14,882 DEBUG [txn.140217646896960][MainThread] abort
+2015-05-20 15:45:14,882 DEBUG [txn.140217646896960][MainThread] new transaction
+2015-05-20 15:45:14,882 DEBUG [txn.140217646896960][MainThread] commit
+2015-05-20 15:45:14,882 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 15:45:14,882 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 15:45:14,974 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 15:45:14,974 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 15:45:14,974 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 15:45:14,974 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 15:45:14,976 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 15:45:14,976 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 15:45:46,632 DEBUG [txn.140217646896960][MainThread] new transaction
+2015-05-20 15:45:46,633 DEBUG [txn.140217646896960][MainThread] commit
+2015-05-20 15:52:41,809 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-05-20 15:52:41,809 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-05-20 15:52:41,809 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-05-20 15:52:41,865 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 15:52:41,865 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 15:52:41,884 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-05-20 15:52:41,884 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:52:41,885 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-05-20 15:52:41,885 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.3.6 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2, 64-bit',)
+2015-05-20 15:52:41,885 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-05-20 15:52:41,886 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:52:41,886 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-05-20 15:52:41,886 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-05-20 15:52:41,886 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 15:52:41,887 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:52:41,887 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 15:52:41,887 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:52:41,887 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-05-20 15:52:41,887 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:52:41,888 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-05-20 15:52:41,888 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-05-20 15:52:41,889 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,889 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-05-20 15:52:41,889 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,890 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-05-20 15:52:41,890 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,890 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-05-20 15:52:41,890 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,890 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-05-20 15:52:41,891 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,891 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-05-20 15:52:41,891 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,891 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-05-20 15:52:41,892 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,892 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-05-20 15:52:41,892 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,892 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-05-20 15:52:41,892 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,892 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-05-20 15:52:41,893 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,893 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-05-20 15:52:41,893 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,893 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-05-20 15:52:41,894 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,894 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-05-20 15:52:41,894 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,894 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-05-20 15:52:41,895 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,895 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-05-20 15:52:41,895 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,895 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-05-20 15:52:41,896 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,896 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-05-20 15:52:41,896 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:52:41,896 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-05-20 15:52:41,897 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:52:41,897 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-05-20 15:52:41,897 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 15:52:41,897 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 15:52:41,909 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-05-20 15:52:41,910 DEBUG [txn.139909235746624][MainThread] new transaction
+2015-05-20 15:52:41,910 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 15:52:41,910 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-05-20 15:52:41,911 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 15:52:41,911 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$tydTGMSRVPOBS5EJ$PnRVGOT/P9jdyWsRWUosEoYR8Me78GNm6h7FMQMNUOC', datetime.date(2015, 5, 19))
+2015-05-20 15:52:41,912 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 15:52:41,912 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-05-20 15:52:41,912 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 15:52:41,913 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$F4I75IzOeqoZCQy9$OWmaHOyvaQJSgAVHDa0NL1hM7VKAKbqqqQ1qavk1qm3', datetime.date(2015, 5, 19))
+2015-05-20 15:52:41,913 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-05-20 15:52:41,913 DEBUG [txn.139909235746624][MainThread] abort
+2015-05-20 15:52:41,913 DEBUG [txn.139909235746624][MainThread] new transaction
+2015-05-20 15:52:41,914 DEBUG [txn.139909235746624][MainThread] commit
+2015-05-20 15:52:41,914 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 15:52:41,914 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 15:52:41,967 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 15:52:41,967 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 15:52:41,968 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 15:52:41,968 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 15:52:41,969 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 15:52:41,969 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 15:52:50,909 DEBUG [txn.139909235746624][MainThread] new transaction
+2015-05-20 15:52:50,909 DEBUG [txn.139909235746624][MainThread] abort
+2015-05-20 15:53:18,112 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-05-20 15:53:18,112 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-05-20 15:53:18,112 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-05-20 15:53:18,171 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 15:53:18,171 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 15:53:18,190 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-05-20 15:53:18,190 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:53:18,191 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-05-20 15:53:18,191 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.3.6 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2, 64-bit',)
+2015-05-20 15:53:18,192 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-05-20 15:53:18,192 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:53:18,192 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-05-20 15:53:18,192 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-05-20 15:53:18,193 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 15:53:18,193 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:53:18,193 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 15:53:18,193 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:53:18,194 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-05-20 15:53:18,194 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 15:53:18,194 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-05-20 15:53:18,194 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-05-20 15:53:18,195 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,195 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-05-20 15:53:18,196 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,196 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-05-20 15:53:18,197 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,197 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-05-20 15:53:18,197 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,197 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-05-20 15:53:18,198 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,198 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-05-20 15:53:18,198 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,198 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-05-20 15:53:18,199 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,199 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-05-20 15:53:18,199 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,199 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-05-20 15:53:18,200 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,200 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-05-20 15:53:18,200 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,200 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-05-20 15:53:18,201 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,201 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-05-20 15:53:18,201 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,202 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-05-20 15:53:18,202 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,202 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-05-20 15:53:18,202 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,203 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-05-20 15:53:18,203 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,203 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-05-20 15:53:18,204 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,204 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-05-20 15:53:18,204 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 15:53:18,204 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-05-20 15:53:18,205 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 15:53:18,205 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-05-20 15:53:18,205 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 15:53:18,205 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 15:53:18,218 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-05-20 15:53:18,218 DEBUG [txn.140343493838656][MainThread] new transaction
+2015-05-20 15:53:18,219 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 15:53:18,219 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'sysdata'}
+2015-05-20 15:53:18,220 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 15:53:18,220 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$tydTGMSRVPOBS5EJ$PnRVGOT/P9jdyWsRWUosEoYR8Me78GNm6h7FMQMNUOC', datetime.date(2015, 5, 19))
+2015-05-20 15:53:18,221 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 15:53:18,221 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-05-20 15:53:18,221 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 15:53:18,222 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$F4I75IzOeqoZCQy9$OWmaHOyvaQJSgAVHDa0NL1hM7VKAKbqqqQ1qavk1qm3', datetime.date(2015, 5, 19))
+2015-05-20 15:53:18,222 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-05-20 15:53:18,222 DEBUG [txn.140343493838656][MainThread] abort
+2015-05-20 15:53:18,222 DEBUG [txn.140343493838656][MainThread] new transaction
+2015-05-20 15:53:18,223 DEBUG [txn.140343493838656][MainThread] commit
+2015-05-20 15:53:18,223 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 15:53:18,223 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 15:53:18,276 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 15:53:18,276 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 15:53:18,276 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 15:53:18,276 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 15:53:18,278 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 15:53:18,278 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 15:53:29,012 DEBUG [txn.140343493838656][MainThread] new transaction
+2015-05-20 15:53:29,014 DEBUG [txn.140343493838656][MainThread] abort
+2015-05-20 16:01:59,287 DEBUG [txn.140343493838656][MainThread] new transaction
+2015-05-20 16:01:59,289 DEBUG [txn.140343493838656][MainThread] commit
+2015-05-20 18:38:58,574 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-05-20 18:38:58,575 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-05-20 18:38:58,575 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-05-20 18:38:58,691 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 18:38:58,691 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-05-20 18:38:58,874 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-05-20 18:38:58,874 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 18:38:58,875 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-05-20 18:38:58,875 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.3.6 on x86_64-unknown-linux-gnu, compiled by gcc (Ubuntu 4.8.2-19ubuntu1) 4.8.2, 64-bit',)
+2015-05-20 18:38:58,875 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-05-20 18:38:58,876 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 18:38:58,887 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-05-20 18:38:58,887 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-05-20 18:38:58,888 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 18:38:58,888 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 18:38:58,889 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-05-20 18:38:58,889 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 18:38:58,889 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-05-20 18:38:58,889 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-05-20 18:38:58,890 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-05-20 18:38:58,890 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-05-20 18:38:58,892 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,892 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-05-20 18:38:58,893 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,893 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-05-20 18:38:58,893 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,893 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-05-20 18:38:58,894 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,894 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-05-20 18:38:58,894 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,894 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-05-20 18:38:58,895 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,895 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-05-20 18:38:58,895 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,895 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-05-20 18:38:58,896 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,896 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-05-20 18:38:58,896 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,896 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-05-20 18:38:58,897 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,897 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-05-20 18:38:58,897 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,897 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-05-20 18:38:58,898 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,898 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-05-20 18:38:58,898 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,898 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-05-20 18:38:58,899 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,899 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-05-20 18:38:58,899 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,899 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-05-20 18:38:58,900 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,900 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-05-20 18:38:58,900 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-05-20 18:38:58,900 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-05-20 18:38:58,900 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-05-20 18:38:58,901 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-05-20 18:38:58,901 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 18:38:58,901 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-05-20 18:38:58,911 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-05-20 18:38:58,911 DEBUG [txn.140343493838656][MainThread] new transaction
+2015-05-20 18:38:58,912 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 18:38:58,912 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'sysdata'}
+2015-05-20 18:38:58,940 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 18:38:58,940 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$tydTGMSRVPOBS5EJ$PnRVGOT/P9jdyWsRWUosEoYR8Me78GNm6h7FMQMNUOC', datetime.date(2015, 5, 19))
+2015-05-20 18:38:58,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-05-20 18:38:58,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-05-20 18:38:58,942 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-05-20 18:38:58,942 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$F4I75IzOeqoZCQy9$OWmaHOyvaQJSgAVHDa0NL1hM7VKAKbqqqQ1qavk1qm3', datetime.date(2015, 5, 19))
+2015-05-20 18:38:58,942 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-05-20 18:38:58,942 DEBUG [txn.140343493838656][MainThread] abort
+2015-05-20 18:38:58,943 DEBUG [txn.140343493838656][MainThread] new transaction
+2015-05-20 18:38:58,943 DEBUG [txn.140343493838656][MainThread] commit
+2015-05-20 18:38:58,943 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 18:38:58,943 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-05-20 18:38:59,038 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 18:38:59,038 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-05-20 18:38:59,039 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 18:38:59,039 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-05-20 18:38:59,041 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-05-20 18:38:59,041 DEBUG [khipu][MainThread] Rotas Adicionadas.
