@@ -1,6 +1,6 @@
 __author__ = 'anderson'
 from pyramid.view import view_config, forbidden_view_config
-from khipu.validacao.validacao_controle import Validador
+from khipu.validacao.validacao_controle import Validador, KhipuToken, KhipuApplicationServer
 
 
 class GeradoraAccessToken():
@@ -11,5 +11,10 @@ class GeradoraAccessToken():
     def token(self):
         json_credentials = self.request.json_body
         req_validador = Validador()
+        khiputoken = KhipuToken()
+        autorizador = KhipuApplicationServer(req_validador, khiputoken)
+        header, body, data = autorizador.validate_authorization_request()
+
+
         print(json_credentials)
         return {"Anderson": "Lanna"}
