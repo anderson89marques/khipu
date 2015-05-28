@@ -1,5 +1,5 @@
 __author__ = 'anderson'
-from oauthlib.oauth2 import RequestValidator, BearerToken, WebApplicationServer
+from oauthlib.oauth2 import RequestValidator, BearerToken, AuthorizationCodeGrant
 
 
 class Validador(RequestValidator):
@@ -13,14 +13,9 @@ class Validador(RequestValidator):
         pass
 
 
-class KhipuApplicationServer(WebApplicationServer):
-    def create_token_response(self, uri, http_method='GET', body=None,
-                              headers=None, credentials=None):
-        pass
-
-    def validate_authorization_request(self, uri, http_method='GET', body=None,
-                                       headers=None):
-        pass
+class KhipuApplicationServer(AuthorizationCodeGrant):
+   def create_token_response(self, request, token_handler):
+       pass
 
 
 class KhipuToken(BearerToken):
