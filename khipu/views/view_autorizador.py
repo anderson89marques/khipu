@@ -1,6 +1,8 @@
 __author__ = 'anderson'
 from pyramid.view import view_config, forbidden_view_config
-from khipu.validacao.validacao_controle import Validador, KhipuToken, KhipuApplicationServer
+from khipu.validacao.validacao_controle import Validador, KhipuToken, KhipuAuthorization
+import logging
+log = logging.getLogger(__name__)
 
 
 class GeradoraAccessToken():
@@ -9,12 +11,14 @@ class GeradoraAccessToken():
 
     @view_config(route_name="token", renderer="json")
     def token(self):
-        json_credentials = self.request.json_body
-        req_validador = Validador()
-        khiputoken = KhipuToken()
-        autorizador = KhipuApplicationServer(req_validador, khiputoken)
-        header, body, data = autorizador.validate_authorization_request()
-
-
+        log.debug("TOKEN")
+        try:
+            json_credentials = self.request.json_body
+            req_validador = Validador()
+            khiputoken = KhipuToken()
+            autorizador = KhipuAuthorization(req_validador)
+            header, body, data = autorizador.validate_authorization_request(json_credentials, khiputoken)
+        except Exception as e:
+            pass
         print(json_credentials)
-        return {"Anderson": "Lanna"}
+        return body
