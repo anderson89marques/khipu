@@ -14,7 +14,7 @@ class Validador(RequestValidator):
 
     def save_bearer_token(self, token, request):
         projeto = DBSession.query(Projeto.client_id == request["client_id"] and
-                                       Projeto.client_secret == request["client_secret"]).first() else False
+                                       Projeto.client_secret == request["client_secret"]).first()
 
 
 class KhipuAuthorization(AuthorizationCodeGrant):
