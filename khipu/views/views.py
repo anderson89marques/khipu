@@ -23,7 +23,7 @@ class KhipuController:
 
     @view_config(route_name="exibeprojeto", renderer="templates/projeto/criarprojeto.jinja2", permission='comum')
     def exibirprojeto(self):
-        return {'projeto': Projeto()}
+        return {'projeto': None}
 
     @view_config(route_name="criarprojeto", renderer="templates/projeto/_tab.jinja2", permission='comum')
     def criarprojeto(self):

@@ -19,6 +19,7 @@ class Validador(RequestValidator):
 
 class KhipuAuthorization(AuthorizationCodeGrant):
     def create_token_response(self, request, token_handler):
+        log.debug("create token")
         headers = {
             'Content-Type': 'application/json',
             'Cache-Control': 'no-store',
@@ -31,7 +32,7 @@ class KhipuAuthorization(AuthorizationCodeGrant):
             log.debug('Erro no cliente durante validação de %r. %r.', request, e)
             return headers, json.dumps({"e": "erro"}), 400
 
-        token = token_handler.create_token(request, refresh_token=True)
+        token = token_handler.create_token(request)
         return headers, json.dumps(token), 200
 
     def validate_token_request(self, request):

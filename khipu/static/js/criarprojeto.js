@@ -5,8 +5,9 @@
 $(document).ready(function($){
     function criarprojeto(){
                 var dados = $("#formdd").serialize()
+                console.log("aqui")
                 $.ajax({
-                    url: "/criarprojeto",
+                    url: "/khipu/criarprojeto",
                     type: 'POST',
                     data: dados,
                     beforeSend:function(){
@@ -15,8 +16,8 @@ $(document).ready(function($){
                     },
                     success: function(data){
                         console.log("CriarProjeto")
-                        $("#formkeys").html(" ")
-                        $("#formkeys").append(data);
+                        $("#tab").html(" ")
+                        $("#tab").append(data);
 
                         /*$("#nome_projeto").html("<p style='font-family:verdana;'><em>"+ data.nome_projeto + "<em></p>")
                         $("#chave").html("<p style='font-family:verdana; font-size:10px;'><em>"+ data.chave.slice(0,100) +
@@ -40,7 +41,7 @@ $(document).ready(function($){
                         //form[ 0 ].reset();
                         dialog_loading.dialog( "close");
                         dialog.dialog( "close" );
-                        window.location.replace("http://192.168.1.140:6543");
+                        window.location.replace("http://0.0.0.0:6543");
                     }
                 },
                 close: function() {
