@@ -48,7 +48,7 @@ def main(global_config, **settings):
     #criando rotas com suas urls
     log.debug("Adicionando as rotas!")
     config.add_static_view('static', 'static', cache_max_age=3600)
-    config.add_route('home', '/')
+    config.add_route('home', '/khipu')
     config.add_route('criargcm', '/khipu/gcm/criarGcm')
     config.add_route('receiver', '/khipu/receiver')
     config.add_route('token', '/khipu/token')

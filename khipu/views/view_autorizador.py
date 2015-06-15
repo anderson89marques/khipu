@@ -11,7 +11,7 @@ class GeradoraAccessToken():
     def __init__(self, request):
         self.request = request
 
-    @view_config(route_name="token", renderer="json")
+    @view_config(route_name="token", request_method="GET", renderer="json")
     def token(self):
         log.debug("TOKEN")
         json_credentials = None
@@ -19,7 +19,7 @@ class GeradoraAccessToken():
             json_credentials = json.loads(self.request.params['q'])
             print(json_credentials)
             req_validador = Validador()
-            khiputoken = KhipuToken()
+            khiputoken = KhipuToken(req_validador)
             autorizador = KhipuAuthorization(req_validador)
             log.debug("antes")
             header, body, data = autorizador.create_token_response(json_credentials, khiputoken)

@@ -178,7 +178,7 @@ class UsuarioController:
         log.debug("login url:%r, refferer:%r" % (login_url, referrer))
 
         if referrer == login_url:
-            referrer = '/'  # never use login form itself as came_from
+            referrer = '/khipu'  # never use login form itself as came_from
 
         came_from = self.request.params.get('came_from', referrer)
         message = ''
