@@ -2,7 +2,7 @@ from pyramid.config import Configurator
 from pyramid.authentication import AuthTktAuthenticationPolicy
 from pyramid.authorization import ACLAuthorizationPolicy
 from sqlalchemy import engine_from_config
-from khipu.banco_de_dados.models import (DBSession, Base, Usuario, Principal)
+from khipu.banco_de_dados.models import (DBSession, Base, Usuario, Principal, upgrade)
 from khipu.seguranca.security import groupfinder, init
 from khipu.servicos.servico import manuseia_excecao
 import logging
@@ -28,6 +28,7 @@ def main(global_config, **settings):
     DBSession.configure(bind=engine)
     Base.metadata.bind = engine
     Base.metadata.create_all(engine)
+    upgrade()
 
     #criando os usuários defaults
     init()

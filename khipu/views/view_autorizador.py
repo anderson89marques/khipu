@@ -4,10 +4,16 @@ from khipu.validacao.validacao_controle import Validador, KhipuToken, KhipuAutho
 from khipu.servicos.servico import manuseia_excecao
 import logging
 import json
+
+
 log = logging.getLogger(__name__)
 
 
 class GeradoraAccessToken():
+
+    """
+        Controla as requisições relacionadas ao cadastro das aplicações clientes no khipu
+    """
     def __init__(self, request):
         self.request = request
 
@@ -17,13 +23,11 @@ class GeradoraAccessToken():
         json_credentials = None
         try:
             json_credentials = json.loads(self.request.params['q'])
-            print(json_credentials)
+            log.debug(json_credentials)
             req_validador = Validador()
             khiputoken = KhipuToken(req_validador)
             autorizador = KhipuAuthorization(req_validador)
-            log.debug("antes")
             header, body, data = autorizador.create_token_response(json_credentials, khiputoken)
-            print(json_credentials)
             return body
         except Exception as e:
             manuseia_excecao()

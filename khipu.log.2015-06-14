@@ -1,0 +1,1842 @@
+2015-06-14 14:04:43,968 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 14:04:43,983 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 14:04:43,983 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 14:04:44,223 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 14:04:44,223 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 14:04:44,405 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 14:04:44,405 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:04:44,423 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 14:04:44,424 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 14:04:44,426 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 14:04:44,427 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:04:44,438 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 14:04:44,439 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 14:04:44,442 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 14:04:44,442 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:04:44,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 14:04:44,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:04:44,460 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 14:04:44,461 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:04:44,462 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 14:04:44,462 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 14:04:44,464 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,464 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 14:04:44,476 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,477 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 14:04:44,478 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,478 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 14:04:44,481 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,482 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 14:04:44,483 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,483 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 14:04:44,485 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,485 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 14:04:44,486 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,487 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 14:04:44,488 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,489 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 14:04:44,491 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,492 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 14:04:44,493 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,494 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 14:04:44,495 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,495 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 14:04:44,497 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,497 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 14:04:44,498 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,498 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 14:04:44,500 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,500 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 14:04:44,501 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,502 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 14:04:44,503 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,504 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 14:04:44,505 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:04:44,505 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 14:04:44,506 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:04:44,507 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 14:04:44,508 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 14:04:44,508 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 14:04:44,556 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:04:44,556 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:04:44,558 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:04:44,559 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 14:04:44,648 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:04:44,649 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 14:04:44,650 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:04:44,650 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:04:44,652 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:04:44,652 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:04:44,653 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:04:44,653 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:04:44,654 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:04:44,654 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:04:44,655 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 14:04:44,655 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 14:04:44,958 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 14:04:44,958 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 14:04:44,959 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 14:04:44,959 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 14:04:44,963 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 14:04:44,963 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 14:06:47,726 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:47,727 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:06:48,269 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:48,270 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:06:48,274 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:48,274 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:06:51,899 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:51,899 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 14:06:51,899 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 14:06:51,965 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:52,144 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:52,147 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:53,542 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:53,544 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:53,554 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:53,557 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:53,560 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:53,562 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:53,566 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:53,568 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:53,571 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:53,574 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:06:53,579 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:06:53,581 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:07:06,845 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:06,846 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:07:06,846 DEBUG [khipu.views.views][MainThread] Sem auth control
+2015-06-14 14:07:06,846 DEBUG [khipu.views.views][MainThread] Sem auth control
+2015-06-14 14:07:06,846 DEBUG [khipu.views.views][MainThread] Usuário não logado. redirecionando para login
+2015-06-14 14:07:06,846 DEBUG [khipu.views.views][MainThread] Usuário não logado. redirecionando para login
+2015-06-14 14:07:06,931 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:06,932 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 14:07:06,932 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 14:07:06,933 DEBUG [khipu.views.views][MainThread] login url:'http://0.0.0.0:6543/login', refferer:'http://0.0.0.0:6543/login'
+2015-06-14 14:07:06,933 DEBUG [khipu.views.views][MainThread] login url:'http://0.0.0.0:6543/login', refferer:'http://0.0.0.0:6543/login'
+2015-06-14 14:07:06,940 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:07:06,977 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:06,978 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:07:12,938 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:12,939 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 14:07:12,939 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 14:07:12,939 DEBUG [khipu.views.views][MainThread] login url:'http://0.0.0.0:6543/login', refferer:'http://0.0.0.0:6543/login'
+2015-06-14 14:07:12,939 DEBUG [khipu.views.views][MainThread] login url:'http://0.0.0.0:6543/login', refferer:'http://0.0.0.0:6543/login'
+2015-06-14 14:07:12,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:07:12,943 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:07:12,943 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:07:12,951 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:07:12,952 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:07:13,066 DEBUG [passlib.registry][MainThread] registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2015-06-14 14:07:13,278 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:07:13,279 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5992c4c>
+2015-06-14 14:07:13,279 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:07:13,285 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:13,286 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:13,286 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:13,287 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:07:13,288 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:07:13,289 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:07:13,294 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:07:13,295 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:07:13,296 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb59b2a4c>
+2015-06-14 14:07:13,296 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb59b2a4c>
+2015-06-14 14:07:13,300 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 14:07:13,300 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 14:07:13,324 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 14:07:13,325 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 14:07:13,325 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c42cc>]
+2015-06-14 14:07:13,325 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c42cc>]
+2015-06-14 14:07:13,326 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:13,326 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:13,328 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:07:13,329 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:07:13,330 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:07:13,331 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:07:13,332 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb59c48ec>
+2015-06-14 14:07:13,332 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb59c48ec>
+2015-06-14 14:07:13,333 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 14:07:13,333 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 14:07:13,334 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 14:07:13,335 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 14:07:13,336 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c42cc>]
+2015-06-14 14:07:13,336 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c42cc>]
+2015-06-14 14:07:13,336 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 14:07:13,336 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 14:07:13,339 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:07:13,340 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb59b262c>
+2015-06-14 14:07:13,340 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:07:17,818 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:17,819 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:17,819 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:17,820 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:07:17,821 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:07:17,821 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:07:17,823 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:07:17,824 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:07:17,825 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6254c>
+2015-06-14 14:07:17,825 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6254c>
+2015-06-14 14:07:17,827 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 14:07:17,828 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 14:07:17,829 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 14:07:17,830 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 14:07:17,830 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c4b0c>]
+2015-06-14 14:07:17,830 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c4b0c>]
+2015-06-14 14:07:17,831 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:17,831 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 14:07:17,834 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:07:17,834 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:07:17,835 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:07:17,836 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:07:17,837 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb59c480c>
+2015-06-14 14:07:17,837 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb59c480c>
+2015-06-14 14:07:17,839 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 14:07:17,840 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 14:07:17,841 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 14:07:17,842 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 14:07:17,843 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c4b0c>]
+2015-06-14 14:07:17,843 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb59c4b0c>]
+2015-06-14 14:07:17,843 DEBUG [khipu.views.views][MainThread] Listar projetos.
+2015-06-14 14:07:17,843 DEBUG [khipu.views.views][MainThread] Listar projetos.
+2015-06-14 14:07:17,844 DEBUG [khipu.views.views][MainThread] Parametros do request: NestedMultiDict([])
+2015-06-14 14:07:17,844 DEBUG [khipu.views.views][MainThread] Parametros do request: NestedMultiDict([])
+2015-06-14 14:07:17,844 DEBUG [khipu.views.views][MainThread] Nome Projeto: ''
+2015-06-14 14:07:17,844 DEBUG [khipu.views.views][MainThread] Nome Projeto: ''
+2015-06-14 14:07:17,844 DEBUG [khipu.views.views][MainThread] Nome Usuário: ''
+2015-06-14 14:07:17,844 DEBUG [khipu.views.views][MainThread] Nome Usuário: ''
+2015-06-14 14:07:17,845 DEBUG [khipu.views.views][MainThread] Datepicker1: ''
+2015-06-14 14:07:17,845 DEBUG [khipu.views.views][MainThread] Datepicker1: ''
+2015-06-14 14:07:17,845 DEBUG [khipu.views.views][MainThread] Datepicker2: ''
+2015-06-14 14:07:17,845 DEBUG [khipu.views.views][MainThread] Datepicker2: ''
+2015-06-14 14:07:17,849 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.id AS projeto_id, projeto.nome AS projeto_nome, projeto.client_id AS projeto_client_id, projeto.client_secret AS projeto_client_secret, projeto.access_token AS projeto_access_token, projeto.grant_type AS projeto_grant_type, projeto.data_ativacao AS projeto_data_ativacao, projeto.usuario_id AS projeto_usuario_id 
+FROM projeto
+2015-06-14 14:07:17,849 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:07:17,879 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('projeto_id', 'projeto_nome', 'projeto_client_id', 'projeto_client_secret', 'projeto_access_token', 'projeto_grant_type', 'projeto_data_ativacao', 'projeto_usuario_id')
+2015-06-14 14:07:17,879 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'projeto1', '9c2644540f0e11e59920001a3f72088e', '9c26e3e60f0e11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 14:07:17,879 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'projeto2', '57d77be60f0f11e59920001a3f72088e', '57d83fae0f0f11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 14:07:17,880 DEBUG [khipu.views.views][MainThread] lista de projetos: Page:
+Collection type:        <class 'list'>
+Current page:           1
+First item:             1
+Last item:              2
+First page:             1
+Last page:              1
+Previous page:          None
+Next page:              None
+Items per page:         10
+Total number of items:  2
+Number of pages:        1
+
+2015-06-14 14:07:17,880 DEBUG [khipu.views.views][MainThread] lista de projetos: Page:
+Collection type:        <class 'list'>
+Current page:           1
+First item:             1
+Last item:              2
+First page:             1
+Last page:              1
+Previous page:          None
+Next page:              None
+Items per page:         10
+Total number of items:  2
+Number of pages:        1
+
+2015-06-14 14:07:17,944 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.id = %(param_1)s
+2015-06-14 14:07:17,945 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 14:07:17,998 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:07:17,999 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:07:18,027 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:07:18,028 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb59482ac>
+2015-06-14 14:07:18,029 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:07:18,074 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:07:18,076 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:09:09,155 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:09:09,157 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:12:14,002 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:12:14,002 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:12:14,002 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:12:14,002 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:12:14,003 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:12:14,003 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:KeyError, linha:19, descrição:'q'
+2015-06-14 14:12:14,003 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:KeyError, linha:19, descrição:'q'
+2015-06-14 14:12:14,006 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:12:14,009 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 14:12:14,009 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_arquivo': 'view_autorizador.py', 'descricao': "'q'", 'tipo_excessao': 'KeyError', 'linha': 19}
+2015-06-14 14:12:14,149 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 14:12:14,150 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (5,)
+2015-06-14 14:12:14,151 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb594d36c>
+2015-06-14 14:12:14,151 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 14:12:14,166 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:12:14,167 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:12:14,167 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:12:47,328 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:12:47,330 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:13:54,737 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:13:54,737 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:13:54,737 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:13:54,738 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:13:54,738 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:13:54,739 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:KeyError, linha:19, descrição:'q'
+2015-06-14 14:13:54,739 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:KeyError, linha:19, descrição:'q'
+2015-06-14 14:13:54,740 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:13:54,741 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 14:13:54,741 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_arquivo': 'view_autorizador.py', 'descricao': "'q'", 'tipo_excessao': 'KeyError', 'linha': 19}
+2015-06-14 14:13:54,745 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 14:13:54,746 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (6,)
+2015-06-14 14:13:54,747 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb59c4b0c>
+2015-06-14 14:13:54,747 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 14:13:54,815 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:13:54,815 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:13:54,815 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:13:54,948 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:13:54,949 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:13:55,025 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:13:55,026 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:14:20,696 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:14:20,697 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:15:57,079 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:15:57,081 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:17:52,950 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:17:52,951 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:20:17,318 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:20:17,318 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 14:20:17,318 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 14:20:17,322 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:31:13,210 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:31:13,211 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:31:13,211 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:31:13,211 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:31:13,211 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:31:13,212 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:31:13,212 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:31:13,212 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}
+2015-06-14 14:31:13,212 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}
+2015-06-14 14:31:13,213 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:31:13,213 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:31:13,214 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:31:13,215 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:31:13,215 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'client_id_1': '9c2644540f0e11e59920001a3f72088e', 'param_1': 1}
+2015-06-14 14:31:13,217 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:31:13,217 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:31:13,218 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}.
+2015-06-14 14:31:13,218 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}.
+2015-06-14 14:31:13,219 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:31:13,221 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:31:13,221 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:31:13,222 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:AttributeError, linha:25, descrição:'NoneType' object has no attribute 'save_bearer_token'
+2015-06-14 14:31:13,222 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:AttributeError, linha:25, descrição:'NoneType' object has no attribute 'save_bearer_token'
+2015-06-14 14:31:13,225 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:31:13,228 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 14:31:13,228 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_arquivo': 'view_autorizador.py', 'descricao': "'NoneType' object has no attribute 'save_bearer_token'", 'tipo_excessao': 'AttributeError', 'linha': 25}
+2015-06-14 14:31:13,229 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 14:31:13,230 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (7,)
+2015-06-14 14:31:13,231 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb59c482c>
+2015-06-14 14:31:13,231 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 14:31:13,245 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:31:13,246 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:31:13,246 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:39:19,283 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:39:19,283 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:39:19,283 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:39:19,284 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:39:19,284 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:39:19,285 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:39:19,285 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:39:19,285 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}
+2015-06-14 14:39:19,285 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}
+2015-06-14 14:39:19,285 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:39:19,285 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:39:19,287 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:39:19,289 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:39:19,290 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'client_id_1': '9c2644540f0e11e59920001a3f72088e', 'param_1': 1}
+2015-06-14 14:39:19,293 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:39:19,294 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:39:19,294 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}.
+2015-06-14 14:39:19,294 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}.
+2015-06-14 14:39:19,295 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:39:19,298 DEBUG [txn.-1219933440][MainThread] abort
+2015-06-14 14:39:19,298 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:39:19,299 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:AttributeError, linha:25, descrição:'NoneType' object has no attribute 'save_bearer_token'
+2015-06-14 14:39:19,299 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:view_autorizador.py, tipo:AttributeError, linha:25, descrição:'NoneType' object has no attribute 'save_bearer_token'
+2015-06-14 14:39:19,300 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:39:19,301 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 14:39:19,302 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_arquivo': 'view_autorizador.py', 'descricao': "'NoneType' object has no attribute 'save_bearer_token'", 'tipo_excessao': 'AttributeError', 'linha': 25}
+2015-06-14 14:39:19,303 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 14:39:19,304 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (8,)
+2015-06-14 14:39:19,305 DEBUG [txn.-1219933440][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb59b288c>
+2015-06-14 14:39:19,305 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 14:39:19,318 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:39:19,321 DEBUG [txn.-1219933440][MainThread] new transaction
+2015-06-14 14:39:19,322 DEBUG [txn.-1219933440][MainThread] commit
+2015-06-14 14:44:01,021 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 14:44:01,023 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 14:44:01,023 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 14:44:01,156 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 14:44:01,156 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 14:44:01,235 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 14:44:01,235 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:44:01,237 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 14:44:01,238 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 14:44:01,240 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 14:44:01,240 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:44:01,241 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 14:44:01,241 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 14:44:01,243 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 14:44:01,243 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:44:01,246 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 14:44:01,247 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:44:01,249 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 14:44:01,250 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 14:44:01,252 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 14:44:01,252 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 14:44:01,256 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,257 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 14:44:01,259 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,259 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 14:44:01,261 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,262 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 14:44:01,263 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,264 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 14:44:01,266 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,266 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 14:44:01,268 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,269 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 14:44:01,270 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,270 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 14:44:01,272 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,272 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 14:44:01,274 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,274 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 14:44:01,276 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,276 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 14:44:01,277 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,278 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 14:44:01,279 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,280 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 14:44:01,281 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,281 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 14:44:01,283 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,283 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 14:44:01,284 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,285 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 14:44:01,286 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,287 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 14:44:01,288 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 14:44:01,289 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 14:44:01,291 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 14:44:01,291 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 14:44:01,292 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 14:44:01,292 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 14:44:01,330 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:44:01,330 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 14:44:01,332 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:44:01,333 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 14:44:01,336 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:44:01,336 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 14:44:01,339 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 14:44:01,340 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 14:44:01,341 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 14:44:01,342 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 14:44:01,343 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:44:01,344 DEBUG [txn.-1219253504][MainThread] abort
+2015-06-14 14:44:01,344 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 14:44:01,344 DEBUG [txn.-1219253504][MainThread] commit
+2015-06-14 14:44:01,345 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 14:44:01,345 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 14:44:01,551 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 14:44:01,551 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 14:44:01,552 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 14:44:01,552 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 14:44:01,558 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 14:44:01,558 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 14:44:09,721 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 14:44:09,722 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:44:09,722 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:44:09,723 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:44:09,723 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:44:09,724 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:44:09,724 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:44:09,724 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 14:44:09,724 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 14:44:09,725 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:44:09,725 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:44:09,727 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:44:09,729 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:44:09,729 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 14:44:09,738 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:44:09,739 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:44:09,740 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 14:44:09,740 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 14:44:09,740 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 14:44:09,740 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 14:44:09,741 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': '6ZnX0wAjVgmeF8ItVj6xGFexcBgtqp'}
+2015-06-14 14:44:09,741 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': '6ZnX0wAjVgmeF8ItVj6xGFexcBgtqp'}
+2015-06-14 14:44:09,742 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 14:44:09,742 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 14:44:09,744 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:44:09,745 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 14:44:09,750 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:44:09,750 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:44:09,752 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:44:09,753 DEBUG [txn.-1219253504][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5b0934c>
+2015-06-14 14:44:09,754 DEBUG [txn.-1219253504][MainThread] commit
+2015-06-14 14:47:16,706 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 14:47:16,707 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:47:16,707 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:47:16,708 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:47:16,708 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:47:16,708 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:47:16,708 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:47:16,709 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 14:47:16,709 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 14:47:16,709 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:47:16,709 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:47:16,711 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:47:16,713 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:47:16,714 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 14:47:16,718 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:47:16,718 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:47:16,719 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 14:47:16,719 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 14:47:16,719 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 14:47:16,719 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 14:47:16,720 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': 'H4WXRpIZrB2sjB8o0poDDdiMsfV93N'}
+2015-06-14 14:47:16,720 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': 'H4WXRpIZrB2sjB8o0poDDdiMsfV93N'}
+2015-06-14 14:47:16,721 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 14:47:16,721 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 14:47:16,723 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:47:16,724 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 14:47:16,726 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:47:16,727 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:47:16,729 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:47:16,730 DEBUG [txn.-1219253504][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a9d72c>
+2015-06-14 14:47:16,730 DEBUG [txn.-1219253504][MainThread] commit
+2015-06-14 14:47:37,467 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 14:47:37,468 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:47:37,468 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 14:47:37,469 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:47:37,469 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 14:47:37,469 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:47:37,469 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 14:47:37,470 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 14:47:37,470 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 14:47:37,470 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:47:37,470 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 14:47:37,471 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 14:47:37,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:47:37,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 14:47:37,473 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:47:37,474 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:47:37,474 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 14:47:37,474 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 14:47:37,475 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 14:47:37,475 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 14:47:37,475 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': 'KQlAeTwKRM7ikknzEPU8sT79mvWuYC'}
+2015-06-14 14:47:37,475 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': 'KQlAeTwKRM7ikknzEPU8sT79mvWuYC'}
+2015-06-14 14:47:37,476 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 14:47:37,476 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 14:47:37,478 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 14:47:37,478 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 14:47:37,480 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 14:47:37,480 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 14:47:37,482 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 14:47:37,483 DEBUG [txn.-1219253504][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5aa43cc>
+2015-06-14 14:47:37,483 DEBUG [txn.-1219253504][MainThread] commit
+2015-06-14 15:40:54,269 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 15:40:54,270 DEBUG [txn.-1219253504][MainThread] abort
+2015-06-14 15:40:57,479 DEBUG [txn.-1219253504][MainThread] new transaction
+2015-06-14 15:40:57,480 DEBUG [txn.-1219253504][MainThread] abort
+2015-06-14 15:41:48,003 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 15:41:48,003 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 15:41:48,004 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 15:41:48,119 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 15:41:48,119 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 15:41:48,188 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 15:41:48,188 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 15:41:48,190 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 15:41:48,191 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 15:41:48,193 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 15:41:48,193 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 15:41:48,194 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 15:41:48,195 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 15:41:48,197 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 15:41:48,197 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 15:41:48,199 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 15:41:48,200 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 15:41:48,201 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 15:41:48,202 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 15:41:48,204 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 15:41:48,205 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 15:41:48,207 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,207 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 15:41:48,209 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,209 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 15:41:48,210 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,210 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 15:41:48,213 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,213 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 15:41:48,214 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,214 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 15:41:48,216 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,218 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 15:41:48,220 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,221 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 15:41:48,223 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,223 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 15:41:48,224 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,224 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 15:41:48,226 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,226 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 15:41:48,227 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,227 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 15:41:48,229 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,229 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 15:41:48,230 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,230 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 15:41:48,232 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,232 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 15:41:48,233 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,234 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 15:41:48,235 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,236 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 15:41:48,237 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 15:41:48,237 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 15:41:48,239 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 15:41:48,240 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 15:41:48,241 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 15:41:48,241 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 15:41:48,273 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 15:41:48,274 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:41:48,275 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 15:41:48,276 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'sysdata'}
+2015-06-14 15:41:48,278 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 15:41:48,279 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 15:41:48,280 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 15:41:48,281 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-06-14 15:41:48,282 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 15:41:48,283 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 15:41:48,283 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 15:41:48,284 DEBUG [txn.-1219994880][MainThread] abort
+2015-06-14 15:41:48,284 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:41:48,285 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:41:48,285 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 15:41:48,285 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 15:41:48,435 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 15:41:48,435 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 15:41:48,436 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 15:41:48,436 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 15:41:48,440 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 15:41:48,440 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 15:42:00,603 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:00,605 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 15:42:00,605 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 15:42:00,657 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:00,690 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:00,692 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:01,502 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:01,504 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:01,509 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:01,511 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:01,514 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:01,516 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:01,519 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:01,521 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:01,524 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:01,528 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 15:42:01,535 DEBUG [txn.-1219994880][MainThread] new transaction
+2015-06-14 15:42:01,537 DEBUG [txn.-1219994880][MainThread] commit
+2015-06-14 16:47:42,261 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 16:47:42,261 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 16:47:42,262 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 16:47:42,370 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 16:47:42,370 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 16:47:42,434 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 16:47:42,435 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:47:42,436 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 16:47:42,437 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 16:47:42,438 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 16:47:42,438 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:47:42,439 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 16:47:42,440 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 16:47:42,441 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 16:47:42,442 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:47:42,443 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 16:47:42,443 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:47:42,444 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 16:47:42,445 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:47:42,445 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 16:47:42,446 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 16:47:42,448 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,448 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 16:47:42,450 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,450 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 16:47:42,451 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,452 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 16:47:42,453 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,454 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 16:47:42,455 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,455 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 16:47:42,458 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,458 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 16:47:42,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 16:47:42,461 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,461 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 16:47:42,462 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,462 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 16:47:42,464 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,464 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 16:47:42,464 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,465 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 16:47:42,466 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,466 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 16:47:42,467 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,467 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 16:47:42,469 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,469 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 16:47:42,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 16:47:42,474 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,474 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 16:47:42,475 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:47:42,476 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 16:47:42,478 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:47:42,478 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 16:47:42,479 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 16:47:42,479 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 16:47:42,510 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:47:42,510 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:42,513 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:47:42,513 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 16:47:42,516 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:47:42,517 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 16:47:42,520 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:47:42,521 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:47:42,522 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:47:42,523 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:47:42,523 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:47:42,525 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:47:42,525 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:42,525 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:42,526 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 16:47:42,526 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 16:47:42,757 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 16:47:42,757 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 16:47:42,760 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 16:47:42,760 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 16:47:42,767 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 16:47:42,767 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 16:47:47,716 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:47,718 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:47:47,718 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:47:47,767 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:47,801 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:47,802 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:48,679 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:48,681 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:48,685 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:48,687 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:48,689 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:48,691 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:48,694 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:48,696 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:48,700 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:48,703 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:48,707 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:48,708 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:51,563 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:51,564 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:47:51,564 DEBUG [khipu.views.views][MainThread] Sem auth control
+2015-06-14 16:47:51,564 DEBUG [khipu.views.views][MainThread] Sem auth control
+2015-06-14 16:47:51,564 DEBUG [khipu.views.views][MainThread] Usuário não logado. redirecionando para login
+2015-06-14 16:47:51,564 DEBUG [khipu.views.views][MainThread] Usuário não logado. redirecionando para login
+2015-06-14 16:47:51,584 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:51,585 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:47:51,585 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:47:51,585 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:47:51,585 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:47:51,590 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:51,625 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:51,627 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:56,970 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:56,971 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:47:56,971 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:47:56,971 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:47:56,971 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:47:56,973 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:47:56,975 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:47:56,975 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:47:56,982 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:47:56,984 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:47:56,993 DEBUG [passlib.registry][MainThread] registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2015-06-14 16:47:57,299 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:47:57,302 DEBUG [txn.-1219613952][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a538ec>
+2015-06-14 16:47:57,303 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:47:57,357 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:47:57,358 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:48:53,153 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:48:53,154 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:48:53,894 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:48:53,896 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:48:54,369 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:48:54,370 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:48:54,689 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:48:54,690 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:48:59,895 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:48:59,897 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:48:59,897 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:48:59,898 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:48:59,899 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:48:59,899 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:48:59,901 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:48:59,901 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:48:59,902 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a127ac>
+2015-06-14 16:48:59,902 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a127ac>
+2015-06-14 16:48:59,906 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:48:59,906 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:48:59,909 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:48:59,910 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:48:59,911 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb599808c>]
+2015-06-14 16:48:59,911 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb599808c>]
+2015-06-14 16:48:59,912 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:48:59,912 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:48:59,913 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:48:59,913 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:48:59,915 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:48:59,916 DEBUG [txn.-1219613952][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a1232c>
+2015-06-14 16:48:59,916 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:48:59,971 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:48:59,972 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:49:04,754 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:49:04,755 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([('login', 'acception'), ('password', '******'), ('form.submitted', '')]): userid: 'acception'
+2015-06-14 16:49:04,755 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([('login', 'acception'), ('password', '******'), ('form.submitted', '')]): userid: 'acception'
+2015-06-14 16:49:04,757 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:04,758 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:04,761 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:04,763 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:04,763 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:04,764 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5998d6c>
+2015-06-14 16:49:04,764 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5998d6c>
+2015-06-14 16:49:04,769 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:04,770 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:04,771 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:04,772 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:04,773 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb599938c>]
+2015-06-14 16:49:04,773 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb599938c>]
+2015-06-14 16:49:04,774 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:49:04,774 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:49:04,774 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:49:04,774 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:49:04,777 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:04,778 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:04,780 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:04,781 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:05,029 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:05,030 DEBUG [txn.-1219613952][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb599890c>
+2015-06-14 16:49:05,031 DEBUG [txn.-1219613952][MainThread] commit
+2015-06-14 16:49:05,106 DEBUG [txn.-1219613952][MainThread] new transaction
+2015-06-14 16:49:05,108 DEBUG [txn.-1219613952][MainThread] abort
+2015-06-14 16:49:17,124 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 16:49:17,125 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 16:49:17,125 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 16:49:17,257 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 16:49:17,257 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 16:49:17,330 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 16:49:17,331 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:17,333 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 16:49:17,333 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 16:49:17,335 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 16:49:17,335 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:17,336 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 16:49:17,337 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 16:49:17,339 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 16:49:17,340 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:17,342 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 16:49:17,343 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:17,344 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 16:49:17,345 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:17,346 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 16:49:17,346 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 16:49:17,349 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,350 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 16:49:17,352 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,352 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 16:49:17,353 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,353 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 16:49:17,355 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,356 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 16:49:17,357 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,357 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 16:49:17,360 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,361 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 16:49:17,362 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,362 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 16:49:17,364 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,365 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 16:49:17,366 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,366 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 16:49:17,368 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,368 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 16:49:17,369 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,369 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 16:49:17,371 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,371 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 16:49:17,372 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,372 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 16:49:17,374 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,374 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 16:49:17,375 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,375 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 16:49:17,376 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,377 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 16:49:17,377 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:49:17,378 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 16:49:17,379 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:49:17,379 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 16:49:17,381 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 16:49:17,381 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 16:49:17,417 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:17,417 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:17,419 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:17,419 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 16:49:17,422 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:17,423 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:17,425 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:17,426 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:17,427 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:17,428 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:17,429 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:17,430 DEBUG [txn.-1219196160][MainThread] abort
+2015-06-14 16:49:17,430 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:17,430 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:17,431 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 16:49:17,431 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 16:49:17,632 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 16:49:17,632 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 16:49:17,634 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 16:49:17,634 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 16:49:17,643 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 16:49:17,643 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 16:49:23,345 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:23,346 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:23,346 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:23,348 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:23,349 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:23,352 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-06-14 16:49:23,355 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:23,356 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:23,357 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5b145ec>
+2015-06-14 16:49:23,357 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5b145ec>
+2015-06-14 16:49:23,360 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:23,360 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:23,364 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:23,365 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:23,367 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a5a18c>]
+2015-06-14 16:49:23,367 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a5a18c>]
+2015-06-14 16:49:23,367 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:23,367 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:23,370 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:23,372 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-06-14 16:49:23,374 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:23,375 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:23,376 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a5a7ec>
+2015-06-14 16:49:23,376 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a5a7ec>
+2015-06-14 16:49:23,378 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:23,378 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:23,380 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:23,381 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:23,382 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a5a18c>]
+2015-06-14 16:49:23,382 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a5a18c>]
+2015-06-14 16:49:23,383 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:49:23,383 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:49:23,435 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:23,436 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5b1434c>
+2015-06-14 16:49:23,436 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:26,339 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:26,340 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:26,340 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:26,341 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:26,342 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:26,343 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-06-14 16:49:26,344 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:26,345 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:26,346 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5b1434c>
+2015-06-14 16:49:26,346 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5b1434c>
+2015-06-14 16:49:26,348 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:26,348 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:26,350 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:26,351 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:26,351 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5b1476c>]
+2015-06-14 16:49:26,351 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5b1476c>]
+2015-06-14 16:49:26,352 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:26,352 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:26,354 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:26,355 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:26,356 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:26,357 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:26,359 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6eb2c>
+2015-06-14 16:49:26,359 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6eb2c>
+2015-06-14 16:49:26,362 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:26,362 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:26,364 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:26,364 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:26,365 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5b1476c>]
+2015-06-14 16:49:26,365 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5b1476c>]
+2015-06-14 16:49:26,366 DEBUG [khipu.views.views][MainThread] Listar projetos.
+2015-06-14 16:49:26,366 DEBUG [khipu.views.views][MainThread] Listar projetos.
+2015-06-14 16:49:26,366 DEBUG [khipu.views.views][MainThread] Parametros do request: NestedMultiDict([])
+2015-06-14 16:49:26,366 DEBUG [khipu.views.views][MainThread] Parametros do request: NestedMultiDict([])
+2015-06-14 16:49:26,366 DEBUG [khipu.views.views][MainThread] Nome Projeto: ''
+2015-06-14 16:49:26,366 DEBUG [khipu.views.views][MainThread] Nome Projeto: ''
+2015-06-14 16:49:26,367 DEBUG [khipu.views.views][MainThread] Nome Usuário: ''
+2015-06-14 16:49:26,367 DEBUG [khipu.views.views][MainThread] Nome Usuário: ''
+2015-06-14 16:49:26,367 DEBUG [khipu.views.views][MainThread] Datepicker1: ''
+2015-06-14 16:49:26,367 DEBUG [khipu.views.views][MainThread] Datepicker1: ''
+2015-06-14 16:49:26,368 DEBUG [khipu.views.views][MainThread] Datepicker2: ''
+2015-06-14 16:49:26,368 DEBUG [khipu.views.views][MainThread] Datepicker2: ''
+2015-06-14 16:49:26,371 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.id AS projeto_id, projeto.nome AS projeto_nome, projeto.client_id AS projeto_client_id, projeto.client_secret AS projeto_client_secret, projeto.access_token AS projeto_access_token, projeto.grant_type AS projeto_grant_type, projeto.data_ativacao AS projeto_data_ativacao, projeto.usuario_id AS projeto_usuario_id 
+FROM projeto
+2015-06-14 16:49:26,371 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:26,374 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('projeto_id', 'projeto_nome', 'projeto_client_id', 'projeto_client_secret', 'projeto_access_token', 'projeto_grant_type', 'projeto_data_ativacao', 'projeto_usuario_id')
+2015-06-14 16:49:26,375 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'projeto1', '9c2644540f0e11e59920001a3f72088e', '9c26e3e60f0e11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 16:49:26,375 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'projeto2', '57d77be60f0f11e59920001a3f72088e', '57d83fae0f0f11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 16:49:26,377 DEBUG [khipu.views.views][MainThread] lista de projetos: Page:
+Collection type:        <class 'list'>
+Current page:           1
+First item:             1
+Last item:              2
+First page:             1
+Last page:              1
+Previous page:          None
+Next page:              None
+Items per page:         10
+Total number of items:  2
+Number of pages:        1
+
+2015-06-14 16:49:26,377 DEBUG [khipu.views.views][MainThread] lista de projetos: Page:
+Collection type:        <class 'list'>
+Current page:           1
+First item:             1
+Last item:              2
+First page:             1
+Last page:              1
+Previous page:          None
+Next page:              None
+Items per page:         10
+Total number of items:  2
+Number of pages:        1
+
+2015-06-14 16:49:26,461 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.id = %(param_1)s
+2015-06-14 16:49:26,461 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:26,463 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:26,463 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:26,466 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:26,467 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5af622c>
+2015-06-14 16:49:26,467 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:26,504 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:26,507 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:31,732 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:31,733 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:31,733 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:31,734 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:31,736 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:31,736 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-06-14 16:49:31,738 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:31,738 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:31,739 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6e36c>
+2015-06-14 16:49:31,739 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6e36c>
+2015-06-14 16:49:31,741 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:31,741 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:31,743 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:31,744 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:31,744 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a8bc4c>]
+2015-06-14 16:49:31,744 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a8bc4c>]
+2015-06-14 16:49:31,745 DEBUG [khipu.views.views][MainThread] Logout!
+2015-06-14 16:49:31,745 DEBUG [khipu.views.views][MainThread] Logout!
+2015-06-14 16:49:31,747 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:31,748 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a6e3ac>
+2015-06-14 16:49:31,749 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:31,761 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:31,761 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:49:31,761 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:49:31,764 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:35,389 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:35,390 DEBUG [txn.-1219196160][MainThread] abort
+2015-06-14 16:49:35,390 DEBUG [khipu.views.views][MainThread] Sem auth control
+2015-06-14 16:49:35,390 DEBUG [khipu.views.views][MainThread] Sem auth control
+2015-06-14 16:49:35,390 DEBUG [khipu.views.views][MainThread] Usuário não logado. redirecionando para login
+2015-06-14 16:49:35,390 DEBUG [khipu.views.views][MainThread] Usuário não logado. redirecionando para login
+2015-06-14 16:49:35,396 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:35,397 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:49:35,397 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:49:35,397 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:49:35,397 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:49:35,406 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:41,938 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:41,938 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:49:41,938 DEBUG [khipu.views.views][MainThread] Login.
+2015-06-14 16:49:41,938 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:49:41,938 DEBUG [khipu.views.views][MainThread] login url:'http://192.168.0.107:6543/login', refferer:'http://192.168.0.107:6543/login'
+2015-06-14 16:49:41,940 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:41,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:41,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:41,943 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:41,944 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:41,951 DEBUG [passlib.registry][MainThread] registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2015-06-14 16:49:42,208 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:42,210 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a9bdec>
+2015-06-14 16:49:42,210 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:42,251 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:42,252 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:42,252 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:42,253 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:42,255 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:42,255 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:42,257 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:42,258 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:42,258 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a0334c>
+2015-06-14 16:49:42,258 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a0334c>
+2015-06-14 16:49:42,261 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:42,261 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:42,263 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:42,263 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:42,264 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0386c>]
+2015-06-14 16:49:42,264 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0386c>]
+2015-06-14 16:49:42,265 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:42,265 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:42,267 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:42,268 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:42,269 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:42,270 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:42,270 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a03eac>
+2015-06-14 16:49:42,270 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a03eac>
+2015-06-14 16:49:42,273 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:42,273 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:42,275 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:42,275 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:42,277 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0386c>]
+2015-06-14 16:49:42,277 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0386c>]
+2015-06-14 16:49:42,278 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:49:42,278 DEBUG [khipu.views.views][MainThread] Home
+2015-06-14 16:49:42,282 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:42,283 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5abaecc>
+2015-06-14 16:49:42,283 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:46,842 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:46,843 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:46,843 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:46,844 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:46,845 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:46,845 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:46,847 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:46,847 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:46,848 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a06bac>
+2015-06-14 16:49:46,848 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a06bac>
+2015-06-14 16:49:46,850 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:46,851 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:46,852 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:46,853 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:46,854 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0a0ec>]
+2015-06-14 16:49:46,854 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0a0ec>]
+2015-06-14 16:49:46,854 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:46,854 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:46,857 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:46,857 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:46,858 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:46,859 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:46,862 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5ad278c>
+2015-06-14 16:49:46,862 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5ad278c>
+2015-06-14 16:49:46,865 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:46,865 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:46,867 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:46,868 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:46,868 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a06f0c>]
+2015-06-14 16:49:46,868 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a06f0c>]
+2015-06-14 16:49:46,869 DEBUG [khipu.views.views][MainThread] Listar projetos.
+2015-06-14 16:49:46,869 DEBUG [khipu.views.views][MainThread] Listar projetos.
+2015-06-14 16:49:46,869 DEBUG [khipu.views.views][MainThread] Parametros do request: NestedMultiDict([])
+2015-06-14 16:49:46,869 DEBUG [khipu.views.views][MainThread] Parametros do request: NestedMultiDict([])
+2015-06-14 16:49:46,870 DEBUG [khipu.views.views][MainThread] Nome Projeto: ''
+2015-06-14 16:49:46,870 DEBUG [khipu.views.views][MainThread] Nome Projeto: ''
+2015-06-14 16:49:46,870 DEBUG [khipu.views.views][MainThread] Nome Usuário: ''
+2015-06-14 16:49:46,870 DEBUG [khipu.views.views][MainThread] Nome Usuário: ''
+2015-06-14 16:49:46,871 DEBUG [khipu.views.views][MainThread] Datepicker1: ''
+2015-06-14 16:49:46,871 DEBUG [khipu.views.views][MainThread] Datepicker1: ''
+2015-06-14 16:49:46,872 DEBUG [khipu.views.views][MainThread] Datepicker2: ''
+2015-06-14 16:49:46,872 DEBUG [khipu.views.views][MainThread] Datepicker2: ''
+2015-06-14 16:49:46,874 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.id AS projeto_id, projeto.nome AS projeto_nome, projeto.client_id AS projeto_client_id, projeto.client_secret AS projeto_client_secret, projeto.access_token AS projeto_access_token, projeto.grant_type AS projeto_grant_type, projeto.data_ativacao AS projeto_data_ativacao, projeto.usuario_id AS projeto_usuario_id 
+FROM projeto
+2015-06-14 16:49:46,874 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:49:46,876 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('projeto_id', 'projeto_nome', 'projeto_client_id', 'projeto_client_secret', 'projeto_access_token', 'projeto_grant_type', 'projeto_data_ativacao', 'projeto_usuario_id')
+2015-06-14 16:49:46,876 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'projeto1', '9c2644540f0e11e59920001a3f72088e', '9c26e3e60f0e11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 16:49:46,877 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'projeto2', '57d77be60f0f11e59920001a3f72088e', '57d83fae0f0f11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 16:49:46,878 DEBUG [khipu.views.views][MainThread] lista de projetos: Page:
+Collection type:        <class 'list'>
+Current page:           1
+First item:             1
+Last item:              2
+First page:             1
+Last page:              1
+Previous page:          None
+Next page:              None
+Items per page:         10
+Total number of items:  2
+Number of pages:        1
+
+2015-06-14 16:49:46,878 DEBUG [khipu.views.views][MainThread] lista de projetos: Page:
+Collection type:        <class 'list'>
+Current page:           1
+First item:             1
+Last item:              2
+First page:             1
+Last page:              1
+Previous page:          None
+Next page:              None
+Items per page:         10
+Total number of items:  2
+Number of pages:        1
+
+2015-06-14 16:49:46,883 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.id = %(param_1)s
+2015-06-14 16:49:46,883 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:46,885 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:46,886 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:46,888 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:46,889 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a067ec>
+2015-06-14 16:49:46,889 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:49:51,318 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:49:51,319 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:51,319 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:51,320 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:49:51,323 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:51,325 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:51,327 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:51,328 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:51,330 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a037ec>
+2015-06-14 16:49:51,330 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a037ec>
+2015-06-14 16:49:51,333 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:51,335 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:51,338 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:51,339 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:51,340 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0328c>]
+2015-06-14 16:49:51,340 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0328c>]
+2015-06-14 16:49:51,341 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:51,341 DEBUG [khipu.seguranca.security][MainThread] Request do group finder NestedMultiDict([]): userid: 'acception'
+2015-06-14 16:49:51,342 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:51,342 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:49:51,344 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:51,344 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:51,345 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6e6ec>
+2015-06-14 16:49:51,345 DEBUG [khipu.seguranca.security][MainThread] USER: <khipu.banco_de_dados.models.Usuario object at 0xb5a6e6ec>
+2015-06-14 16:49:51,346 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT principal.id AS principal_id, principal.nome AS principal_nome 
+FROM principal, usuario_principal 
+WHERE %(param_1)s = usuario_principal.usuario_id AND principal.id = usuario_principal.grupo_id
+2015-06-14 16:49:51,347 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:51,348 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('principal_id', 'principal_nome')
+2015-06-14 16:49:51,349 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'role_admin')
+2015-06-14 16:49:51,349 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0328c>]
+2015-06-14 16:49:51,349 DEBUG [khipu.seguranca.security][MainThread] Principals [<khipu.banco_de_dados.models.Principal object at 0xb5a0328c>]
+2015-06-14 16:49:51,350 DEBUG [khipu.views.views][MainThread] Show projeto.
+2015-06-14 16:49:51,350 DEBUG [khipu.views.views][MainThread] Show projeto.
+2015-06-14 16:49:51,350 DEBUG [khipu.views.views][MainThread] Projeto id: '1'
+2015-06-14 16:49:51,350 DEBUG [khipu.views.views][MainThread] Projeto id: '1'
+2015-06-14 16:49:51,352 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.id AS projeto_id, projeto.nome AS projeto_nome, projeto.client_id AS projeto_client_id, projeto.client_secret AS projeto_client_secret, projeto.access_token AS projeto_access_token, projeto.grant_type AS projeto_grant_type, projeto.data_ativacao AS projeto_data_ativacao, projeto.usuario_id AS projeto_usuario_id 
+FROM projeto 
+WHERE projeto.id = %(id_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:49:51,352 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'id_1': '1', 'param_1': 1}
+2015-06-14 16:49:51,377 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('projeto_id', 'projeto_nome', 'projeto_client_id', 'projeto_client_secret', 'projeto_access_token', 'projeto_grant_type', 'projeto_data_ativacao', 'projeto_usuario_id')
+2015-06-14 16:49:51,378 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'projeto1', '9c2644540f0e11e59920001a3f72088e', '9c26e3e60f0e11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 16:49:51,378 DEBUG [khipu.views.views][MainThread] Projeto: projeto1
+2015-06-14 16:49:51,378 DEBUG [khipu.views.views][MainThread] Projeto: projeto1
+2015-06-14 16:49:51,419 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.id = %(param_1)s
+2015-06-14 16:49:51,419 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 2}
+2015-06-14 16:49:51,421 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:49:51,421 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:49:51,423 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:49:51,425 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a035cc>
+2015-06-14 16:49:51,426 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:50:32,805 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:50:32,806 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 16:50:32,806 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 16:50:32,807 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 16:50:32,807 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 16:50:32,807 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 16:50:32,807 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 16:50:32,807 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'grant_type': 'client_credentials', 'scopes': '', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 16:50:32,807 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'grant_type': 'client_credentials', 'scopes': '', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 16:50:32,808 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 16:50:32,808 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 16:50:32,809 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:50:32,811 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 16:50:32,813 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'client_id_1': '9c2644540f0e11e59920001a3f72088e', 'param_1': 1}
+2015-06-14 16:50:32,818 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 16:50:32,819 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 16:50:32,820 DEBUG [khipu.validacao.validacao_controle][MainThread] Erro no cliente durante validação de {'grant_type': 'client_credentials', 'scopes': '', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}. AttributeError("'KeyedTuple' object has no attribute 'access_token'",).
+2015-06-14 16:50:32,820 DEBUG [khipu.validacao.validacao_controle][MainThread] Erro no cliente durante validação de {'grant_type': 'client_credentials', 'scopes': '', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}. AttributeError("'KeyedTuple' object has no attribute 'access_token'",).
+2015-06-14 16:50:32,820 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:50:32,823 DEBUG [txn.-1219196160][MainThread] abort
+2015-06-14 16:50:32,823 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:50:32,824 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:validacao_controle.py, tipo:AttributeError, linha:46, descrição:'KeyedTuple' object has no attribute 'access_token'
+2015-06-14 16:50:32,824 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:validacao_controle.py, tipo:AttributeError, linha:46, descrição:'KeyedTuple' object has no attribute 'access_token'
+2015-06-14 16:50:32,826 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:50:32,828 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 16:50:32,828 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_arquivo': 'validacao_controle.py', 'descricao': "'KeyedTuple' object has no attribute 'access_token'", 'linha': 46, 'tipo_excessao': 'AttributeError'}
+2015-06-14 16:50:32,830 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 16:50:32,831 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (9,)
+2015-06-14 16:50:32,832 DEBUG [txn.-1219196160][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a0ad0c>
+2015-06-14 16:50:32,832 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 16:50:32,845 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:50:32,846 DEBUG [txn.-1219196160][MainThread] new transaction
+2015-06-14 16:50:32,846 DEBUG [txn.-1219196160][MainThread] commit
+2015-06-14 16:54:44,283 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 16:54:44,283 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 16:54:44,284 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 16:54:44,401 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 16:54:44,401 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 16:54:44,468 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 16:54:44,468 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:54:44,470 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 16:54:44,471 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 16:54:44,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 16:54:44,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:54:44,473 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 16:54:44,474 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 16:54:44,475 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 16:54:44,475 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:54:44,477 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 16:54:44,477 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:54:44,478 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 16:54:44,478 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 16:54:44,479 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 16:54:44,479 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 16:54:44,481 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,482 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 16:54:44,483 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,484 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 16:54:44,485 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,485 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 16:54:44,486 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,487 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 16:54:44,488 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,489 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 16:54:44,490 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,491 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 16:54:44,492 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,492 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 16:54:44,497 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,499 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 16:54:44,500 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,500 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 16:54:44,502 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,502 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 16:54:44,503 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,504 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 16:54:44,505 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,506 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 16:54:44,507 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,513 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 16:54:44,515 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,515 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 16:54:44,516 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,516 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 16:54:44,518 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,518 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 16:54:44,519 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 16:54:44,520 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 16:54:44,521 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 16:54:44,522 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 16:54:44,523 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 16:54:44,523 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 16:54:44,575 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:54:44,575 DEBUG [txn.-1219114240][MainThread] new transaction
+2015-06-14 16:54:44,577 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:54:44,578 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 16:54:44,581 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:54:44,581 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 16:54:44,584 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 16:54:44,584 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 16:54:44,585 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 16:54:44,586 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 16:54:44,587 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:54:44,588 DEBUG [txn.-1219114240][MainThread] abort
+2015-06-14 16:54:44,588 DEBUG [txn.-1219114240][MainThread] new transaction
+2015-06-14 16:54:44,589 DEBUG [txn.-1219114240][MainThread] commit
+2015-06-14 16:54:44,589 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 16:54:44,589 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 16:54:44,816 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 16:54:44,816 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 16:54:44,819 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 16:54:44,819 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 16:54:44,823 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 16:54:44,823 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 16:54:51,627 DEBUG [txn.-1219114240][MainThread] new transaction
+2015-06-14 16:54:51,628 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 16:54:51,628 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 16:54:51,629 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 16:54:51,629 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 16:54:51,629 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 16:54:51,629 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 16:54:51,630 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}
+2015-06-14 16:54:51,630 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}
+2015-06-14 16:54:51,630 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 16:54:51,630 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 16:54:51,632 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:54:51,633 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 16:54:51,634 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'client_id_1': '9c2644540f0e11e59920001a3f72088e'}
+2015-06-14 16:54:51,637 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 16:54:51,638 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 16:54:51,638 DEBUG [khipu.validacao.validacao_controle][MainThread] Erro no cliente durante validação de {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}. AttributeError("'KeyedTuple' object has no attribute 'access_token'",).
+2015-06-14 16:54:51,638 DEBUG [khipu.validacao.validacao_controle][MainThread] Erro no cliente durante validação de {'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials'}. AttributeError("'KeyedTuple' object has no attribute 'access_token'",).
+2015-06-14 16:54:51,639 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 16:54:51,640 DEBUG [txn.-1219114240][MainThread] abort
+2015-06-14 16:54:51,640 DEBUG [txn.-1219114240][MainThread] new transaction
+2015-06-14 16:54:51,641 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:validacao_controle.py, tipo:AttributeError, linha:47, descrição:'KeyedTuple' object has no attribute 'access_token'
+2015-06-14 16:54:51,641 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:validacao_controle.py, tipo:AttributeError, linha:47, descrição:'KeyedTuple' object has no attribute 'access_token'
+2015-06-14 16:54:51,643 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 16:54:51,645 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 16:54:51,646 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'linha': 47, 'nome_arquivo': 'validacao_controle.py', 'descricao': "'KeyedTuple' object has no attribute 'access_token'", 'tipo_excessao': 'AttributeError'}
+2015-06-14 16:54:51,649 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 16:54:51,650 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (10,)
+2015-06-14 16:54:51,651 DEBUG [txn.-1219114240][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5b2890c>
+2015-06-14 16:54:51,651 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 16:54:51,672 DEBUG [txn.-1219114240][MainThread] commit
+2015-06-14 16:54:51,673 DEBUG [txn.-1219114240][MainThread] new transaction
+2015-06-14 16:54:51,673 DEBUG [txn.-1219114240][MainThread] commit
+2015-06-14 17:01:50,772 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 17:01:50,773 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 17:01:50,773 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 17:01:50,884 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 17:01:50,884 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 17:01:50,952 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 17:01:50,952 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:01:50,954 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 17:01:50,955 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 17:01:50,957 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 17:01:50,958 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:01:50,959 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 17:01:50,960 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 17:01:50,962 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 17:01:50,962 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:01:50,964 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 17:01:50,964 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:01:50,966 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 17:01:50,966 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:01:50,968 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 17:01:50,969 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 17:01:50,973 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:50,974 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 17:01:50,976 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:50,977 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 17:01:50,979 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:50,979 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 17:01:50,981 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:50,981 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 17:01:50,982 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:50,983 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 17:01:50,984 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:50,985 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 17:01:50,986 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:50,986 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 17:01:50,988 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:50,988 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 17:01:50,990 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:50,990 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 17:01:50,993 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:50,993 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 17:01:50,994 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:50,995 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 17:01:50,997 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:50,999 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 17:01:51,000 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:51,000 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 17:01:51,002 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:51,002 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 17:01:51,004 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:51,004 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 17:01:51,006 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:51,007 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 17:01:51,008 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:01:51,008 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 17:01:51,010 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:01:51,011 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 17:01:51,012 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 17:01:51,012 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 17:01:51,054 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:01:51,054 DEBUG [txn.-1219454208][MainThread] new transaction
+2015-06-14 17:01:51,057 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 17:01:51,058 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 17:01:51,061 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 17:01:51,062 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 17:01:51,064 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 17:01:51,065 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 17:01:51,066 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 17:01:51,067 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 17:01:51,068 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 17:01:51,069 DEBUG [txn.-1219454208][MainThread] abort
+2015-06-14 17:01:51,069 DEBUG [txn.-1219454208][MainThread] new transaction
+2015-06-14 17:01:51,069 DEBUG [txn.-1219454208][MainThread] commit
+2015-06-14 17:01:51,070 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 17:01:51,070 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 17:01:51,247 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 17:01:51,247 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 17:01:51,249 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 17:01:51,249 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 17:01:51,253 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 17:01:51,253 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 17:01:55,464 DEBUG [txn.-1219454208][MainThread] new transaction
+2015-06-14 17:01:55,465 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 17:01:55,465 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 17:01:55,466 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 17:01:55,466 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 17:01:55,467 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 17:01:55,467 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 17:01:55,467 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 17:01:55,467 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 17:01:55,468 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 17:01:55,468 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 17:01:55,469 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:01:55,471 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.client_id = %(client_id_1)s AS anon_1 
+FROM projeto 
+ LIMIT %(param_1)s
+2015-06-14 17:01:55,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'client_id_1': '9c2644540f0e11e59920001a3f72088e', 'param_1': 1}
+2015-06-14 17:01:55,477 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('anon_1',)
+2015-06-14 17:01:55,479 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (True,)
+2015-06-14 17:01:55,479 DEBUG [khipu.validacao.validacao_controle][MainThread] <class 'sqlalchemy.util._collections.KeyedTuple'>
+2015-06-14 17:01:55,479 DEBUG [khipu.validacao.validacao_controle][MainThread] <class 'sqlalchemy.util._collections.KeyedTuple'>
+2015-06-14 17:01:55,480 DEBUG [khipu.validacao.validacao_controle][MainThread] Erro no cliente durante validação de {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}. AttributeError("'KeyedTuple' object has no attribute 'access_token'",).
+2015-06-14 17:01:55,480 DEBUG [khipu.validacao.validacao_controle][MainThread] Erro no cliente durante validação de {'client_id': '9c2644540f0e11e59920001a3f72088e', 'grant_type': 'client_credentials', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}. AttributeError("'KeyedTuple' object has no attribute 'access_token'",).
+2015-06-14 17:01:55,481 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 17:01:55,482 DEBUG [txn.-1219454208][MainThread] abort
+2015-06-14 17:01:55,483 DEBUG [txn.-1219454208][MainThread] new transaction
+2015-06-14 17:01:55,483 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:validacao_controle.py, tipo:AttributeError, linha:47, descrição:'KeyedTuple' object has no attribute 'access_token'
+2015-06-14 17:01:55,483 DEBUG [khipu.servicos.servico][MainThread] Erro: nome do arquivo:validacao_controle.py, tipo:AttributeError, linha:47, descrição:'KeyedTuple' object has no attribute 'access_token'
+2015-06-14 17:01:55,485 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:01:55,487 INFO  [sqlalchemy.engine.base.Engine][MainThread] INSERT INTO khipu_exception (nome_arquivo, tipo_excessao, linha, descricao) VALUES (%(nome_arquivo)s, %(tipo_excessao)s, %(linha)s, %(descricao)s) RETURNING khipu_exception.id
+2015-06-14 17:01:55,488 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'descricao': "'KeyedTuple' object has no attribute 'access_token'", 'tipo_excessao': 'AttributeError', 'nome_arquivo': 'validacao_controle.py', 'linha': 47}
+2015-06-14 17:01:55,490 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('id',)
+2015-06-14 17:01:55,490 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (11,)
+2015-06-14 17:01:55,492 DEBUG [txn.-1219454208][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5ad794c>
+2015-06-14 17:01:55,493 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 17:01:55,511 DEBUG [txn.-1219454208][MainThread] commit
+2015-06-14 17:01:55,513 DEBUG [txn.-1219454208][MainThread] new transaction
+2015-06-14 17:01:55,513 DEBUG [txn.-1219454208][MainThread] commit
+2015-06-14 17:05:26,763 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-14 17:05:26,763 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-14 17:05:26,764 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-14 17:05:26,874 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 17:05:26,874 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-14 17:05:26,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-14 17:05:26,942 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:05:26,944 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-14 17:05:26,944 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-14 17:05:26,946 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-14 17:05:26,946 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:05:26,947 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-14 17:05:26,947 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-14 17:05:26,948 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 17:05:26,949 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:05:26,950 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-14 17:05:26,951 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:05:26,952 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-14 17:05:26,952 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-14 17:05:26,953 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-14 17:05:26,953 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-14 17:05:26,955 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,956 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-14 17:05:26,958 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,958 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-14 17:05:26,959 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,959 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-14 17:05:26,961 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,962 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-14 17:05:26,963 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,963 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-14 17:05:26,964 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,965 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-14 17:05:26,966 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,966 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-14 17:05:26,968 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,968 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-14 17:05:26,969 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,970 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-14 17:05:26,972 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,972 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-14 17:05:26,973 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,974 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-14 17:05:26,976 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,977 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-14 17:05:26,979 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,979 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-14 17:05:26,980 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,981 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-14 17:05:26,982 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,983 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-14 17:05:26,984 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,985 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-14 17:05:26,986 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-14 17:05:26,986 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-14 17:05:26,988 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-14 17:05:26,988 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-14 17:05:26,989 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 17:05:26,989 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-14 17:05:27,027 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:05:27,028 DEBUG [txn.-1219568896][MainThread] new transaction
+2015-06-14 17:05:27,030 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 17:05:27,031 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-14 17:05:27,033 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 17:05:27,033 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-14 17:05:27,035 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-14 17:05:27,036 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-14 17:05:27,037 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-14 17:05:27,038 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-14 17:05:27,038 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 17:05:27,039 DEBUG [txn.-1219568896][MainThread] abort
+2015-06-14 17:05:27,040 DEBUG [txn.-1219568896][MainThread] new transaction
+2015-06-14 17:05:27,040 DEBUG [txn.-1219568896][MainThread] commit
+2015-06-14 17:05:27,040 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 17:05:27,040 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-14 17:05:27,209 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 17:05:27,209 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-14 17:05:27,209 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 17:05:27,209 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-14 17:05:27,214 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 17:05:27,214 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-14 17:05:32,190 DEBUG [txn.-1219568896][MainThread] new transaction
+2015-06-14 17:05:32,192 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 17:05:32,192 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 17:05:32,192 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 17:05:32,192 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 17:05:32,193 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 17:05:32,193 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 17:05:32,193 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 17:05:32,193 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 17:05:32,194 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 17:05:32,194 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 17:05:32,196 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:05:32,202 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.id AS projeto_id, projeto.nome AS projeto_nome, projeto.client_id AS projeto_client_id, projeto.client_secret AS projeto_client_secret, projeto.access_token AS projeto_access_token, projeto.grant_type AS projeto_grant_type, projeto.data_ativacao AS projeto_data_ativacao, projeto.usuario_id AS projeto_usuario_id 
+FROM projeto 
+WHERE projeto.client_id = %(client_id_1)s 
+ LIMIT %(param_1)s
+2015-06-14 17:05:32,204 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'client_id_1': '9c2644540f0e11e59920001a3f72088e', 'param_1': 1}
+2015-06-14 17:05:32,208 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('projeto_id', 'projeto_nome', 'projeto_client_id', 'projeto_client_secret', 'projeto_access_token', 'projeto_grant_type', 'projeto_data_ativacao', 'projeto_usuario_id')
+2015-06-14 17:05:32,211 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'projeto1', '9c2644540f0e11e59920001a3f72088e', '9c26e3e60f0e11e59920001a3f72088e', None, None, datetime.date(2015, 6, 9), 2)
+2015-06-14 17:05:32,212 DEBUG [khipu.validacao.validacao_controle][MainThread] <class 'khipu.banco_de_dados.models.Projeto'>
+2015-06-14 17:05:32,212 DEBUG [khipu.validacao.validacao_controle][MainThread] <class 'khipu.banco_de_dados.models.Projeto'>
+2015-06-14 17:05:32,212 DEBUG [khipu.validacao.validacao_controle][MainThread] depois validatecliente
+2015-06-14 17:05:32,212 DEBUG [khipu.validacao.validacao_controle][MainThread] depois validatecliente
+2015-06-14 17:05:32,213 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 17:05:32,213 DEBUG [khipu.validacao.validacao_controle][MainThread] token handler
+2015-06-14 17:05:32,214 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': '8yjjbQ5gfrQ9cbh2rdVPkCYS14MwCk'}
+2015-06-14 17:05:32,214 DEBUG [khipu.validacao.validacao_controle][MainThread] Token criado: {'access_token': '8yjjbQ5gfrQ9cbh2rdVPkCYS14MwCk'}
+2015-06-14 17:05:32,215 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 17:05:32,216 DEBUG [txn.-1219568896][MainThread] abort
+2015-06-14 17:05:32,216 DEBUG [txn.-1219568896][MainThread] new transaction
+2015-06-14 17:05:32,217 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 17:05:32,217 DEBUG [khipu.validacao.validacao_controle][MainThread] save token
+2015-06-14 17:05:32,220 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:05:32,222 INFO  [sqlalchemy.engine.base.Engine][MainThread] UPDATE projeto SET access_token=%(access_token)s WHERE projeto.id = %(projeto_id)s
+2015-06-14 17:05:32,223 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'projeto_id': 1, 'access_token': '8yjjbQ5gfrQ9cbh2rdVPkCYS14MwCk'}
+2015-06-14 17:05:32,226 DEBUG [txn.-1219568896][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5bf38ec>
+2015-06-14 17:05:32,227 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-14 17:05:32,247 DEBUG [txn.-1219568896][MainThread] commit
+2015-06-14 17:05:32,248 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 17:05:32,248 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 17:05:32,249 DEBUG [txn.-1219568896][MainThread] new transaction
+2015-06-14 17:05:32,250 DEBUG [txn.-1219568896][MainThread] commit
+2015-06-14 17:05:53,934 DEBUG [txn.-1219568896][MainThread] new transaction
+2015-06-14 17:05:53,935 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 17:05:53,935 DEBUG [khipu.views.view_autorizador][MainThread] TOKEN
+2015-06-14 17:05:53,936 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 17:05:53,936 DEBUG [khipu.views.view_autorizador][MainThread] antes
+2015-06-14 17:05:53,936 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 17:05:53,936 DEBUG [khipu.validacao.validacao_controle][MainThread] create token
+2015-06-14 17:05:53,937 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 17:05:53,937 DEBUG [khipu.validacao.validacao_controle][MainThread] validate token request : request {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}
+2015-06-14 17:05:53,937 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 17:05:53,937 DEBUG [khipu.validacao.validacao_controle][MainThread] validate client
+2015-06-14 17:05:53,939 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-14 17:05:53,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT projeto.id AS projeto_id, projeto.nome AS projeto_nome, projeto.client_id AS projeto_client_id, projeto.client_secret AS projeto_client_secret, projeto.access_token AS projeto_access_token, projeto.grant_type AS projeto_grant_type, projeto.data_ativacao AS projeto_data_ativacao, projeto.usuario_id AS projeto_usuario_id 
+FROM projeto 
+WHERE projeto.client_id = %(client_id_1)s 
+ LIMIT %(param_1)s
+2015-06-14 17:05:53,941 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'client_id_1': '9c2644540f0e11e59920001a3f72088e', 'param_1': 1}
+2015-06-14 17:05:53,948 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('projeto_id', 'projeto_nome', 'projeto_client_id', 'projeto_client_secret', 'projeto_access_token', 'projeto_grant_type', 'projeto_data_ativacao', 'projeto_usuario_id')
+2015-06-14 17:05:53,949 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'projeto1', '9c2644540f0e11e59920001a3f72088e', '9c26e3e60f0e11e59920001a3f72088e', '8yjjbQ5gfrQ9cbh2rdVPkCYS14MwCk', None, datetime.date(2015, 6, 9), 2)
+2015-06-14 17:05:53,950 DEBUG [khipu.validacao.validacao_controle][MainThread] <class 'khipu.banco_de_dados.models.Projeto'>
+2015-06-14 17:05:53,950 DEBUG [khipu.validacao.validacao_controle][MainThread] <class 'khipu.banco_de_dados.models.Projeto'>
+2015-06-14 17:05:53,950 DEBUG [khipu.validacao.validacao_controle][MainThread] depois validatecliente
+2015-06-14 17:05:53,950 DEBUG [khipu.validacao.validacao_controle][MainThread] depois validatecliente
+2015-06-14 17:05:53,952 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 17:05:53,952 DEBUG [khipu.validacao.validacao_controle][MainThread] Validação ok para {'grant_type': 'client_credentials', 'client_id': '9c2644540f0e11e59920001a3f72088e', 'scopes': '', 'client_secret': '9c26e3e60f0e11e59920001a3f72088e'}.
+2015-06-14 17:05:53,953 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-14 17:05:53,956 DEBUG [txn.-1219568896][MainThread] commit <zope.sqlalchemy.datamanager.SessionDataManager object at 0xb5a408cc>
+2015-06-14 17:05:53,956 DEBUG [txn.-1219568896][MainThread] commit

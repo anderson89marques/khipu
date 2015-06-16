@@ -1,10 +1,9 @@
-from sqlalchemy import (Column, Index, Integer, Text, ForeignKey, Date)
+from sqlalchemy import (Column, MetaData, Integer, Text, ForeignKey, Date, create_engine, Table)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import (scoped_session, sessionmaker, relationship)
 from zope.sqlalchemy import ZopeTransactionExtension
 from passlib.context import CryptContext
-from simplecrypt import encrypt
-from binascii import hexlify
+from migrate.changeset import schema
 import uuid
 import sys
 import os
@@ -69,6 +68,7 @@ class Projeto(Base):
     usuario = relationship('Usuario', back_populates='projetos')
     #0.* mensagens podem ser enviadas(N - 1)
     mensagens = relationship('Mensagem', back_populates='projeto')
+    usuarios_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='projeto')
 
     def gerar_chaves_para_projeto(self):
         self.client_id = uuid.uuid1().hex
@@ -85,6 +85,7 @@ class Projeto(Base):
 
 class Mensagem(Base):
     __tablename__ = 'mensagem'
+
     id = Column(Integer, primary_key=True)
     id_on_web_app = Column(Integer)
     data_chegada = Column(Date)
@@ -93,9 +94,44 @@ class Mensagem(Base):
     status = Column(Text) #Vai ser um Enum.
     projeto_id = Column(Integer, ForeignKey('projeto.id'))
     projeto = relationship('Projeto', back_populates='mensagens')
+    usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
+    usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='mensagens')
 
     def __repr__(self):
         return "Mensagem: {0} {1} {2} {3}".format(self.id, self.id_on_web_app, self.data_chegada, self.status)
+
+
+def upgrade():
+    engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/khipudb')
+    meta = MetaData(bind=engine)
+    msg = Table('mensagem', Base.metadata, autoload=True)
+    usr = Column('usuario_aplicacao_cliente_id', Integer, ForeignKey('usuario_aplicacao_cliente.id'))
+    schema.create_column(usr, msg)
+    #msg.append_column(usr)
+    msg.update()
+
+
+
+class UsuarioAplicacaoCliente(Base):
+    __tablename__ = 'usuario_aplicacao_cliente'
+
+    id = Column(Integer, primary_key=True)
+    nome_usuario = Column(Text)
+    chave = Column(Text)
+    projeto_id = Column(Integer, ForeignKey('projeto.id'))
+    projeto = relationship('Projeto', back_populates='usuarios_aplicacao_cliente')
+    telefones = relationship('Telefone', back_populates='usuario_aplicacao_cliente')
+    mensagens = relationship('Mensagem', back_populates='usuario_aplicacao_cliente')
+    register_ids = relationship("RegisterIds", back_populates='usuario_aplicacao_cliente')
+
+
+class Telefone(Base):
+    __tablename__ = 'telefone'
+
+    id = Column(Integer, primary_key=True)
+    numero = Column(Text)
+    usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
+    usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='telefones')
 
 
 class GcmInformation(Base):
@@ -103,14 +139,14 @@ class GcmInformation(Base):
     id = Column(Integer, primary_key=True)
     name = Column(Text, default="GCMCLASS")
     apikey = Column(Text, default="AIzaSyBCyTjgOMZncxzTgPxVN9yxEbaZ0Y2SvQo") #chave do servidor
-    register_id = Column(Integer, ForeignKey('registers_ids.id'))
-    register_ids = relationship("RegisterIds", uselist=True)
 
 
 class RegisterIds(Base):
     __tablename__ = 'registers_ids'
     id = Column(Integer, primary_key=True)
     androidkey = Column(Text)
+    usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
+    usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='register_ids')
 
 
 class KhipuException(Base):

@@ -1,10 +1,11 @@
 __author__ = 'anderson'
 from khipu.banco_de_dados.models import (DBSession, Projeto)
 from khipu.servicos.servico import manuseia_excecao
-from oauthlib.oauth2 import RequestValidator, BearerToken, AuthorizationCodeGrant
+from oauthlib.oauth2 import (RequestValidator, BearerToken, AuthorizationCodeGrant)
 import json
 import logging
 import transaction
+
 log = logging.getLogger(__name__)
 
 
@@ -12,15 +13,19 @@ class Validador(RequestValidator):
 
     def validate_client(self, request):
         log.debug("validate client")
-        projeto = DBSession.query(Projeto).filter(Projeto.client_id == request["client_id"] and
-                                                  Projeto.client_secret == request["client_secret"]).first()
-        result = {"projeto": None, "has_access_token": False, "has_project": False}
-        log.debug(type(projeto))
-        if projeto:
-            result["projeto"] = projeto
-            result["has_access_token"] = True if projeto.access_token else False
-            result["has_project"] = True
-        return result
+        try:
+            projeto = DBSession.query(Projeto).filter(Projeto.client_id == request["client_id"] and
+                                                      Projeto.client_secret == request["client_secret"]).first()
+            result = {"projeto": None, "has_access_token": False, "has_project": False}
+            log.debug(type(projeto))
+
+            if projeto:
+                result["projeto"] = projeto
+                result["has_access_token"] = True if projeto.access_token else False
+                result["has_project"] = True
+            return result
+        except Exception as e:
+                manuseia_excecao()
 
     def save_bearer_token(self, token, projeto):
         with transaction.manager:
