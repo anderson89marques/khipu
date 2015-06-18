@@ -101,17 +101,6 @@ class Mensagem(Base):
         return "Mensagem: {0} {1} {2} {3}".format(self.id, self.id_on_web_app, self.data_chegada, self.status)
 
 
-def upgrade():
-    engine = create_engine('postgresql+psycopg2://postgres:postgres@localhost/khipudb')
-    meta = MetaData(bind=engine)
-    msg = Table('mensagem', Base.metadata, autoload=True)
-    usr = Column('usuario_aplicacao_cliente_id', Integer, ForeignKey('usuario_aplicacao_cliente.id'))
-    schema.create_column(usr, msg)
-    #msg.append_column(usr)
-    msg.update()
-
-
-
 class UsuarioAplicacaoCliente(Base):
     __tablename__ = 'usuario_aplicacao_cliente'
 

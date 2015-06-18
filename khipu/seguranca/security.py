@@ -3,11 +3,12 @@ USERS = {'editor': 'editor',
          'viewer': 'viewer'}
 GROUPS = {'editor': ['group:editors']}
 
-from khipu.banco_de_dados.models import (DBSession, Usuario, Principal, Mensagem, Projeto)
+from khipu.banco_de_dados.models import (DBSession, Usuario, Principal, GcmInformation)
 import transaction
 import datetime
 import logging
 log = logging.getLogger(__name__)
+
 
 def groupfinder(userid, request):
     log.debug("Request do group finder %r: userid: %r" % (request.params, userid))

@@ -1,7 +1,8 @@
 from khipu.banco_de_dados.models import (DBSession, Mensagem, Projeto, Usuario)
 from khipu.banco_de_dados.enuns import StatusMensagem
 from pyramid.security import (remember, forget, authenticated_userid, effective_principals)
-from khipu.servicos.servico import (Sender, SistemaService, MensagemService, GcmService, manuseia_excecao)
+from khipu.servicos.servico import (Sender, SistemaService, MensagemService, GcmService, UsuarioAplicacaoService,
+                                    manuseia_excecao)
 from pyramid.httpexceptions import HTTPFound, HTTPUnauthorized
 from pyramid.view import (view_config, forbidden_view_config)
 from pyramid.response import Response
@@ -10,11 +11,14 @@ from paginate import Page
 import transaction
 import datetime
 import logging
+import json
+
 log = logging.getLogger(__name__)
 
 
 # ***** KHIPU *********
 class KhipuController:
+
     def __init__(self, request):
         self.request = request
         self.logged_in = request.authenticated_userid #no template eu uso assim -> view.logged_in
@@ -128,6 +132,7 @@ class KhipuController:
 
 # ***** USUARIO *********
 class UsuarioController:
+
     def __init__(self, request):
         self.request = request
         self.logged_in = request.authenticated_userid
@@ -238,6 +243,7 @@ class GcmController:
 
 # ***** Mensagem *********
 class MensagemController:
+
     def __init__(self, request):
         self.request = request
         self.logged_in = request.authenticated_userid
@@ -313,8 +319,31 @@ class MensagemController:
         return mensagens
 
 
+# ***** Usuario Aplicação Cliente *********
+class UsuarioAplicacaoController:
+
+    def __init__(self, request):
+        self.request = request
+        self.logged_in = request.authenticated_userid
+        self.usuario_aplicacao_service = UsuarioAplicacaoService()
+
+    @view_config(route_name="cadastrousuariocliente", request_method="PUT", renderer="json")
+    def cadastro_usuario_cliente(self):
+        log.debug("Cadastrando usuario Cliente")
+        dados_usuario = self.request.json_body
+        log.debug("json body %r" % dados_usuario)
+        try:
+            self.usuario_aplicacao_service.cadastrarUsuario(dados_usuario["usuario"])
+            return {"ok": "Resposta"}
+        except Exception as e:
+            manuseia_excecao()
+            return {"erro": e.__repr__()}
+
+
+
 # ***** Sistema *********
 class SistemaController:
+
     def __init__(self, request):
         self.request = request
         self.logged_in = request.authenticated_userid

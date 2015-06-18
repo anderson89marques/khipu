@@ -1,0 +1,2007 @@
+2015-06-16 00:16:39,064 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 00:16:39,064 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 00:16:39,065 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 00:16:39,310 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 00:16:39,310 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 00:16:39,659 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 00:16:39,659 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:39,676 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 00:16:39,676 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 00:16:39,679 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 00:16:39,679 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:39,699 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 00:16:39,700 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 00:16:39,701 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 00:16:39,701 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:39,712 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 00:16:39,713 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:39,714 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 00:16:39,715 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:39,716 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 00:16:39,717 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 00:16:39,720 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,720 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 00:16:39,746 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,746 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 00:16:39,747 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,747 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 00:16:39,749 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,749 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 00:16:39,750 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,750 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 00:16:39,752 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,752 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 00:16:39,753 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,753 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 00:16:39,755 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,755 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 00:16:39,756 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,757 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 00:16:39,759 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,759 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 00:16:39,760 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,762 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 00:16:39,764 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,765 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 00:16:39,766 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,766 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 00:16:39,768 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,768 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 00:16:39,769 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,769 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 00:16:39,771 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,772 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,773 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 00:16:39,778 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,779 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,779 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 00:16:39,781 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,781 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 00:16:39,782 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 00:16:39,785 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 00:16:39,787 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 00:16:39,787 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 00:16:39,790 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+CREATE TABLE usuario_aplicacao_cliente (
+	id SERIAL NOT NULL, 
+	nome_usuario TEXT, 
+	chave TEXT, 
+	projeto_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(projeto_id) REFERENCES projeto (id)
+)
+
+
+2015-06-16 00:16:39,790 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:40,377 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-16 00:16:40,400 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+CREATE TABLE telefone (
+	id SERIAL NOT NULL, 
+	numero TEXT, 
+	usuario_aplicacao_cliente_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(usuario_aplicacao_cliente_id) REFERENCES usuario_aplicacao_cliente (id)
+)
+
+
+2015-06-16 00:16:40,401 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 00:16:40,506 INFO  [sqlalchemy.engine.base.Engine][MainThread] COMMIT
+2015-06-16 00:16:40,524 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-16 00:16:40,524 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-16 00:16:40,573 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-16 00:16:40,573 DEBUG [txn.-1220019456][MainThread] new transaction
+2015-06-16 00:16:40,575 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-16 00:16:40,575 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'sysdata'}
+2015-06-16 00:16:40,593 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-16 00:16:40,594 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-16 00:16:40,595 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-16 00:16:40,596 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'param_1': 1, 'nome_1': 'acception'}
+2015-06-16 00:16:40,597 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-16 00:16:40,597 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-16 00:16:40,605 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-16 00:16:40,606 DEBUG [txn.-1220019456][MainThread] abort
+2015-06-16 00:16:40,609 DEBUG [txn.-1220019456][MainThread] new transaction
+2015-06-16 00:16:40,609 DEBUG [txn.-1220019456][MainThread] commit
+2015-06-16 00:16:40,609 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-16 00:16:40,609 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-16 00:16:40,935 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-16 00:16:40,935 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-16 00:16:40,936 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-16 00:16:40,936 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-16 00:16:40,941 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-16 00:16:40,941 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-16 02:00:51,214 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:00:51,215 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:00:51,215 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:00:51,333 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:00:51,333 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:00:51,402 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:00:51,403 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:00:51,405 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:00:51,405 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:00:51,407 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:00:51,407 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:00:51,408 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:00:51,408 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:00:51,410 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:00:51,410 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:00:51,412 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:00:51,412 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:00:51,413 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:00:51,413 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:00:51,414 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:00:51,415 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:00:51,417 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,417 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:00:51,420 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,420 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:00:51,422 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,422 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:00:51,423 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,424 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:00:51,425 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,425 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:00:51,427 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,427 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:00:51,429 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,430 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:00:51,431 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,432 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:00:51,433 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,434 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:00:51,436 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,437 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:00:51,437 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,437 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:00:51,439 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,439 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:00:51,441 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,441 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:00:51,443 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,444 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:00:51,447 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,448 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:00:51,451 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,452 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:00:51,453 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,453 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:00:51,455 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,455 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:00:51,456 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,456 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:00:51,457 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,458 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:00:51,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:00:51,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:00:51,461 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:00:51,462 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:03:43,158 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:03:43,158 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:03:43,158 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:03:43,277 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:03:43,277 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:03:43,343 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:03:43,344 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,345 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:03:43,346 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:03:43,347 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:03:43,347 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,348 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:03:43,349 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:03:43,350 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:03:43,350 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,352 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:03:43,352 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,353 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:03:43,353 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,355 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:03:43,355 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:03:43,360 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,361 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:03:43,363 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,364 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:03:43,365 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,365 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:03:43,367 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,367 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:03:43,368 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,368 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:03:43,370 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,371 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:03:43,372 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,373 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:03:43,375 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,375 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:03:43,377 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,378 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:03:43,380 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,381 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:03:43,382 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,382 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:03:43,384 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,385 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:03:43,386 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,386 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:03:43,387 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,388 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:03:43,389 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,389 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:03:43,392 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,392 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:03:43,393 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,394 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:03:43,395 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,396 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:03:43,397 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,397 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:03:43,399 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,401 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:03:43,403 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:03:43,404 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:03:43,405 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:03:43,406 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:03:43,451 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:03:43,451 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,452 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:03:43,453 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:03:43,453 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:03:43,454 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,454 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:03:43,455 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:03:43,456 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:03:43,457 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,460 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:03:43,461 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,463 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:03:43,463 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,465 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:03:43,465 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:03:43,467 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:03:43,467 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'mensagem'}
+2015-06-16 02:03:43,469 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:03:43,470 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54210,)
+2015-06-16 02:03:43,471 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:03:43,472 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:03:43,479 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:03:43,480 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('mensagem_id_seq'::regclass)", True, 1, 54210)
+2015-06-16 02:03:43,481 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id_on_web_app', 'integer', None, False, 2, 54210)
+2015-06-16 02:03:43,481 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_chegada', 'date', None, False, 3, 54210)
+2015-06-16 02:03:43,482 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_ultimo_envio', 'date', None, False, 4, 54210)
+2015-06-16 02:03:43,482 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('numero_tentativas_envio', 'integer', None, False, 5, 54210)
+2015-06-16 02:03:43,483 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('status', 'text', None, False, 6, 54210)
+2015-06-16 02:03:43,483 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_id', 'integer', None, False, 7, 54210)
+2015-06-16 02:03:43,484 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:03:43,484 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,487 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:03:43,487 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:03:43,488 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:03:43,488 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:03:43,488 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:03:43,489 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:03:43,490 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:03:43,492 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,495 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:03:43,499 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:03:43,500 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:03:43,505 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:03:43,505 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:03:43,506 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:03:43,507 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:03:43,509 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:03:43,509 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem_pkey',)
+2015-06-16 02:03:43,519 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:03:43,520 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54210}
+2015-06-16 02:03:43,523 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:03:43,523 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem_projeto_id_fkey', 'FOREIGN KEY (projeto_id) REFERENCES projeto(id)', 'public')
+2015-06-16 02:03:43,526 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:03:43,527 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'projeto'}
+2015-06-16 02:03:43,529 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:03:43,530 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54178,)
+2015-06-16 02:03:43,531 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:03:43,532 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:03:43,534 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:03:43,535 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('projeto_id_seq'::regclass)", True, 1, 54178)
+2015-06-16 02:03:43,535 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('nome', 'text', None, False, 2, 54178)
+2015-06-16 02:03:43,536 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('client_id', 'text', None, False, 3, 54178)
+2015-06-16 02:03:43,536 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('client_secret', 'text', None, False, 4, 54178)
+2015-06-16 02:03:43,537 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('access_token', 'text', None, False, 5, 54178)
+2015-06-16 02:03:43,538 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('grant_type', 'text', None, False, 6, 54178)
+2015-06-16 02:03:43,538 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_ativacao', 'date', None, False, 7, 54178)
+2015-06-16 02:03:43,538 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_id', 'integer', None, False, 8, 54178)
+2015-06-16 02:03:43,539 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:03:43,540 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,542 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:03:43,543 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:03:43,543 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:03:43,544 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:03:43,544 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:03:43,544 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:03:43,545 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:03:43,546 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,548 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:03:43,552 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:03:43,553 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:03:43,555 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:03:43,556 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:03:43,557 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:03:43,558 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:03:43,559 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:03:43,560 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_pkey',)
+2015-06-16 02:03:43,562 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:03:43,563 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54178}
+2015-06-16 02:03:43,565 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:03:43,566 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_usuario_id_fkey', 'FOREIGN KEY (usuario_id) REFERENCES usuario(id)', 'public')
+2015-06-16 02:03:43,569 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:03:43,570 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'usuario'}
+2015-06-16 02:03:43,572 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:03:43,572 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54141,)
+2015-06-16 02:03:43,574 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:03:43,575 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:03:43,577 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:03:43,578 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('usuario_id_seq'::regclass)", True, 1, 54141)
+2015-06-16 02:03:43,578 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('nome', 'text', None, False, 2, 54141)
+2015-06-16 02:03:43,579 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('senha', 'text', None, False, 3, 54141)
+2015-06-16 02:03:43,580 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_criacao', 'date', None, False, 4, 54141)
+2015-06-16 02:03:43,581 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:03:43,581 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,584 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:03:43,586 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:03:43,586 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:03:43,587 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:03:43,587 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:03:43,587 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:03:43,588 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:03:43,589 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:03:43,591 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:03:43,594 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:03:43,595 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:03:43,597 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:03:43,597 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:03:43,599 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:03:43,599 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:03:43,603 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:03:43,604 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_pkey',)
+2015-06-16 02:03:43,605 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:03:43,606 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54141}
+2015-06-16 02:03:43,608 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:03:43,609 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:03:43,610 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:03:43,613 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:03:43,616 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:03:43,617 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:03:43,621 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:03:43,623 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:03:43,624 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:03:43,627 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:05:51,425 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:05:51,426 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:05:51,426 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:05:51,545 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:05:51,545 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:05:51,611 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:05:51,611 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,613 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:05:51,613 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:05:51,614 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:05:51,615 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,616 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:05:51,616 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:05:51,617 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:05:51,618 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,619 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:05:51,619 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,620 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:05:51,620 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,621 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:05:51,622 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:05:51,625 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,625 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:05:51,627 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,628 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:05:51,629 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,629 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:05:51,631 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,631 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:05:51,632 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,633 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:05:51,635 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,636 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:05:51,637 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,637 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:05:51,640 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,645 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:05:51,647 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,647 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:05:51,649 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,650 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:05:51,652 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,653 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:05:51,655 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,656 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:05:51,657 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,657 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:05:51,659 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,659 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:05:51,660 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,661 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:05:51,663 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,663 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:05:51,664 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,665 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:05:51,666 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,667 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:05:51,668 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,668 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:05:51,670 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,670 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:05:51,671 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:05:51,671 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:05:51,673 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:05:51,673 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:05:51,717 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:05:51,718 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,719 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:05:51,720 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:05:51,720 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:05:51,720 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,721 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:05:51,721 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:05:51,723 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:05:51,723 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,724 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:05:51,724 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,725 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:05:51,726 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,726 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:05:51,727 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:05:51,728 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:05:51,728 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'mensagem'}
+2015-06-16 02:05:51,731 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:05:51,731 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54210,)
+2015-06-16 02:05:51,732 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:05:51,734 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:05:51,739 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:05:51,741 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('mensagem_id_seq'::regclass)", True, 1, 54210)
+2015-06-16 02:05:51,742 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id_on_web_app', 'integer', None, False, 2, 54210)
+2015-06-16 02:05:51,743 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_chegada', 'date', None, False, 3, 54210)
+2015-06-16 02:05:51,743 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_ultimo_envio', 'date', None, False, 4, 54210)
+2015-06-16 02:05:51,743 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('numero_tentativas_envio', 'integer', None, False, 5, 54210)
+2015-06-16 02:05:51,744 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('status', 'text', None, False, 6, 54210)
+2015-06-16 02:05:51,744 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_id', 'integer', None, False, 7, 54210)
+2015-06-16 02:05:51,745 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:05:51,745 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,748 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:05:51,748 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:05:51,748 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:05:51,749 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:05:51,749 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:05:51,749 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:05:51,751 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:05:51,751 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,755 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:05:51,761 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:05:51,761 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:05:51,764 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:05:51,764 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:05:51,765 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:05:51,766 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:05:51,770 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:05:51,771 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem_pkey',)
+2015-06-16 02:05:51,781 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:05:51,781 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54210}
+2015-06-16 02:05:51,785 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:05:51,786 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem_projeto_id_fkey', 'FOREIGN KEY (projeto_id) REFERENCES projeto(id)', 'public')
+2015-06-16 02:05:51,787 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:05:51,788 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'projeto'}
+2015-06-16 02:05:51,789 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:05:51,789 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54178,)
+2015-06-16 02:05:51,790 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:05:51,790 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:05:51,792 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:05:51,793 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('projeto_id_seq'::regclass)", True, 1, 54178)
+2015-06-16 02:05:51,793 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('nome', 'text', None, False, 2, 54178)
+2015-06-16 02:05:51,794 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('client_id', 'text', None, False, 3, 54178)
+2015-06-16 02:05:51,795 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('client_secret', 'text', None, False, 4, 54178)
+2015-06-16 02:05:51,795 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('access_token', 'text', None, False, 5, 54178)
+2015-06-16 02:05:51,796 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('grant_type', 'text', None, False, 6, 54178)
+2015-06-16 02:05:51,796 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_ativacao', 'date', None, False, 7, 54178)
+2015-06-16 02:05:51,796 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_id', 'integer', None, False, 8, 54178)
+2015-06-16 02:05:51,797 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:05:51,797 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,801 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:05:51,802 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:05:51,802 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:05:51,803 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:05:51,803 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:05:51,803 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:05:51,804 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:05:51,805 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,807 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:05:51,810 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:05:51,811 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:05:51,813 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:05:51,814 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:05:51,815 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:05:51,815 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:05:51,819 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:05:51,820 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_pkey',)
+2015-06-16 02:05:51,821 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:05:51,822 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54178}
+2015-06-16 02:05:51,824 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:05:51,825 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_usuario_id_fkey', 'FOREIGN KEY (usuario_id) REFERENCES usuario(id)', 'public')
+2015-06-16 02:05:51,827 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:05:51,828 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'usuario'}
+2015-06-16 02:05:51,830 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:05:51,830 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54141,)
+2015-06-16 02:05:51,831 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:05:51,832 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:05:51,836 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:05:51,837 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('usuario_id_seq'::regclass)", True, 1, 54141)
+2015-06-16 02:05:51,837 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('nome', 'text', None, False, 2, 54141)
+2015-06-16 02:05:51,838 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('senha', 'text', None, False, 3, 54141)
+2015-06-16 02:05:51,838 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_criacao', 'date', None, False, 4, 54141)
+2015-06-16 02:05:51,839 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:05:51,839 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,842 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:05:51,842 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:05:51,843 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:05:51,843 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:05:51,843 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:05:51,844 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:05:51,846 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:05:51,847 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:05:51,850 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:05:51,853 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:05:51,853 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:05:51,856 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:05:51,857 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:05:51,857 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:05:51,858 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:05:51,860 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:05:51,860 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_pkey',)
+2015-06-16 02:05:51,861 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:05:51,862 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54141}
+2015-06-16 02:05:51,865 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:05:51,867 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:05:51,867 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:05:51,870 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:05:51,873 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:05:51,874 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:05:51,877 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:05:51,879 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:05:51,880 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:05:51,883 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:07:30,666 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:07:30,666 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:07:30,667 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:07:30,784 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:07:30,784 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:07:30,852 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:07:30,852 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,854 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:07:30,854 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:07:30,857 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:07:30,857 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,858 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:07:30,859 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:07:30,861 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:07:30,861 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,863 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:07:30,863 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,865 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:07:30,865 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,867 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:07:30,867 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:07:30,875 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,876 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:07:30,878 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,878 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:07:30,879 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,879 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:07:30,881 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,882 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:07:30,883 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,883 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:07:30,884 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,885 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:07:30,886 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,886 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:07:30,888 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,889 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:07:30,890 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,890 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:07:30,892 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,892 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:07:30,893 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,894 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:07:30,896 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,897 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:07:30,898 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,898 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:07:30,901 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,902 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:07:30,903 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,904 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:07:30,906 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,906 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:07:30,907 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,908 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:07:30,909 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,910 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:07:30,911 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,911 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:07:30,913 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,913 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:07:30,914 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:07:30,915 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:07:30,916 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:07:30,917 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:07:30,969 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:07:30,969 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,970 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:07:30,971 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:07:30,971 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:07:30,972 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,972 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:07:30,973 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:07:30,975 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:07:30,976 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,977 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:07:30,978 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,979 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:07:30,980 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:30,981 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:07:30,981 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:07:30,983 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:07:30,984 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'mensagem'}
+2015-06-16 02:07:30,986 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:07:30,987 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54210,)
+2015-06-16 02:07:30,988 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:07:30,989 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:07:30,996 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:07:30,997 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('mensagem_id_seq'::regclass)", True, 1, 54210)
+2015-06-16 02:07:30,997 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id_on_web_app', 'integer', None, False, 2, 54210)
+2015-06-16 02:07:30,997 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_chegada', 'date', None, False, 3, 54210)
+2015-06-16 02:07:30,998 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_ultimo_envio', 'date', None, False, 4, 54210)
+2015-06-16 02:07:30,998 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('numero_tentativas_envio', 'integer', None, False, 5, 54210)
+2015-06-16 02:07:30,998 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('status', 'text', None, False, 6, 54210)
+2015-06-16 02:07:30,999 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_id', 'integer', None, False, 7, 54210)
+2015-06-16 02:07:31,000 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:07:31,000 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:31,002 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:07:31,004 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:07:31,004 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:07:31,005 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:07:31,005 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:07:31,005 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:07:31,007 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:07:31,008 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:31,011 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:07:31,015 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:07:31,016 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:07:31,019 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:07:31,020 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:07:31,020 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:07:31,021 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:07:31,023 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:07:31,024 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem_pkey',)
+2015-06-16 02:07:31,032 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:07:31,032 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54210}
+2015-06-16 02:07:31,035 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:07:31,036 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem_projeto_id_fkey', 'FOREIGN KEY (projeto_id) REFERENCES projeto(id)', 'public')
+2015-06-16 02:07:31,038 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:07:31,039 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'projeto'}
+2015-06-16 02:07:31,040 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:07:31,041 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54178,)
+2015-06-16 02:07:31,042 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:07:31,043 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:07:31,045 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:07:31,046 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('projeto_id_seq'::regclass)", True, 1, 54178)
+2015-06-16 02:07:31,047 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('nome', 'text', None, False, 2, 54178)
+2015-06-16 02:07:31,047 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('client_id', 'text', None, False, 3, 54178)
+2015-06-16 02:07:31,048 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('client_secret', 'text', None, False, 4, 54178)
+2015-06-16 02:07:31,048 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('access_token', 'text', None, False, 5, 54178)
+2015-06-16 02:07:31,048 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('grant_type', 'text', None, False, 6, 54178)
+2015-06-16 02:07:31,049 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_ativacao', 'date', None, False, 7, 54178)
+2015-06-16 02:07:31,049 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_id', 'integer', None, False, 8, 54178)
+2015-06-16 02:07:31,050 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:07:31,051 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:31,054 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:07:31,054 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:07:31,055 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:07:31,056 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:07:31,056 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:07:31,056 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:07:31,057 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:07:31,058 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:31,060 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:07:31,063 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:07:31,064 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:07:31,067 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:07:31,067 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:07:31,068 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:07:31,068 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:07:31,070 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:07:31,071 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_pkey',)
+2015-06-16 02:07:31,073 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:07:31,074 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54178}
+2015-06-16 02:07:31,077 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:07:31,078 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto_usuario_id_fkey', 'FOREIGN KEY (usuario_id) REFERENCES usuario(id)', 'public')
+2015-06-16 02:07:31,079 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT c.oid
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE (pg_catalog.pg_table_is_visible(c.oid))
+            AND c.relname = %(table_name)s AND c.relkind in ('r','v')
+        
+2015-06-16 02:07:31,080 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_name': 'usuario'}
+2015-06-16 02:07:31,081 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('oid',)
+2015-06-16 02:07:31,082 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (54141,)
+2015-06-16 02:07:31,084 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT a.attname,
+              pg_catalog.format_type(a.atttypid, a.atttypmod),
+              (SELECT pg_catalog.pg_get_expr(d.adbin, d.adrelid)
+                FROM pg_catalog.pg_attrdef d
+               WHERE d.adrelid = a.attrelid AND d.adnum = a.attnum
+               AND a.atthasdef)
+              AS DEFAULT,
+              a.attnotnull, a.attnum, a.attrelid as table_oid
+            FROM pg_catalog.pg_attribute a
+            WHERE a.attrelid = %(table_oid)s
+            AND a.attnum > 0 AND NOT a.attisdropped
+            ORDER BY a.attnum
+        
+2015-06-16 02:07:31,085 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:07:31,087 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname', 'format_type', 'default', 'attnotnull', 'attnum', 'table_oid')
+2015-06-16 02:07:31,088 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id', 'integer', "nextval('usuario_id_seq'::regclass)", True, 1, 54141)
+2015-06-16 02:07:31,088 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('nome', 'text', None, False, 2, 54141)
+2015-06-16 02:07:31,089 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('senha', 'text', None, False, 3, 54141)
+2015-06-16 02:07:31,090 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('data_criacao', 'date', None, False, 4, 54141)
+2015-06-16 02:07:31,091 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               pg_catalog.format_type(t.typbasetype, t.typtypmod) as "attype",
+               not t.typnotnull as "nullable",
+               t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema"
+            FROM pg_catalog.pg_type t
+               LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+            WHERE t.typtype = 'd'
+        
+2015-06-16 02:07:31,091 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:31,093 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'attype', 'nullable', 'default', 'visible', 'schema')
+2015-06-16 02:07:31,094 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('cardinal_number', 'integer', True, None, False, 'information_schema')
+2015-06-16 02:07:31,094 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('character_data', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:07:31,095 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('sql_identifier', 'character varying', True, None, False, 'information_schema')
+2015-06-16 02:07:31,096 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('time_stamp', 'timestamp(2) with time zone', True, "('now'::text)::timestamp(2) with time zone", False, 'information_schema')
+2015-06-16 02:07:31,096 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('yes_or_no', 'character varying(3)', True, None, False, 'information_schema')
+2015-06-16 02:07:31,097 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+            SELECT t.typname as "name",
+               -- no enum defaults in 8.4 at least
+               -- t.typdefault as "default",
+               pg_catalog.pg_type_is_visible(t.oid) as "visible",
+               n.nspname as "schema",
+               e.enumlabel as "label"
+            FROM pg_catalog.pg_type t
+                 LEFT JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace
+                 LEFT JOIN pg_catalog.pg_enum e ON t.oid = e.enumtypid
+            WHERE t.typtype = 'e'
+            ORDER BY "name", e.oid -- e.oid gives us label order
+        
+2015-06-16 02:07:31,098 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:07:31,100 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('name', 'visible', 'schema', 'label')
+2015-06-16 02:07:31,103 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+                SELECT a.attname
+                FROM pg_attribute a JOIN (
+                    SELECT unnest(ix.indkey) attnum,
+                           generate_subscripts(ix.indkey, 1) ord
+                    FROM pg_index ix
+                    WHERE ix.indrelid = %(table_oid)s AND ix.indisprimary
+                    ) k ON a.attnum=k.attnum
+                WHERE a.attrelid = %(table_oid)s
+                ORDER BY k.ord
+            
+2015-06-16 02:07:31,104 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:07:31,106 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('attname',)
+2015-06-16 02:07:31,107 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('id',)
+2015-06-16 02:07:31,109 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+        SELECT conname
+           FROM  pg_catalog.pg_constraint r
+           WHERE r.conrelid = %(table_oid)s AND r.contype = 'p'
+           ORDER BY 1
+        
+2015-06-16 02:07:31,109 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:07:31,111 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname',)
+2015-06-16 02:07:31,111 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_pkey',)
+2015-06-16 02:07:31,112 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT r.conname,
+                pg_catalog.pg_get_constraintdef(r.oid, true) as condef,
+                n.nspname as conschema
+          FROM  pg_catalog.pg_constraint r,
+                pg_namespace n,
+                pg_class c
+
+          WHERE r.conrelid = %(table)s AND
+                r.contype = 'f' AND
+                c.oid = confrelid AND
+                n.oid = c.relnamespace
+          ORDER BY 1
+        
+2015-06-16 02:07:31,113 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table': 54141}
+2015-06-16 02:07:31,115 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('conname', 'condef', 'conschema')
+2015-06-16 02:07:31,117 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:07:31,118 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54141}
+2015-06-16 02:07:31,121 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:07:31,123 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:07:31,123 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54178}
+2015-06-16 02:07:31,126 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:07:31,128 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+          SELECT
+              i.relname as relname,
+              ix.indisunique, ix.indexprs, ix.indpred,
+              a.attname, a.attnum, ix.indkey::varchar
+          FROM
+              pg_class t
+                    join pg_index ix on t.oid = ix.indrelid
+                    join pg_class i on i.oid=ix.indexrelid
+                    left outer join
+                        pg_attribute a
+                        on t.oid=a.attrelid and a.attnum = ANY(ix.indkey)
+          WHERE
+              t.relkind = 'r'
+              and t.oid = %(table_oid)s
+              and ix.indisprimary = 'f'
+          ORDER BY
+              t.relname,
+              i.relname
+        
+2015-06-16 02:07:31,128 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'table_oid': 54210}
+2015-06-16 02:07:31,132 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname', 'indisunique', 'indexprs', 'indpred', 'attname', 'attnum', 'indkey')
+2015-06-16 02:10:29,432 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:10:29,432 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:10:29,433 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:10:29,551 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:10:29,551 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:10:29,618 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:10:29,618 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:10:29,620 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:10:29,620 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:10:29,622 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:10:29,622 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:10:29,623 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:10:29,623 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:10:29,624 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:10:29,625 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:10:29,626 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:10:29,626 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:10:29,627 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:10:29,628 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:10:29,629 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:10:29,629 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:10:29,633 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,633 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:10:29,635 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,636 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:10:29,637 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,637 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:10:29,639 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,639 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:10:29,640 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,640 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:10:29,643 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,643 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:10:29,644 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,645 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:10:29,647 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,648 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:10:29,649 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,649 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:10:29,651 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,652 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:10:29,653 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,654 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:10:29,655 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,656 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:10:29,657 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,657 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:10:29,659 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,659 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:10:29,660 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,661 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:10:29,663 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,664 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:10:29,665 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,665 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:10:29,667 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,668 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:10:29,669 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,670 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:10:29,672 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,673 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:10:29,674 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:10:29,674 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:10:29,676 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:10:29,676 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:13:20,922 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:13:20,922 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:13:20,923 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:13:21,040 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:13:21,040 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:13:21,106 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:13:21,106 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:13:21,108 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:13:21,108 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:13:21,110 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:13:21,110 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:13:21,111 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:13:21,111 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:13:21,113 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:13:21,113 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:13:21,114 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:13:21,115 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:13:21,115 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:13:21,116 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:13:21,117 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:13:21,117 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:13:21,119 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,121 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:13:21,123 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,124 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:13:21,125 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,125 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:13:21,127 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,130 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:13:21,131 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,131 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:13:21,133 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,134 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:13:21,135 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,136 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:13:21,137 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,137 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:13:21,138 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,138 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:13:21,139 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,140 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:13:21,141 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,142 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:13:21,144 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,144 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:13:21,145 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,146 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:13:21,147 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,148 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:13:21,150 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,151 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:13:21,152 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,153 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:13:21,154 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,154 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:13:21,156 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,156 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:13:21,157 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,158 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:13:21,159 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,159 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:13:21,161 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:13:21,165 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:13:21,167 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:13:21,169 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:15:39,231 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:15:39,232 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:15:39,232 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:15:39,346 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:15:39,346 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:15:39,408 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:15:39,409 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:15:39,410 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:15:39,411 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:15:39,412 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:15:39,413 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:15:39,413 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:15:39,414 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:15:39,415 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:15:39,415 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:15:39,417 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:15:39,417 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:15:39,418 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:15:39,418 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:15:39,419 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:15:39,420 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:15:39,422 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,422 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:15:39,427 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,427 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:15:39,428 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,429 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:15:39,431 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,432 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:15:39,433 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,433 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:15:39,434 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,435 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:15:39,435 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,436 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:15:39,437 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,438 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:15:39,438 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,439 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:15:39,440 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,440 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:15:39,441 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,442 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:15:39,443 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,443 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:15:39,444 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,445 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:15:39,447 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,448 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:15:39,449 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,450 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:15:39,452 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,453 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:15:39,454 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,454 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:15:39,455 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,456 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:15:39,456 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,457 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:15:39,458 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,458 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:15:39,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:15:39,459 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:15:39,460 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:15:39,461 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:15:39,466 INFO  [sqlalchemy.engine.base.Engine][MainThread] 
+CREATE TABLE mensagem (
+	id SERIAL NOT NULL, 
+	id_on_web_app INTEGER, 
+	data_chegada DATE, 
+	data_ultimo_envio DATE, 
+	numero_tentativas_envio INTEGER, 
+	status TEXT, 
+	projeto_id INTEGER, 
+	usuario_aplicacao_cliente_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(projeto_id) REFERENCES projeto (id), 
+	FOREIGN KEY(usuario_aplicacao_cliente_id) REFERENCES usuario_aplicacao_cliente (id)
+)
+
+
+2015-06-16 02:15:39,466 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:15:39,473 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-16 02:20:51,828 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:20:51,829 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:20:51,829 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:20:51,946 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:20:51,946 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:20:52,010 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:20:52,011 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:20:52,012 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:20:52,013 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:20:52,014 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:20:52,015 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:20:52,015 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:20:52,016 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:20:52,017 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:20:52,018 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:20:52,019 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:20:52,019 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:20:52,020 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:20:52,021 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:20:52,022 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:20:52,022 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:20:52,024 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,024 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:20:52,026 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,029 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:20:52,030 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,031 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:20:52,033 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,033 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:20:52,035 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,035 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:20:52,038 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,039 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:20:52,040 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,040 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:20:52,042 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,042 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:20:52,043 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,043 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:20:52,044 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,045 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:20:52,046 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,046 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:20:52,048 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,048 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:20:52,050 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,050 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:20:52,051 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,052 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:20:52,053 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,053 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:20:52,055 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,055 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:20:52,056 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,057 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:20:52,059 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,059 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:20:52,060 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,061 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:20:52,063 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,064 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:20:52,065 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:20:52,065 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:20:52,067 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:20:52,068 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:20:52,071 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-16 02:20:52,071 DEBUG [khipu.seguranca.security][MainThread] Criando usuários defaults!
+2015-06-16 02:20:52,123 INFO  [sqlalchemy.engine.base.Engine][MainThread] BEGIN (implicit)
+2015-06-16 02:20:52,123 DEBUG [txn.-1219179776][MainThread] new transaction
+2015-06-16 02:20:52,124 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-16 02:20:52,125 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'sysdata', 'param_1': 1}
+2015-06-16 02:20:52,127 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-16 02:20:52,128 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (1, 'sysdata', '$5$rounds=110000$8vhJooyyNV1Trdpy$fqTd65emn2w/peL3dhfTt.WoBbAqSfVKNrCywA0Pif3', datetime.date(2015, 6, 9))
+2015-06-16 02:20:52,131 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT usuario.id AS usuario_id, usuario.nome AS usuario_nome, usuario.senha AS usuario_senha, usuario.data_criacao AS usuario_data_criacao 
+FROM usuario 
+WHERE usuario.nome = %(nome_1)s 
+ LIMIT %(param_1)s
+2015-06-16 02:20:52,132 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'nome_1': 'acception', 'param_1': 1}
+2015-06-16 02:20:52,133 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('usuario_id', 'usuario_nome', 'usuario_senha', 'usuario_data_criacao')
+2015-06-16 02:20:52,134 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row (2, 'acception', '$5$rounds=110000$isSE2inLZApv3Ck4$TyutNpCLONQtgpQvMSXH/imaHM5ooBcfS7QSBhpRTT3', datetime.date(2015, 6, 9))
+2015-06-16 02:20:52,134 INFO  [sqlalchemy.engine.base.Engine][MainThread] ROLLBACK
+2015-06-16 02:20:52,136 DEBUG [txn.-1219179776][MainThread] abort
+2015-06-16 02:20:52,137 DEBUG [txn.-1219179776][MainThread] new transaction
+2015-06-16 02:20:52,137 DEBUG [txn.-1219179776][MainThread] commit
+2015-06-16 02:20:52,137 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-16 02:20:52,137 DEBUG [khipu][MainThread] Configurando o pyramid
+2015-06-16 02:20:52,287 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-16 02:20:52,287 DEBUG [khipu][MainThread] Configurando a Autenicação e configuração 
+2015-06-16 02:20:52,289 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-16 02:20:52,289 DEBUG [khipu][MainThread] Adicionando as rotas!
+2015-06-16 02:20:52,297 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-16 02:20:52,297 DEBUG [khipu][MainThread] Rotas Adicionadas.
+2015-06-16 02:31:21,209 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:31:21,209 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:31:21,210 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:31:21,468 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:31:21,468 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:31:21,514 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:31:21,515 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:31:21,517 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:31:21,517 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:31:21,518 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:31:21,519 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:31:21,520 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:31:21,520 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:31:21,521 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:31:21,522 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:31:21,523 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:31:21,524 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:31:21,525 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:31:21,526 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:31:21,527 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:31:21,527 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:31:21,531 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,532 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:31:21,534 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,535 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:31:21,536 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,537 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:31:21,539 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,539 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:31:21,540 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,540 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:31:21,542 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,542 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:31:21,543 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,543 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:31:21,545 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,546 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:31:21,547 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,547 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:31:21,549 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,549 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:31:21,550 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,551 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:31:21,554 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,555 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:31:21,556 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,556 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:31:21,559 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,560 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:31:21,560 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,561 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:31:21,562 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,562 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:31:21,563 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,564 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:31:21,566 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,566 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)
+2015-06-16 02:31:21,570 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,571 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:31:21,572 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,573 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:31:21,575 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:31:21,575 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:31:21,576 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:31:21,577 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:44:45,055 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2015-06-16 02:44:45,055 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2015-06-16 02:44:45,056 DEBUG [passlib.utils.compat][MainThread] loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2015-06-16 02:44:45,266 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:44:45,266 DEBUG [khipu][MainThread] Inicializando a base de dados!
+2015-06-16 02:44:45,315 INFO  [sqlalchemy.engine.base.Engine][MainThread] select version()
+2015-06-16 02:44:45,316 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:44:45,318 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('version',)
+2015-06-16 02:44:45,318 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('PostgreSQL 9.1.15 on i686-pc-linux-gnu, compiled by gcc (Ubuntu/Linaro 4.6.3-1ubuntu5) 4.6.3, 32-bit',)
+2015-06-16 02:44:45,319 INFO  [sqlalchemy.engine.base.Engine][MainThread] select current_schema()
+2015-06-16 02:44:45,320 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:44:45,321 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('current_schema',)
+2015-06-16 02:44:45,321 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('public',)
+2015-06-16 02:44:45,322 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:44:45,323 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:44:45,324 INFO  [sqlalchemy.engine.base.Engine][MainThread] SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2015-06-16 02:44:45,324 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:44:45,325 INFO  [sqlalchemy.engine.base.Engine][MainThread] show standard_conforming_strings
+2015-06-16 02:44:45,326 INFO  [sqlalchemy.engine.base.Engine][MainThread] {}
+2015-06-16 02:44:45,327 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('standard_conforming_strings',)
+2015-06-16 02:44:45,327 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('on',)
+2015-06-16 02:44:45,332 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,334 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario'}
+2015-06-16 02:44:45,336 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,337 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario',)
+2015-06-16 02:44:45,338 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,339 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'khipu_exception'}
+2015-06-16 02:44:45,341 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,342 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('khipu_exception',)
+2015-06-16 02:44:45,342 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,343 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'gcminformation'}
+2015-06-16 02:44:45,344 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,344 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('gcminformation',)
+2015-06-16 02:44:45,345 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,346 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'principal'}
+2015-06-16 02:44:45,347 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,347 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('principal',)
+2015-06-16 02:44:45,353 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,354 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'server_information'}
+2015-06-16 02:44:45,356 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,356 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('server_information',)
+2015-06-16 02:44:45,358 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,358 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_principal'}
+2015-06-16 02:44:45,360 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,361 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_principal',)
+2015-06-16 02:44:45,362 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,362 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'projeto'}
+2015-06-16 02:44:45,363 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,363 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('projeto',)
+2015-06-16 02:44:45,364 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,365 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'usuario_aplicacao_cliente'}
+2015-06-16 02:44:45,366 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,367 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('usuario_aplicacao_cliente',)
+2015-06-16 02:44:45,368 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,369 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'registers_ids'}
+2015-06-16 02:44:45,370 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,371 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('registers_ids',)
+2015-06-16 02:44:45,372 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,372 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'telefone'}
+2015-06-16 02:44:45,374 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,374 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('telefone',)
+2015-06-16 02:44:45,379 INFO  [sqlalchemy.engine.base.Engine][MainThread] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where n.nspname=current_schema() and relname=%(name)s
+2015-06-16 02:44:45,379 INFO  [sqlalchemy.engine.base.Engine][MainThread] {'name': 'mensagem'}
+2015-06-16 02:44:45,381 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Col ('relname',)
+2015-06-16 02:44:45,382 DEBUG [sqlalchemy.engine.base.Engine][MainThread] Row ('mensagem',)

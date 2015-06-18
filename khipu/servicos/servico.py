@@ -1,6 +1,6 @@
 __author__ = 'anderson'
 
-from khipu.banco_de_dados.models import (DBSession, Mensagem, GcmInformation, Projeto, RegisterIds, KhipuException)
+from khipu.banco_de_dados.models import (DBSession, Mensagem, UsuarioAplicacaoCliente, GcmInformation, Projeto, RegisterIds, KhipuException)
 from khipu.banco_de_dados.enuns import StatusMensagem
 from sqlalchemy.exc import DBAPIError
 from khipu.gcm_wraper.gcm import GCM
@@ -13,6 +13,7 @@ import json
 import psutil
 
 log = logging.getLogger(__name__)
+
 
 # ***** Sender *********
 class Sender(object):
@@ -238,6 +239,19 @@ class GcmService(object):
         return response
 
 
+# ***** Usuario Aplicação Cliente Service *********
+class UsuarioAplicacaoService:
+
+    def cadastrarUsuario(self, dados):
+        try:
+            usuario_cliente = DBSession.query(UsuarioAplicacaoCliente).\
+                filter(UsuarioAplicacaoCliente.chave == dados["chave_registro_android"]).first()
+            if not usuario_cliente:
+                pass
+        except Exception as e:
+            manuseia_excecao()
+
+
 def descriptografa_projeto(id_projeto, key):
     """
     Função utilizada por várias classes para descriptografar o token e buscar o projeto relacionado a ele.
@@ -245,6 +259,7 @@ def descriptografa_projeto(id_projeto, key):
     :param key: chave usada para descriptografar
     :return: o projeto relaciona is id_projeto
     """
+
     #descriptografando e buscando o projeto no banco
     log.debug("Descriptografando id_projeto!")
     token_em_bytes = unhexlify(id_projeto)
@@ -261,6 +276,7 @@ def manuseia_excecao():
     Função que cria e escreve no log as excessões
     :return:
     """
+
     with transaction.manager:
         excep = KhipuException()
         log.debug(excep)
