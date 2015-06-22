@@ -1,8 +1,9 @@
 __author__ = 'anderson'
 
-from khipu.banco_de_dados.models import (DBSession, Mensagem, UsuarioAplicacaoCliente, GcmInformation, Projeto, RegisterIds, KhipuException)
+from khipu.banco_de_dados.models import (DBSession, Mensagem, UsuarioAplicacaoCliente, GcmInformation, Projeto,
+                                         RegisterIds, KhipuException, Telefone)
 from khipu.banco_de_dados.enuns import StatusMensagem
-from sqlalchemy.exc import DBAPIError
+from khipu.servicos.exception_service import ExceptionService
 from khipu.gcm_wraper.gcm import GCM
 from binascii import unhexlify
 from simplecrypt import decrypt
@@ -75,7 +76,7 @@ class Sender(object):
                 return {'msg': "Projeto não autorizado"}
 
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             return {'msg': "Erro: {0}".format(e)}
 
 
@@ -136,7 +137,7 @@ class SistemaService(object):
         try:
            list = DBSession.query(KhipuException).all()
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             msg['ok'] = "Erro :( %r" % e
             return msg
         return list
@@ -171,7 +172,7 @@ class MensagemService(object):
             else:
                 return {'msg': "Projeto não autorizado"}
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             return {'msg': "Erro na consulta: %r" % e}
 
 
@@ -203,7 +204,7 @@ class GcmService(object):
 
         except Exception as e:
             msg['ok'] = "Erro :( %r" % e
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
 
         return msg
 
@@ -234,7 +235,7 @@ class GcmService(object):
                 response['ok'] = "Projeto não autorizado"
         except Exception as e:
             response['ok'] = "Erro :( %r" % e
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
 
         return response
 
@@ -243,13 +244,25 @@ class GcmService(object):
 class UsuarioAplicacaoService:
 
     def cadastrarUsuario(self, dados):
-        try:
-            usuario_cliente = DBSession.query(UsuarioAplicacaoCliente).\
-                filter(UsuarioAplicacaoCliente.chave == dados["chave_registro_android"]).first()
-            if not usuario_cliente:
-                pass
-        except Exception as e:
-            manuseia_excecao()
+        with transaction.manager:
+            try:
+                usr_cli = DBSession.query(UsuarioAplicacaoCliente).\
+                    filter(UsuarioAplicacaoCliente.chave == dados["usuario"]["chave_registro_android"]).first()
+                if not usr_cli:
+                    log.debug("Novo Usuário cliente")
+                    projeto = DBSession.query(Projeto).filter(Projeto.access_token == dados["access_token"]).first()
+                    usr_cli = UsuarioAplicacaoCliente()
+                    usr_cli.nome_usuario, usr_cli.chave, usr_cli.projeto = dados["usuario"]["nome_usuario"],\
+                                                                           dados["usuario"]["chave_registro_android"],\
+                                                                           projeto
+                    for tel in dados["usuario"]["telefones"]:
+                        telefone = Telefone()
+                        telefone.numero, telefone.usuario_aplicacao_cliente = tel, usr_cli
+                        usr_cli.telefones.append(telefone)
+                    log.debug("Salvando novo usuário cliente %r" % usr_cli)
+                    DBSession.add(usr_cli)
+            except Exception as e:
+                ExceptionService.manuseia_excecao()
 
 
 def descriptografa_projeto(id_projeto, key):
@@ -271,13 +284,3 @@ def descriptografa_projeto(id_projeto, key):
     return projeto
 
 
-def manuseia_excecao():
-    """
-    Função que cria e escreve no log as excessões
-    :return:
-    """
-
-    with transaction.manager:
-        excep = KhipuException()
-        log.debug(excep)
-        DBSession.add(excep)

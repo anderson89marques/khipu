@@ -20,13 +20,13 @@
                     <div class="col-lg-10">
                         <img class="logo img-responsive" src="{{request.static_url('khipu:static/pyramid.png')}}" alt="pyramid web framework">
                     </div>
-                <div class="col-lg-2">
-                    {% if view.logged_in%}
-                        <span style="color: #a9bcb8;"> Olá {{ view.logged_in }} </span><a href="{{ request.application_url }}/logout" style="text-decoration: none;"><span style="color: #a9bcb8;">| Sair</span></a>
-                    {% else %}
-                         <span style="color: #a9bcb8;"> Olá </span> <a href="{{ request.application_url }}/login" style="text-decoration: none;"><span style="color: #a9bcb8;">| Entrar</span></a>
-                    {% endif %}
-                </div>
+                    <div class="col-lg-2">
+                        {% if view.logged_in%}
+                            <span style="color: #a9bcb8;"> Olá {{ view.logged_in }} </span><a href="{{ request.application_url }}/logout" style="text-decoration: none;"><span style="color: #a9bcb8;">| Sair</span></a>
+                        {% else %}
+                             <span style="color: #a9bcb8;"> Olá </span> <a href="{{ request.application_url }}/login" style="text-decoration: none;"><span style="color: #a9bcb8;">| Entrar</span></a>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,7 +64,7 @@
         </nav>
         {% block content %} {% endblock %}
 
-    <footer class="panel-footer navbar-inverse">
+    <footer class="modal-footer navbar-inverse">
         <div class="container">
             <p class="text-muted text-center" style="color: #ffffff">
                 <strong>

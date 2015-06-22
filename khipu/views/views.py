@@ -1,8 +1,9 @@
 from khipu.banco_de_dados.models import (DBSession, Mensagem, Projeto, Usuario)
 from khipu.banco_de_dados.enuns import StatusMensagem
+from khipu.servicos.servico import (Sender, SistemaService, MensagemService, GcmService, UsuarioAplicacaoService)
+from khipu.servicos.exception_service import ExceptionService
+from khipu.validacao.validacao_controle import AuthorizationService
 from pyramid.security import (remember, forget, authenticated_userid, effective_principals)
-from khipu.servicos.servico import (Sender, SistemaService, MensagemService, GcmService, UsuarioAplicacaoService,
-                                    manuseia_excecao)
 from pyramid.httpexceptions import HTTPFound, HTTPUnauthorized
 from pyramid.view import (view_config, forbidden_view_config)
 from pyramid.response import Response
@@ -51,7 +52,7 @@ class KhipuController:
                 else:
                     return Response("Projeto já existe!", content_type='text/plain', status_int=500)
             except Exception as e:
-                manuseia_excecao()
+                ExceptionService.manuseia_excecao()
                 return Response("Erro ao criar projeto", content_type='text/plain', status_int=500)
 
             return {'projeto': projeto}
@@ -65,7 +66,7 @@ class KhipuController:
             projeto = DBSession.query(Projeto).filter(Projeto.id == id).first()
             log.debug("Projeto: %s" % projeto.nome)
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             return Response("Erro ao exibir projeto", content_type='text/plain', status_int=500)
         return {'projeto': projeto}
 
@@ -113,7 +114,7 @@ class KhipuController:
                                  items_per_page=10,
                                  item_count=len(query))
         except DBAPIError:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             return Response("Problema na busca dos projetos", content_type='text/plain', status_int=500)
 
         log.debug("lista de projetos: %s" % listprojetos)
@@ -148,7 +149,7 @@ class UsuarioController:
             #paginação
             listusuarios = Page(query, page=int(self.request.matchdict['page']), items_per_page=10, item_count=len(query))
         except DBAPIError:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             Response("Problema na busca de pessoas", content_type='text/plain', status_int=500)
             log.debug("Lista de usuários: %r" % listusuarios)
         return {'listusuarios': listusuarios}
@@ -158,15 +159,16 @@ class UsuarioController:
         log.debug("Home")
         return {"nome": "Anderson"}
 
-
     @forbidden_view_config()
     def sem_auth_control(self):
+
         """
         Se o usuário está logado e veio parar aqui quer dizer que ele não tem autorização para acessar
         alguma view. então devo retornar uma mensagem dizendo que ele não tem permissão, ou uma página de não permissão.
         Se o usuário não estiver logado ele vai para a tela de login
         :return:
         """
+
         log.debug("Sem auth control")
         if 'system.Authenticated' in effective_principals(self.request):
             log.debug("Usuário sem permissão: %r" % self.logged_in)
@@ -216,6 +218,7 @@ class UsuarioController:
 
 # ***** GCM *********
 class GcmController:
+
     """
     Classe responsável pela comunicação com o Android.
     """
@@ -289,7 +292,7 @@ class MensagemController:
             listmensagens = Page(query, page=int(self.request.matchdict['page']),
                                  items_per_page=10, item_count=len(query))
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             return Response("Problema na busca das mensagens", content_type='text/plain', status_int=500)
         log.debug("lista de mensagens: %r" % listmensagens)
         model = {'listmensagens': listmensagens}
@@ -329,16 +332,18 @@ class UsuarioAplicacaoController:
 
     @view_config(route_name="cadastrousuariocliente", request_method="PUT", renderer="json")
     def cadastro_usuario_cliente(self):
+
         log.debug("Cadastrando usuario Cliente")
         dados_usuario = self.request.json_body
         log.debug("json body %r" % dados_usuario)
         try:
-            self.usuario_aplicacao_service.cadastrarUsuario(dados_usuario["usuario"])
-            return {"ok": "Resposta"}
+            if AuthorizationService.validate_access_token(dados_usuario["access_token"]):
+                self.usuario_aplicacao_service.cadastrarUsuario(dados_usuario)
+                return {"resposta": "ok"}
+            return {"resposta": "acccess tokren inválido"}
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             return {"erro": e.__repr__()}
-
 
 
 # ***** Sistema *********

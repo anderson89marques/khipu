@@ -1,9 +1,8 @@
-from sqlalchemy import (Column, MetaData, Integer, Text, ForeignKey, Date, create_engine, Table)
+from sqlalchemy import (Column, Integer, Text, ForeignKey, Date)
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import (scoped_session, sessionmaker, relationship)
 from zope.sqlalchemy import ZopeTransactionExtension
 from passlib.context import CryptContext
-from migrate.changeset import schema
 import uuid
 import sys
 import os
@@ -109,7 +108,7 @@ class UsuarioAplicacaoCliente(Base):
     chave = Column(Text)
     projeto_id = Column(Integer, ForeignKey('projeto.id'))
     projeto = relationship('Projeto', back_populates='usuarios_aplicacao_cliente')
-    telefones = relationship('Telefone', back_populates='usuario_aplicacao_cliente')
+    telefones = relationship('Telefone', back_populates='usuario_aplicacao_cliente', cascade="all, delete-orphan")
     mensagens = relationship('Mensagem', back_populates='usuario_aplicacao_cliente')
     register_ids = relationship("RegisterIds", back_populates='usuario_aplicacao_cliente')
 

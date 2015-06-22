@@ -4,8 +4,9 @@ from pyramid.authorization import ACLAuthorizationPolicy
 from sqlalchemy import engine_from_config
 from khipu.banco_de_dados.models import (DBSession, Base, Usuario, Principal)
 from khipu.seguranca.security import groupfinder, init
-from khipu.servicos.servico import manuseia_excecao
+from khipu.servicos.servico import ExceptionService
 import logging
+
 log = logging.getLogger(__name__)
 
 """

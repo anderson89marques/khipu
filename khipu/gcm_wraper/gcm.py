@@ -5,6 +5,7 @@ import logging
 GCM_URL = 'https://android.googleapis.com/gcm/send'
 log = logging.getLogger(__name__)
 
+
 class GCM(object):
     def __init__(self, apikey, url=GCM_URL):
         self.apikey = apikey

@@ -1,7 +1,7 @@
 __author__ = 'anderson'
-from pyramid.view import view_config, forbidden_view_config
-from khipu.validacao.validacao_controle import Validador, KhipuToken, KhipuAuthorization
-from khipu.servicos.servico import manuseia_excecao
+from pyramid.view import view_config
+from khipu.servicos.exception_service import ExceptionService
+from khipu.validacao.validacao_controle import AuthorizationService
 import logging
 import json
 
@@ -14,22 +14,19 @@ class GeradoraAccessToken():
     """
         Controla as requisições relacionadas ao cadastro das aplicações clientes no khipu
     """
+
     def __init__(self, request):
         self.request = request
 
     @view_config(route_name="token", request_method="GET", renderer="json")
     def token(self):
         log.debug("TOKEN")
-        json_credentials = None
         try:
             json_credentials = json.loads(self.request.params['q'])
             log.debug(json_credentials)
-            req_validador = Validador()
-            khiputoken = KhipuToken(req_validador)
-            autorizador = KhipuAuthorization(req_validador)
-            header, body, data = autorizador.create_token_response(json_credentials, khiputoken)
+            header, body, data = AuthorizationService.create_access_token(json_credentials)
             return body
         except Exception as e:
-            manuseia_excecao()
+            ExceptionService.manuseia_excecao()
             print(e)
             return "erro"
