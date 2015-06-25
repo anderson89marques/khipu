@@ -230,11 +230,11 @@ class GcmController:
     @view_config(route_name='criargcm', renderer='json')
     def criarGcm(self):
         log.debug("Criar objeto gcm")
-        with transaction.manager:
-            log.debug("Parametros vindos do android: %r" % self.request.params)
-            mensagem = self.gcmservice.informa_regid(self.request.params, self.request.registry.settings["token.secret"])
+        #with transaction.manager:
+        log.debug("Parametros vindos do android: %r" % self.request.params)
+        #mensagem = self.gcmservice.informa_regid(self.request.params, self.request.registry.settings["token.secret"])
 
-        return mensagem
+        return {"resgistro": "ok"}
 
     @view_config(route_name="androidmessages", renderer="json")
     def android_messages_information(self):

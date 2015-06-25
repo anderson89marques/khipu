@@ -22,9 +22,11 @@ class GeradoraAccessToken():
     def token(self):
         log.debug("TOKEN")
         try:
+            log.debug(self.request.params)
             json_credentials = json.loads(self.request.params['q'])
             log.debug(json_credentials)
             header, body, data = AuthorizationService.create_access_token(json_credentials)
+            log.debug(type(body))
             return body
         except Exception as e:
             ExceptionService.manuseia_excecao()

@@ -71,7 +71,7 @@ class KhipuAuthorization(AuthorizationCodeGrant):
             ExceptionService.manuseia_excecao()
             return headers, json.dumps({"e": "erro"}), 400
 
-        return headers, json.dumps(token), 200
+        return headers, token, 200
 
     def validate_token_request(self, request):
         log.debug("validate token request : request %r" % request)
