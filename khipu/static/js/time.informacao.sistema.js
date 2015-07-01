@@ -3,9 +3,9 @@
  */
 $(document).ready(function(){
     //time em milisegundos
-    /*var timer = $.timer(function(){
+    var timer = $.timer(function(){
         $.ajax({
-            url: "/parametros/body",
+            url: "/khipu/parametros/body",
             type: 'POST',
             context: $("#body_list_parametros"),
             beforeSend:function(){
@@ -20,7 +20,7 @@ $(document).ready(function(){
             }
         });
     });
-    timer.set({time: 10000, autostart: true});*/
-    //timer.play();
-    //timer.stop();
+    timer.set({time: 600000, autostart: true});
+    timer.play();
+    //imer.stop();
 });

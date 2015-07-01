@@ -7,20 +7,24 @@ import uuid
 import sys
 import os
 
-#Criação da sessão de acesso ao banco de dados e também da classe Base para a construção dos modelos.
+'Criação da sessão de acesso ao banco de dados e também da classe Base para a construção dos modelos.'
 DBSession = scoped_session(sessionmaker(extension=ZopeTransactionExtension(), expire_on_commit=False))
 Base = declarative_base()
 
 
-#usuarios e seu grupos(principals)
 class Usuario(Base):
+    """usuarios e seu grupos(principals)"""
     __tablename__ = 'usuario'
+
     id = Column(Integer, primary_key=True)
     nome = Column(Text, nullable=True)
     senha = Column(Text, nullable=True)
     data_criacao = Column(Date)
     principals = relationship('Principal', secondary='usuario_principal')
     projetos = relationship('Projeto', back_populates='usuario')
+
+    def __init__(self):
+        pass
 
     def check_password(self, password):
         #Criando um objeto que usará criptografia do método shs256, rounds default de 80000
@@ -38,24 +42,28 @@ class Usuario(Base):
 
 class Principal(Base):
     __tablename__ = 'principal'
+
     id = Column(Integer, primary_key=True)
     nome = Column(Text, nullable=True)
     usuarios = relationship('Usuario', secondary='usuario_principal')
 
+    def __init__(self):
+        pass
+
 
 class Usuario_Principal(Base):
     __tablename__ = 'usuario_principal'
+
     usuario_id = Column(Integer, ForeignKey('usuario.id'), primary_key=True)
     grupo_id = Column(Integer, ForeignKey('principal.id'), primary_key=True)
 
-#fim usuários e seus grupos
+    def __init__(self):
+        pass
 
 
-# data = datetime.strptime(b, format_data_hora).date()
-# format_data = "%d%m%Y"
-#início de controle de projetos
 class Projeto(Base):
     __tablename__ = 'projeto'
+
     id = Column(Integer, primary_key=True)
     nome = Column(Text)
     client_id = Column(Text)
@@ -69,6 +77,9 @@ class Projeto(Base):
     mensagens = relationship('Mensagem', back_populates='projeto')
     usuarios_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='projeto')
 
+    def __init__(self):
+        pass
+
     def gerar_chaves_para_projeto(self):
         self.client_id = uuid.uuid1().hex
         self.client_secret = uuid.uuid1().hex
@@ -79,7 +90,6 @@ class Projeto(Base):
         #Comparando o valor da string(uuid) com o valor criptografado(chave)
         okornot = cripto.verify(self.uuid, chave)
         return okornot
-#fim de controle de projetos
 
 
 class Mensagem(Base):
@@ -96,6 +106,9 @@ class Mensagem(Base):
     usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
     usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='mensagens')
 
+    def __init__(self):
+        pass
+
     def __repr__(self):
         return "Mensagem: {0} {1} {2} {3}".format(self.id, self.id_on_web_app, self.data_chegada, self.status)
 
@@ -110,7 +123,10 @@ class UsuarioAplicacaoCliente(Base):
     projeto = relationship('Projeto', back_populates='usuarios_aplicacao_cliente')
     telefones = relationship('Telefone', back_populates='usuario_aplicacao_cliente', cascade="all, delete-orphan")
     mensagens = relationship('Mensagem', back_populates='usuario_aplicacao_cliente')
-    register_ids = relationship("RegisterIds", back_populates='usuario_aplicacao_cliente')
+    register_ids = relationship("RegisterIds", back_populates='usuario_aplicacao_cliente', cascade="all, delete-orphan")
+
+    def __init__(self):
+        pass
 
 
 class Telefone(Base):
@@ -121,50 +137,56 @@ class Telefone(Base):
     usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
     usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='telefones')
 
+    def __init__(self, numero, usuario_aplicacao_cliente):
+        self.numero = numero
+        self.usuario_aplicacao_cliente = usuario_aplicacao_cliente
+
 
 class GcmInformation(Base):
     __tablename__ = 'gcminformation'
+
     id = Column(Integer, primary_key=True)
     name = Column(Text, default="GCMCLASS")
     apikey = Column(Text, default="AIzaSyBCyTjgOMZncxzTgPxVN9yxEbaZ0Y2SvQo") #chave do servidor
 
+    def __init__(self):
+        pass
+
 
 class RegisterIds(Base):
     __tablename__ = 'registers_ids'
+
     id = Column(Integer, primary_key=True)
     androidkey = Column(Text)
     usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
     usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='register_ids')
+
+    def __init__(self, android_key):
+        self.androidkey = android_key
 
 
 class KhipuException(Base):
     __tablename__ = 'khipu_exception'
     id = Column(Integer, primary_key=True)
     nome_arquivo = Column(Text)
+    data_excecao = Column(Date, nullable=True)
     tipo_excessao = Column(Text)
     linha = Column(Text)
     descricao = Column(Text)
 
     def __init__(self):
+        from datetime import datetime
         exc_type, exc_obj, exc_tb = sys.exc_info()
 
         self.nome_arquivo = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
         self.tipo_excessao = exc_type.__name__
         self.linha = exc_tb.tb_lineno
         self.descricao = str(exc_obj)
+        d =datetime.now().strftime('%d-%m-%Y')
+        self.data_excecao = datetime.strptime(d, '%d-%m-%Y').date()
 
     def __repr__(self):
-        return "Erro: nome do arquivo:{0}, tipo:{1}, linha:{2}, descrição:{3}".format(self.nome_arquivo,self.tipo_excessao,
+        return "Erro: nome do arquivo:{0}, tipo:{1}, linha:{2}, descrição:{3}".format(self.nome_arquivo, self.tipo_excessao,
                                                                                       self.linha, self.descricao)
-
-
-class ServerInformation(Base):
-    __tablename__ = 'server_information'
-    id = Column(Integer, primary_key=True)
-    mensagem_id = Column(Integer)
-    app_key = Column(Integer)
-    data_recebimento = Column(Date)
-
-
 
 

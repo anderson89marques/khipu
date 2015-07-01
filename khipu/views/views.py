@@ -1,6 +1,6 @@
 from khipu.banco_de_dados.models import (DBSession, Mensagem, Projeto, Usuario)
 from khipu.banco_de_dados.enuns import StatusMensagem
-from khipu.servicos.servico import (Sender, SistemaService, MensagemService, GcmService, UsuarioAplicacaoService)
+from khipu.servicos.servico import (SistemaService, MensagemService, GcmService, UsuarioAplicacaoService)
 from khipu.servicos.exception_service import ExceptionService
 from khipu.validacao.validacao_controle import AuthorizationService
 from pyramid.security import (remember, forget, authenticated_userid, effective_principals)
@@ -230,11 +230,18 @@ class GcmController:
     @view_config(route_name='criargcm', renderer='json')
     def criarGcm(self):
         log.debug("Criar objeto gcm")
-        #with transaction.manager:
-        log.debug("Parametros vindos do android: %r" % self.request.params)
-        #mensagem = self.gcmservice.informa_regid(self.request.params, self.request.registry.settings["token.secret"])
-
-        return {"resgistro": "ok"}
+        log.debug("Parametros vindos do android: %r" % self.request.method)
+        log.debug(self.request.json_body)
+        dados_android = self.request.json_body
+        try:
+            if AuthorizationService.validate_access_token(dados_android["access_token"]):
+                if self.gcmservice.definir_regid(dados_android):
+                    return {"resposta": "ok"}
+            else:
+                return {"resposta": "access token inválido"}
+        except Exception as e:
+            ExceptionService.manuseia_excecao()
+            return {"erro": e.__repr__()}
 
     @view_config(route_name="androidmessages", renderer="json")
     def android_messages_information(self):
@@ -250,7 +257,6 @@ class MensagemController:
     def __init__(self, request):
         self.request = request
         self.logged_in = request.authenticated_userid
-        self.sender = Sender()
         self.mensagem_service = MensagemService()
 
     @view_config(route_name='listamensagens', renderer='templates/mensagem/listamensagens.jinja2', permission="comum")
@@ -307,11 +313,19 @@ class MensagemController:
 
         return model
 
-    @view_config(route_name="receiver", renderer="json")
-    def receiver_data(self):
-        log.debug("Recebendo mensagem %r" % self.request.params)
-        mensagem = self.sender.processador(self.request.params['q'], self.request.registry.settings["token.secret"])
-        return mensagem
+    @view_config(route_name="receiver", request_method='POST', renderer="json")
+    def receiver_message(self):
+        log.debug("Recebendo mensagem %r" % self.request.method)
+        dados = self.request.json_body
+        log.debug("dados json %r" % dados)
+        try:
+            if AuthorizationService.validate_access_token(dados["data"]["access_token"]):
+                mensagem = self.mensagem_service.processador(dados)
+                return mensagem
+            return {"resposta": "acccess tokren inválido"}
+        except Exception as e:
+            ExceptionService.manuseia_excecao()
+            return {"erro": e.__repr__()}
 
     @view_config(route_name="busca_informacao", renderer="json")
     def busca_informacao_mensagem(self):

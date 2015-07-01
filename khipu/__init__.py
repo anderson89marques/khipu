@@ -51,7 +51,7 @@ def main(global_config, **settings):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/khipu')
     config.add_route('criargcm', '/khipu/gcm/criarGcm')
-    config.add_route('receiver', '/khipu/receiver')
+    config.add_route('receiver', '/khipu/receiver_message')
     config.add_route('token', '/khipu/token')
     config.add_route('exibeprojeto', '/khipu/projeto')
     config.add_route('criarprojeto', '/khipu/criarprojeto')

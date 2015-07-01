@@ -1,10 +1,26 @@
 #dialog_loading_body {
+    display: none;
+}
+
+#dialog_loading_body {
     position: fixed;
     right: 50px;
     bottom: 50px;
 }
 
-#dialog_loading_body img{
+#dialog_loading_body img {
     height: 80px;
     width: 80px;
+}
+
+.body_list_div {
+    margin-top: 40px;
+}
+
+.header_table {
+    text-align: center;
+}
+
+.header_table span {
+     font-size: 20px;
 }

@@ -35,7 +35,9 @@ print("::::::::::::::::::")
 #vou salvar a data normal e na hora de exibir eu edito
 l = "03-29-2015"
 formater_string = "%m-%d-%Y"
-d = datetime.strptime(l, formater_string)
+#d = datetime.strptime(l, formater_string)
+d =datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+d = datetime.strptime(d, '%d-%m-%Y %H:%M:%S').date()
 print(d)
 print(type(d))
 print(StatusMensagem.CONFIRMADA_SMS.name)

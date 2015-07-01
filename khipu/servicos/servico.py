@@ -16,70 +16,6 @@ import psutil
 log = logging.getLogger(__name__)
 
 
-# ***** Sender *********
-class Sender(object):
-    """
-        Classe responsável por formatar as informações que serão enviadas para o servidor do google e posteriormente
-        para o celular cadastrado, que então enviará as mensagens de texto;
-    """
-
-    def __init__(self):
-        pass
-
-    def givemeGcm(self):
-        log.debug("Buscando GCM")
-        return DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
-
-    def get_mensagem(self, id_msg):
-        msg = DBSession.query(Mensagem).filter(Mensagem.id_on_web_app == id_msg).first()
-        return msg
-
-    def salvar_mensagem(self, id_msg, projeto):
-        log.debug("Salvando Mensagem.")
-        with transaction.manager:
-            m = self.get_mensagem(id_msg)
-            if m:
-                m.status = StatusMensagem.RECEBIDA_CLIENTE.value
-                m.data_ultimo_envio = datetime.datetime.now().date()
-                DBSession.add(m)
-                log.debug("Mensagem atualizada: %r" % m)
-            else:
-                msg = Mensagem()
-                msg.id_on_web_app = id_msg
-                msg.data_chegada = datetime.datetime.now().date()
-                msg.data_ultimo_envio = datetime.datetime.now().date()
-                msg.numero_tentativas_envio = 1
-                msg.status = StatusMensagem.RECEBIDA_CLIENTE.value
-                msg.projeto = projeto
-                DBSession.add(msg)
-                log.debug("Mensagem salva: %r" % msg)
-        return msg
-
-    def processador(self, dados, key):
-        log.debug("Processando Mensagem Recebida")
-        d = json.loads(dados)
-        projeto = None
-        log.debug("Dados json: %r" % d['data'])
-        try:
-            projeto = descriptografa_projeto(d['data']['id_projeto'], key)
-            if projeto:
-                self.salvar_mensagem(d['data']['id_mensagem'], projeto)
-                gcminformation = self.givemeGcm()
-
-                d['registration_ids'] = [gcminformation.register_ids[0].androidkey]
-                log.debug("DADOS: %r" % d)
-                gcmobj = GCM(gcminformation.apikey)
-                response = gcmobj.json_request(registration_ids=d['registration_ids'], data=d['data'])
-                log.debug("Resposta Google: %r" % response)
-                return {'msg': "Mensagem Recebida com sucesso"}
-            else:
-                return {'msg': "Projeto não autorizado"}
-
-        except Exception as e:
-            ExceptionService.manuseia_excecao()
-            return {'msg': "Erro: {0}".format(e)}
-
-
 # ***** Sistema *********
 class SistemaService(object):
     """
@@ -146,13 +82,64 @@ class SistemaService(object):
 # ***** Mensagem *********
 class MensagemService(object):
     """
-        Classe que controla a busca de informações sobre as mensagens.
+        Classe responsável por formatar as informações que serão enviadas para o servidor do google e posteriormente
+        para o celular cadastrado, que então enviará as mensagens de texto.
+        Controla a busca de informações sobre as mensagens.
         O método get_messages recebe a chave para descriptografar o token identificador da aplicação
         e também os dados contendo o token e os ids das mensagens ao qual se quer obter informação.
     """
 
     def __init__(self):
-        pass
+        #como implementar singleton no python
+        self.gcm_service = GcmService()
+        self.msg_service = UsuarioAplicacaoService()
+
+    def get_mensagem(self, id_msg):
+        msg = DBSession.query(Mensagem).filter(Mensagem.id_on_web_app == id_msg).first()
+        return msg
+
+    def salvar_mensagem(self, id_msg, projeto):
+        log.debug("Salvando Mensagem.")
+        with transaction.manager:
+            m = self.get_mensagem(id_msg)
+            if m:
+                m.status = StatusMensagem.RECEBIDA_CLIENTE.value
+                m.data_ultimo_envio = datetime.datetime.now().date()
+                DBSession.add(m)
+                log.debug("Mensagem atualizada: %r" % m)
+            else:
+                msg = Mensagem()
+                msg.id_on_web_app = id_msg
+                msg.data_chegada = datetime.datetime.now().date()
+                msg.data_ultimo_envio = datetime.datetime.now().date()
+                msg.numero_tentativas_envio = 1
+                msg.status = StatusMensagem.RECEBIDA_CLIENTE.value
+                msg.projeto = projeto
+                DBSession.add(msg)
+                log.debug("Mensagem salva: %r" % msg)
+        return msg
+
+    def processador(self, dados):
+        log.debug("Processando Mensagem Recebida")
+        d = dados['data']
+        try:
+            projeto = DBSession.query(Projeto).filter(Projeto.access_token == d["access_token"]).first()
+            if projeto:
+                self.salvar_mensagem(d['id_mensagem'], projeto)
+                gcminformation = self.gcm_service.givemeGcm()
+                usr_app_client = self.msg_service.buscaUsuarioPorChave(d["chave"])
+                d['registration_ids'] = [usr_app_client.register_ids[0].androidkey] #[gcminformation.register_ids[0].androidkey]
+                log.debug("DADOS: %r" % d)
+                gcmobj = GCM(gcminformation.apikey)
+                response = gcmobj.json_request(registration_ids=d['registration_ids'], data=d['data'])
+                log.debug("Resposta Google: %r" % response)
+                return {'msg': "Mensagem Recebida com sucesso"}
+            else:
+                return {'msg': "Projeto não autorizado"}
+
+        except Exception as e:
+            ExceptionService.manuseia_excecao()
+            return {'msg': "Erro: {0}".format(e)}
 
     def get_messages(self, dados, key):
         log.debug("Buscando Mensagens!")
@@ -176,37 +163,29 @@ class MensagemService(object):
             return {'msg': "Erro na consulta: %r" % e}
 
 
-# ***** Mensagem *********
+# ***** GCMService *********
 class GcmService(object):
+
     def __init__(self):
         pass
 
-    def informa_regid(self, dados, key):
+    def givemeGcm(self):
+        log.debug("Buscando GCM")
+        return DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
+
+    def definir_regid(self, dados_android):
         log.debug("Recebimento do RegId do android")
-        log.debug("")
-        projeto = None
-        msg = {}
-        try:
-            projeto = descriptografa_projeto(dados['id_projeto'], key)
-
-            if projeto:
-                log.debug("Buscando a classe GcmInformation")
-                gcmclass = DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
-                if not gcmclass:
-                    log.debug("a classe GcmInformation")
-                    regId = RegisterIds(androidkey=dados["RegId"])
-                    gcmclass = GcmInformation()
-                    gcmclass.register_ids.append(regId)
-                    DBSession.add(gcmclass)
-                msg['ok'] = 'Projeto autorizado'
-            else:
-                msg['ok'] = "Projeto não autorizado"
-
-        except Exception as e:
-            msg['ok'] = "Erro :( %r" % e
-            ExceptionService.manuseia_excecao()
-
-        return msg
+        with transaction.manager:
+            try:
+                usuario_aplicao_cliente = DBSession.query(UsuarioAplicacaoCliente).\
+                                          filter(UsuarioAplicacaoCliente.chave == dados_android["senha_registro"]).first()
+                log.debug("usuario aplicação cliente: %r" % usuario_aplicao_cliente)
+                if usuario_aplicao_cliente:
+                    regId = RegisterIds(android_key=dados_android["RegId"])
+                    usuario_aplicao_cliente.register_ids.append(regId)
+                    DBSession.add(usuario_aplicao_cliente)
+            except Exception as e:
+                ExceptionService.manuseia_excecao()
 
     def informacao_sobre_msg(self, dados, key):
         log.debug("Recebimento da Informação da mensagem do android")
@@ -255,14 +234,19 @@ class UsuarioAplicacaoService:
                     usr_cli.nome_usuario, usr_cli.chave, usr_cli.projeto = dados["usuario"]["nome_usuario"],\
                                                                            dados["usuario"]["chave_registro_android"],\
                                                                            projeto
-                    for tel in dados["usuario"]["telefones"]:
-                        telefone = Telefone()
-                        telefone.numero, telefone.usuario_aplicacao_cliente = tel, usr_cli
-                        usr_cli.telefones.append(telefone)
+
+                    usr_cli.telefones = [Telefone(numero=tel, usuario_aplicacao_cliente=usr_cli) for tel in dados["usuario"]["telefones"]]
                     log.debug("Salvando novo usuário cliente %r" % usr_cli)
                     DBSession.add(usr_cli)
             except Exception as e:
                 ExceptionService.manuseia_excecao()
+
+    def buscaUsuarioPorChave(self, chave):
+        try:
+            return DBSession.query(UsuarioAplicacaoCliente).filter(UsuarioAplicacaoCliente.chave == chave).first()
+        except Exception as e:
+            ExceptionService.manuseia_excecao()
+
 
 
 def descriptografa_projeto(id_projeto, key):
@@ -281,6 +265,7 @@ def descriptografa_projeto(id_projeto, key):
     log.debug("decript")
     projeto = DBSession.query(Projeto).filter(Projeto.uuid == token_descripto_bytes.decode("utf8")).first()
     log.debug("projeto:D")
+
     return projeto
 
 
