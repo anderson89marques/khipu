@@ -23,9 +23,6 @@ class Usuario(Base):
     principals = relationship('Principal', secondary='usuario_principal')
     projetos = relationship('Projeto', back_populates='usuario')
 
-    def __init__(self):
-        pass
-
     def check_password(self, password):
         #Criando um objeto que usará criptografia do método shs256, rounds default de 80000
         cripto = CryptContext(schemes="sha256_crypt")
@@ -46,9 +43,6 @@ class Principal(Base):
     id = Column(Integer, primary_key=True)
     nome = Column(Text, nullable=True)
     usuarios = relationship('Usuario', secondary='usuario_principal')
-
-    def __init__(self):
-        pass
 
 
 class Usuario_Principal(Base):
@@ -77,8 +71,6 @@ class Projeto(Base):
     mensagens = relationship('Mensagem', back_populates='projeto')
     usuarios_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='projeto')
 
-    def __init__(self):
-        pass
 
     def gerar_chaves_para_projeto(self):
         self.client_id = uuid.uuid1().hex
@@ -106,9 +98,6 @@ class Mensagem(Base):
     usuario_aplicacao_cliente_id = Column(Integer, ForeignKey('usuario_aplicacao_cliente.id'))
     usuario_aplicacao_cliente = relationship('UsuarioAplicacaoCliente', back_populates='mensagens')
 
-    def __init__(self):
-        pass
-
     def __repr__(self):
         return "Mensagem: {0} {1} {2} {3}".format(self.id, self.id_on_web_app, self.data_chegada, self.status)
 
@@ -124,9 +113,6 @@ class UsuarioAplicacaoCliente(Base):
     telefones = relationship('Telefone', back_populates='usuario_aplicacao_cliente', cascade="all, delete-orphan")
     mensagens = relationship('Mensagem', back_populates='usuario_aplicacao_cliente')
     register_ids = relationship("RegisterIds", back_populates='usuario_aplicacao_cliente', cascade="all, delete-orphan")
-
-    def __init__(self):
-        pass
 
 
 class Telefone(Base):
@@ -149,8 +135,12 @@ class GcmInformation(Base):
     name = Column(Text, default="GCMCLASS")
     apikey = Column(Text, default="AIzaSyBCyTjgOMZncxzTgPxVN9yxEbaZ0Y2SvQo") #chave do servidor
 
-    def __init__(self):
-        pass
+    def __init__(self, **kwargs):
+        if 'name' not in kwargs:
+            kwargs['name'] = self.__table__.c.name.default.arg
+        if 'apikey' not in kwargs:
+            kwargs['apikey'] = self.__table__.c.apikey.default.arg
+        super(GcmInformation, self).__init__(**kwargs)
 
 
 class RegisterIds(Base):

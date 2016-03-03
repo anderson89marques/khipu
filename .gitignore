@@ -1,8 +1,9 @@
 /diagramaArquitetura.asta
-/.idea
-/.idea/workspace.xml
-/.idea/misc.xml
-/.idea/Khipu.iml
-/.idea/inspectionProfiles/Project_Default.xml
-khipu/*/__pycache__/*
-khipu/__pycache__/*
+.idea
+*.pyc
+__pycache__
+khipu.log*
+.floo
+.flooignore
+.gitignore~
+*.Rhistory

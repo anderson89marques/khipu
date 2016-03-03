@@ -237,6 +237,8 @@ class GcmController:
             if AuthorizationService.validate_access_token(dados_android["access_token"]):
                 if self.gcmservice.definir_regid(dados_android):
                     return {"resposta": "ok"}
+                else:
+                    return {"resposta": "usuario cliente não encontrado"}
             else:
                 return {"resposta": "access token inválido"}
         except Exception as e:

@@ -101,12 +101,12 @@ class MensagemService(object):
     def salvar_mensagem(self, id_msg, projeto):
         log.debug("Salvando Mensagem.")
         with transaction.manager:
-            m = self.get_mensagem(id_msg)
-            if m:
-                m.status = StatusMensagem.RECEBIDA_CLIENTE.value
-                m.data_ultimo_envio = datetime.datetime.now().date()
-                DBSession.add(m)
-                log.debug("Mensagem atualizada: %r" % m)
+            msg = self.get_mensagem(id_msg)
+            if msg:
+                msg.status = StatusMensagem.RECEBIDA_CLIENTE.value
+                msg.data_ultimo_envio = datetime.datetime.now().date()
+                DBSession.add(msg)
+                log.debug("Mensagem atualizada: %r" % msg)
             else:
                 msg = Mensagem()
                 msg.id_on_web_app = id_msg
@@ -126,13 +126,18 @@ class MensagemService(object):
             projeto = DBSession.query(Projeto).filter(Projeto.access_token == d["access_token"]).first()
             if projeto:
                 self.salvar_mensagem(d['id_mensagem'], projeto)
+
                 gcminformation = self.gcm_service.givemeGcm()
                 usr_app_client = self.msg_service.buscaUsuarioPorChave(d["chave"])
                 d['registration_ids'] = [usr_app_client.register_ids[0].androidkey] #[gcminformation.register_ids[0].androidkey]
+
                 log.debug("DADOS: %r" % d)
+
                 gcmobj = GCM(gcminformation.apikey)
-                response = gcmobj.json_request(registration_ids=d['registration_ids'], data=d['data'])
+                response = gcmobj.json_request(registration_ids=d['registration_ids'], data=dados['data'])
+
                 log.debug("Resposta Google: %r" % response)
+
                 return {'msg': "Mensagem Recebida com sucesso"}
             else:
                 return {'msg': "Projeto não autorizado"}
@@ -171,7 +176,11 @@ class GcmService(object):
 
     def givemeGcm(self):
         log.debug("Buscando GCM")
-        return DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
+        gcminformation = DBSession.query(GcmInformation).filter(GcmInformation.name == "GCMCLASS").first()
+        if not gcminformation:
+            gcminformation = GcmInformation()
+
+        return gcminformation
 
     def definir_regid(self, dados_android):
         log.debug("Recebimento do RegId do android")
@@ -181,9 +190,13 @@ class GcmService(object):
                                           filter(UsuarioAplicacaoCliente.chave == dados_android["senha_registro"]).first()
                 log.debug("usuario aplicação cliente: %r" % usuario_aplicao_cliente)
                 if usuario_aplicao_cliente:
+                    #É preciso ainda tratar quando fizer uma nova requisição e o RegID já existe.
                     regId = RegisterIds(android_key=dados_android["RegId"])
                     usuario_aplicao_cliente.register_ids.append(regId)
                     DBSession.add(usuario_aplicao_cliente)
+                    return True
+                else:
+                    return False
             except Exception as e:
                 ExceptionService.manuseia_excecao()
 

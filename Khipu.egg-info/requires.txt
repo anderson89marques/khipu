@@ -6,4 +6,11 @@ SQLAlchemy
 transaction
 zope.sqlalchemy
 waitress
+gunicorn
+alembic
 psutil
+passlib
+simple-crypt
+oauthlib
+psycopg2
+paginate

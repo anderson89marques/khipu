@@ -1,6 +1,7 @@
 CHANGES.txt
 MANIFEST.in
 README.txt
+alembic.ini
 development.ini
 production.ini
 requirements.txt
@@ -14,11 +15,10 @@ Khipu.egg-info/requires.txt
 Khipu.egg-info/top_level.txt
 khipu/__init__.py
 khipu/tests.py
-khipu/Autenticacao/__init__.py
-khipu/Autorizacao/__init__.py
 khipu/banco_de_dados/__init__.py
 khipu/banco_de_dados/enuns.py
 khipu/banco_de_dados/models.py
+khipu/erros/__init__.py
 khipu/gcm_wraper/__init__.py
 khipu/gcm_wraper/gcm.py
 khipu/scripts/__init__.py
@@ -31,6 +31,7 @@ khipu/seguranca/__init__.py
 khipu/seguranca/resources.py
 khipu/seguranca/security.py
 khipu/servicos/__init__.py
+khipu/servicos/exception_service.py
 khipu/servicos/servico.py
 khipu/static/pyramid-16x16.png
 khipu/static/pyramid.png
@@ -59,6 +60,7 @@ khipu/static/dist/themes/default/40px.png
 khipu/static/dist/themes/default/style.css
 khipu/static/dist/themes/default/style.min.css
 khipu/static/dist/themes/default/throbber.gif
+khipu/static/images/loaderfaces.gif
 khipu/static/images/project.jpg
 khipu/static/js/criarcontato.js
 khipu/static/js/criarmensagem.js
@@ -81,6 +83,7 @@ khipu/templates/pessoa/listcontatos.jinja2
 khipu/templates/pessoa/listgrupos.jinja2
 khipu/templates/projeto/_form.jinja2
 khipu/templates/projeto/_listaparcial.jinja2
+khipu/templates/projeto/_tab.jinja2
 khipu/templates/projeto/criarprojeto.jinja2
 khipu/templates/projeto/listaprojetos.jinja2
 khipu/templates/projeto/showprojeto.jinja2
@@ -91,5 +94,8 @@ khipu/templates/sistema/_table_network.jinja2
 khipu/templates/sistema/listaexcecoes.jinja2
 khipu/templates/sistema/listparametros.jinja2
 khipu/templates/usuario/listausuarios.jinja2
+khipu/validacao/__init__.py
+khipu/validacao/validacao_controle.py
 khipu/views/__init__.py
+khipu/views/view_autorizador.py
 khipu/views/views.py

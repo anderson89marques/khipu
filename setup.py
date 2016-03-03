@@ -9,18 +9,16 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 requires = [
-    'pyramid',
-    'pyramid_jinja2',
-    'pyramid_debugtoolbar',
-    'pyramid_tm',
-    'SQLAlchemy',
-    'transaction',
-    'zope.sqlalchemy',
-    'waitress',
+    'pyramid', 'pyramid_jinja2', 'pyramid_debugtoolbar',
+    'pyramid_tm', 'SQLAlchemy', 'transaction',
+    'zope.sqlalchemy', 'waitress', 'gunicorn',
+    'alembic', 'psutil', 'passlib',
+    'simple-crypt', 'oauthlib', 'psycopg2',
+    'paginate'
     ]
 
 setup(name='Khipu',
-      version='0.0',
+      version='0.1',
       description='Khipu',
       long_description=README + '\n\n' + CHANGES,
       classifiers=[
